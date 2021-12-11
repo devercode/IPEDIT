@@ -1,27 +1,48 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
+      <a class="navbar-item logo" href="https://bulma.io">
         <img src="../assets/images/ipedit.png" width="112" height="28" />
       </a>
-
-      <a
-        role="button"
-        class="navbar-burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarBasicExample"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+      <!-- responsive-edd -->
+      <div class="responsive-edd">
+        <div class="navbar-end endd">
+          <div class="navbar-item">
+            <div class="buttons">
+              <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link"> 한국어 </a>
+                <div class="navbar-dropdown">
+                  <a class="navbar-item">
+                    <p>English</p>
+                  </a>
+                  <a class="navbar-item">
+                    <p>日本語</p>
+                  </a>
+                </div>
+              </div>
+              <a class="navbar-item item-log"> 로그인 </a>
+              <a class="button btn"> 시작하기 </a>
+            </div>
+          </div>
+        </div>
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu is-active">
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> Products </a>
+          <a class="navbar-link" style="width: max-content"> Products </a>
           <div class="navbar-dropdown dropdown-products">
             <a class="navbar-item">
               <p>IPEDIT draft</p>

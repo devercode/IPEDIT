@@ -4,12 +4,23 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media only screen and (max-width: 1200px) {
+      justify-content: space-around;
+    }
+    @media only screen and (max-width: 582px) {
+      margin: 50px auto;
+    }
     .exmodule {
+      cursor: pointer;
       width: 350px;
       height: 320px;
       margin-bottom: 20px;
       background-repeat: no-repeat;
       border-radius: 10px;
+      @media only screen and (max-width: 768px) {
+        width: 100%;
+        background-size: cover;
+      }
       .module-text {
         height: 100%;
         display: flex;

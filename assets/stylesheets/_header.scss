@@ -1,10 +1,89 @@
 .navbar {
   padding: 16px 40px;
   .navbar-brand {
+    justify-content: space-between;
     .navbar-item {
       img {
         width: 150px;
         height: 20.67px;
+      }
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+}
+.navbar-end {
+  @media only screen and (max-width: 1023px) {
+    display: none;
+  }
+  .navbar-item {
+    @media screen and (min-width: 1024px) and (max-width: 1084px) {
+      padding-right: 0;
+    }
+  }
+}
+.dropdown-products {
+  @media only screen and (max-width: 1023px) {
+    height: auto !important;
+    padding: 0 !important;
+    .navbar-item {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+.navbar-menu {
+  @media only screen and (max-width: 1023px) {
+    padding: 20px;
+    box-shadow: none;
+  }
+}
+.navbar-start {
+  @media only screen and (max-width: 1023px) {
+    .navbar-link {
+      padding-bottom: 0;
+    }
+  }
+}
+.logo {
+  @media only screen and (max-width: 1023px) {
+    padding-bottom: 0 !important;
+  }
+}
+.responsive-edd {
+  display: flex;
+  align-items: center;
+  .navbar-item,
+  .has-dropdown,
+  .is-hoverable {
+    flex-direction: column;
+    @media only screen and (max-width: 1023px) {
+      padding-bottom: 0;
+    }
+    .navbar-link {
+      @media only screen and (max-width: 1023px) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .navbar-dropdown {
+    position: absolute;
+    box-shadow: 0px 40px 40px -20px rgb(0 0 0 / 5%);
+    margin-top: 20px;
+  }
+
+  .endd {
+    display: none;
+    @media only screen and (max-width: 1023px) {
+      display: block;
+      .navbar-item {
+        padding-right: 16px;
+      }
+    }
+    @media only screen and (max-width: 620px) {
+      .item-log,
+      .btn {
+        display: none;
       }
     }
   }
@@ -17,6 +96,9 @@
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
+    @media only screen and (max-width: 1023px) {
+      padding: 1rem 0.75rem;
+    }
     p {
       width: 100%;
       text-align: left;
@@ -28,6 +110,9 @@
     p:nth-child(2) {
       font-size: 12px;
       line-height: 140%;
+      @media only screen and (max-width: 1023px) {
+        display: none;
+      }
     }
   }
 }
@@ -45,9 +130,19 @@
   line-height: 100%;
   color: #7c7f91;
   padding-left: 0;
+  padding-top: 0;
+  &:hover {
+    background-color: #fff;
+  }
+  @media only screen and (max-width: 1023px) {
+    padding-bottom: 20px;
+  }
 }
 .navbar-link:not(.is-arrowless)::after {
   border-color: #7c7f91;
-  margin-top: -0.5em;
+  margin-top: -0.75em;
   right: 5.53px;
+  @media only screen and (max-width: 1023px) {
+    margin-top: -0.5em;
+  }
 }

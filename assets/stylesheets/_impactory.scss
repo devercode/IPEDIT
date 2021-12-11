@@ -5,6 +5,9 @@
     // max-width: 1110px;
     padding: 240px 0;
     margin: 0 auto;
+    @media only screen and (max-width: 582px) {
+      padding: 68px 0;
+    }
     .video {
       background-position: center;
       background-repeat: no-repeat;
@@ -13,11 +16,19 @@
       background: linear-gradient(0deg, #00000033, rgba(0, 0, 0, 0.2));
       box-shadow: 0px 100px 80px -60px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
+      @media only screen and (max-width: 582px) {
+        height: 400px;
+      }
       .video-img {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100%;
+        cursor: pointer;
+        @media only screen and (max-width: 582px) {
+          width: 40%;
+          margin: 0 auto;
+        }
         img {
         }
       }
@@ -28,6 +39,12 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
+      @media only screen and (max-width: 1200px) {
+        justify-content: space-around;
+      }
+      @media only screen and (max-width: 582px) {
+        padding-top: 50px;
+      }
       .module {
         background: #ffffff;
         box-shadow: 0px 40px 40px -20px rgba(0, 0, 0, 0.05);
@@ -36,12 +53,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        // padding: 38px 60px;
         justify-content: center;
+        @media only screen and (max-width: 1200px) {
+          margin-bottom: 20px;
+        }
+        @media only screen and (max-width: 768px) {
+          width: 100%;
+        }
         .top {
           display: flex;
           justify-content: space-between;
           width: 100%;
+          @media only screen and (max-width: 768px) {
+            justify-content: space-around;
+          }
           .left {
             .left__top {
               width: 100px;
@@ -136,6 +161,9 @@
             width: 120px;
             box-shadow: 0px 40px 40px -20px rgba(0, 0, 0, 0.05);
             margin-top: 20px;
+            @media only screen and (max-width: 768px) {
+              width: 45%;
+            }
             img {
             }
           }

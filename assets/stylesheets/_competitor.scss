@@ -1,6 +1,9 @@
 .competitor {
   .competitor__container {
     margin: 240px auto;
+    @media only screen and (max-width: 582px) {
+      margin: 50px auto;
+    }
     h3 {
       font-weight: 600;
       font-size: 32px;
@@ -11,6 +14,9 @@
     .markets {
       margin-top: 120px;
       line-height: 1.2;
+      @media only screen and (max-width: 582px) {
+        margin-top: 70px;
+      }
       p {
         font-weight: bold;
         font-size: 24px;
@@ -20,6 +26,12 @@
         font-weight: bold;
         font-size: 96px;
         color: #212037;
+        @media only screen and (max-width: 768px) {
+          font-size: 80px;
+        }
+        @media only screen and (max-width: 582px) {
+          font-size: 14vw;
+        }
         span {
           font-size: 30px;
           font-weight: bold;
