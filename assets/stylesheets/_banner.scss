@@ -1,0 +1,51 @@
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: normal;
+}
+.hompage-baner {
+  width: 100%;
+  display: flex;
+  .containe {
+    width: 100%;
+    max-height: 240px;
+    text-align: center;
+    padding: 360px 0;
+    max-width: 383px;
+    margin: 0 auto;
+    &__img {
+    }
+    &__text {
+      padding: 40px 0;
+      p {
+        color: #fff;
+        font-size: 24px;
+      }
+      p:nth-child(2) {
+        font-weight: bold;
+      }
+    }
+    .btn-banner {
+      margin: 0 auto;
+      width: 220px;
+      height: 52px;
+      padding: 18px 28px;
+      font-size: 16px;
+      font-weight: 700;
+      background-color: #fff;
+    }
+  }
+  &__left {
+    width: 50%;
+    height: 960px;
+  }
+  &__right {
+    width: 50%;
+    height: 960px;
+  }
+}

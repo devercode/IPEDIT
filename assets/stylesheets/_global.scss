@@ -1,0 +1,53 @@
+.btn {
+  color: #fff;
+  width: 120px;
+  height: 48px;
+  right: 0px;
+  top: calc(50% - 48px / 2);
+  background: #5c6bc0;
+  border-radius: 6px;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a {
+  font-family: Pretendard;
+  font-style: normal;
+  font-weight: normal;
+}
+.container {
+  max-width: 1110px !important;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
+@media (max-width: 582px) {
+  .container {
+    max-width: 90% !important;
+  }
+}

@@ -1,7 +1,17 @@
 <template>
-  <Tutorial/>
+  <Main />
 </template>
 
 <script>
-export default {}
+// import Main from "../components/main.vue";
+
+export default {
+  data() {
+    return {};
+  },
+
+  // components: {
+  //   Main
+  // }
+};
 </script>

@@ -1,0 +1,30 @@
+.competitor {
+  .competitor__container {
+    margin: 240px auto;
+    h3 {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 140%;
+      letter-spacing: -0.5px;
+      color: #212037;
+    }
+    .markets {
+      margin-top: 120px;
+      line-height: 1.2;
+      p {
+        font-weight: bold;
+        font-size: 24px;
+        color: #7c7f91;
+      }
+      h1 {
+        font-weight: bold;
+        font-size: 96px;
+        color: #212037;
+        span {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
