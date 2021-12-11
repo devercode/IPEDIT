@@ -1,0 +1,32 @@
+.footer {
+  background-color: #fff;
+  padding: 0;
+  margin-bottom: 80px;
+  .footer__container {
+    .content {
+      ul {
+        display: flex;
+        list-style: none;
+        margin-left: 0;
+        li:nth-child(1) {
+          padding-right: 60px;
+        }
+        li {
+          padding-right: 40px;
+          font-weight: 600;
+          font-size: 18px;
+          color: #7c7f91;
+        }
+      }
+    }
+    .information {
+      font-size: 14px;
+      color: #7c7f91;
+    }
+    .years {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #7c7f91;
+    }
+  }
+}

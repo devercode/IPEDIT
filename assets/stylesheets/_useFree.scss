@@ -1,0 +1,26 @@
+.useFree {
+  background: #212037;
+  margin-top: 177px;
+  margin-bottom: 80px;
+  height: 220px;
+  .useFree__container {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+    h1 {
+      font-family: Spoqa Han Sans Neo;
+      font-weight: bold;
+      font-size: 28px;
+      color: #ffffff;
+    }
+    .btn-useFree {
+      width: 180px;
+      height: 56px;
+      background: #ffffff;
+      color: #212037;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}

@@ -81,12 +81,6 @@ export default {
       ],
     };
   },
-  beforeCreate() {
-    console.log("data");
-  },
-  created() {
-    // console.log(data);
-  },
   components: {},
 };
 </script>
