@@ -10,8 +10,13 @@
           <div class="navbar-item">
             <div class="buttons">
               <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link"> 한국어 </a>
-                <div class="navbar-dropdown">
+                <a class="navbar-link" v-on:click="activeEdd = !activeEdd">
+                  한국어
+                </a>
+                <div
+                  class="navbar-dropdown"
+                  v-bind:class="{ showDropEdd: !activeEdd }"
+                >
                   <a class="navbar-item">
                     <p>English</p>
                   </a>
@@ -27,10 +32,12 @@
         </div>
         <a
           role="button"
-          class="navbar-burger"
+          class="navbar-burger isActive"
+          v-bind:class="{ 'is-active': activeMenu }"
           aria-label="menu"
           aria-expanded="false"
           data-target="navbarBasicExample"
+          v-on:click="activeMenu = !activeMenu"
         >
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -39,11 +46,24 @@
       </div>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu is-active">
+    <div
+      id="navbarBasicExample"
+      class="navbar-menu"
+      v-bind:class="{ 'is-active': activeMenu }"
+    >
       <div class="navbar-start">
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" style="width: max-content"> Products </a>
-          <div class="navbar-dropdown dropdown-products">
+          <a
+            class="navbar-link"
+            style="width: max-content"
+            v-on:click="activeDropdown = !activeDropdown"
+          >
+            Products
+          </a>
+          <div
+            class="navbar-dropdown dropdown-products"
+            v-bind:class="{ showDropRespon: !activeDropdown }"
+          >
             <a class="navbar-item">
               <p>IPEDIT draft</p>
               <p>
@@ -97,8 +117,13 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      activeMenu: false,
+      activeEdd: false,
+      activeDropdown: false,
+    };
   },
   components: {},
+  methods: {},
 };
 </script>
