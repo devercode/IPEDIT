@@ -5,12 +5,30 @@
         class="video"
         v-bind:style="{ backgroundImage: 'url(' + videoArea + ')' }"
       >
-        <div class="video-img">
+        <div class="video-img" v-on:click="modalVideo = !modalVideo">
           <img
             src="../assets/images/playcircle.png"
             alt="../assets/images/playcircle.png"
           />
         </div>
+      </div>
+
+      <!-- modal video -->
+      <div class="modal" v-bind:class="{ 'is-active': modalVideo }">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+          <iframe
+            width="420"
+            height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY"
+          >
+          </iframe>
+        </div>
+        <button
+          class="modal-close is-large"
+          aria-label="close"
+          v-on:click="modalVideo = false"
+        ></button>
       </div>
 
       <div class="box-containe">
@@ -115,6 +133,7 @@ export default {
       rectangle3: Rectangle3,
       rectangle6: Rectangle6,
       highlight: Highlight,
+      modalVideo: false,
     };
   },
   components: {},

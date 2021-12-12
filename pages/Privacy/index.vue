@@ -2,6 +2,7 @@
   <div>
     <Header />
     <CompTerm
+      v-bind:arrSelect="arr"
       title="개인정보처리방침"
       rule1="제1조 (목적)"
       rule2="제2조 (용어의 정의)"
@@ -37,7 +38,17 @@ import Header from "../../container/Header.vue";
 import Footer from "../../container/Footer.vue";
 export default {
   data() {
-    return {};
+    return {
+      arr: [
+        "2021.05.1",
+        "2021.05.2",
+        "2021.05.3",
+        "2021.05.4",
+        "2021.05.5",
+        "2021.05.6",
+        "2021.05.7",
+      ],
+    };
   },
   components: { Header, Footer },
 };

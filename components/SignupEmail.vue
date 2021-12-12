@@ -116,7 +116,10 @@
               <div class="control">
                 <div class="select">
                   <select>
-                    <option>국가 선택</option>
+                    <option v-for="item in countries" :key="item">
+                      <span>{{ item.name }}</span>
+                      <span>{{ item.dial_code }}</span>
+                    </option>
                     <option>With options</option>
                   </select>
                 </div>
@@ -197,10 +200,12 @@
 </style>
 
 <script>
+import { Country } from "../assets/javascripts/data";
 export default {
   data() {
     return {
       idTabs: 1,
+      countries: Country,
     };
   },
   props: {
@@ -208,9 +213,6 @@ export default {
   },
   components: {},
   methods: {
-    // changeModalLogin: function () {
-    //   this.$emit("changeModalLogin");
-    // },
     ShowTabContent: function (data) {
       this.idTabs = data;
     },

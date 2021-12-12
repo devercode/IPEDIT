@@ -97,6 +97,7 @@ export default {
     },
     openModalSignUp: function () {
       this.modalSignup = true;
+      // modalLogin = false;
     },
   },
 };

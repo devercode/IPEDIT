@@ -12,8 +12,8 @@
           <li>IPEDIT draft</li>
           <li>IPEDIT translate</li>
           <li>회사소개</li>
-          <li>이용약관</li>
-          <li>개인정보이용방침</li>
+          <li><NuxtLink to="/term">이용약관</NuxtLink></li>
+          <li><NuxtLink to="/privacy">개인정보이용방침</NuxtLink></li>
         </ul>
       </div>
       <div class="information">

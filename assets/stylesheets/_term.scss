@@ -17,13 +17,18 @@
     .field {
       padding-bottom: 40px;
       .control {
-        width: 140px;
         .select {
           height: 100%;
+          width: 150px;
           select {
             height: 52px;
             color: #7c7f91;
             border-radius: 7px;
+            width: 150px;
+            option {
+              background-color: #fff !important;
+              color: #212037 !important;
+            }
           }
         }
         .select:not(.is-multiple):not(.is-loading)::after {

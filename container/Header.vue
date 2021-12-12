@@ -1,7 +1,12 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
+    <Login
+      v-if="modalLogin"
+      v-bind:modalLogin="modalLogin"
+      v-on:changeModalLogin="changeModalLogin"
+    />
     <div class="navbar-brand">
-      <a class="navbar-item logo" href="https://bulma.io">
+      <a class="navbar-item logo" href="/">
         <img src="../assets/images/ipedit.png" width="112" height="28" />
       </a>
       <!-- responsive-edd -->
@@ -107,12 +112,6 @@
             <a class="button btn" v-on:click="modalLogin = !modalLogin">
               시작하기
             </a>
-            <div v-if="modalLogin">
-              <Login
-                v-bind:modalLogin="modalLogin"
-                v-on:changeModalLogin="changeModalLogin"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -141,11 +140,11 @@ export default {
       this.modalLogin = false;
     },
   },
-  created() {
-    console.log(
-      "propertyComputed sẽ update vì this.property đã thay đổi",
-      this.modalLogin
-    );
-  },
+  // created() {
+  //   console.log(
+  //     "propertyComputed sẽ update vì this.property đã thay đổi",
+  //     this.modalLogin
+  //   );
+  // },
 };
 </script>
