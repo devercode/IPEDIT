@@ -7,7 +7,7 @@
     <CompExamples />
     <UseFree />
     <Footer />
-    <Signup />
+    <!-- <Signup /> -->
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
     CompExamples,
     UseFree,
     Footer,
-    Signup,
+    // Signup,
   },
 };
 </script>
