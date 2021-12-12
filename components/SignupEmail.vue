@@ -22,13 +22,21 @@
       <!-- tabs -->
       <div class="tabs-containe">
         <ul>
-          <li class="" v-on:click="ShowTabContent(1)">
+          <li
+            class=""
+            v-on:click="ShowTabContent(1)"
+            v-bind:class="{ isActive: idTabs === 1 }"
+          >
             <img
-              src="../assets/images/draft-black.png"
+              src="../assets/images/draft.png"
               alt="../assets/images/draft.png"
             />
           </li>
-          <li class="img-child2" v-on:click="ShowTabContent(2)">
+          <li
+            class=""
+            v-on:click="ShowTabContent(2)"
+            v-bind:class="{ isActive: idTabs === 2 }"
+          >
             <img
               src="../assets/images/translate.png"
               alt="../assets/images/translate.png"

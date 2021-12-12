@@ -1,6 +1,7 @@
 .competitor {
+  background: #fff;
+  padding: 240px 0;
   .competitor__container {
-    margin: 240px auto;
     @media only screen and (max-width: 582px) {
       margin: 50px auto;
     }
