@@ -1,0 +1,62 @@
+.term {
+  background: #f6f7f9;
+  // margin: 60px 0;
+  margin-top: 60px;
+  .term__container {
+    margin: 0 auto;
+    padding: 60px;
+    background: #fff;
+
+    h1 {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: #212037;
+      padding-bottom: 40px;
+    }
+    .field {
+      padding-bottom: 40px;
+      .control {
+        width: 140px;
+        .select {
+          height: 100%;
+          select {
+            height: 52px;
+            color: #7c7f91;
+            border-radius: 7px;
+          }
+        }
+        .select:not(.is-multiple):not(.is-loading)::after {
+          border-color: #7c7f91;
+          // margin-top: 0;
+        }
+      }
+    }
+    .rule-containe {
+      text-align: left;
+      padding-bottom: 40px;
+      h3 {
+        font-weight: bold;
+        font-size: 18px;
+        color: #212037;
+        padding-bottom: 10px;
+      }
+      p {
+        font-size: 14px;
+        color: #7c7f91;
+      }
+    }
+  }
+}
+select option {
+  color: white !important;
+}
+
+select option,
+select optgroup {
+  background-color: #363636 !important;
+}
+
+::placeholder {
+  color: #aaa !important;
+}

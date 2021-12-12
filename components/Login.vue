@@ -1,4 +1,4 @@
-<template >
+<template>
   <div class="modal" v-bind:class="{ 'is-active': modalLogin }">
     <div class="modal-background"></div>
     <div class="modal-content">
@@ -54,8 +54,16 @@
         </p>
       </div>
 
-      <p class="signup">IPEDIT이 처음이신가요?<span>회원가입</span></p>
+      <p class="signup">
+        IPEDIT이 처음이신가요?<span v-on:click="openModalSignUp">회원가입</span>
+      </p>
     </div>
+    <SignUp
+      v-if="modalSignup"
+      v-bind:modalSignup="modalSignup"
+      v-on:changeModalSignUp="changeModalSignUp"
+    />
+
     <button
       class="modal-close is-large"
       aria-label="close"
@@ -69,17 +77,26 @@
 </style>
 
 <script>
+import SignUp from "./SignUp.vue";
 export default {
   data() {
-    return {};
+    return {
+      modalSignup: false,
+    };
   },
   props: {
     modalLogin: Boolean,
   },
-  components: {},
+  components: { SignUp },
   methods: {
     changeModalLogin: function () {
       this.$emit("changeModalLogin");
+    },
+    changeModalSignUp: function () {
+      this.modalSignup = false;
+    },
+    openModalSignUp: function () {
+      this.modalSignup = true;
     },
   },
 };

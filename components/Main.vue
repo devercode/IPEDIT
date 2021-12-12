@@ -7,7 +7,6 @@
     <CompExamples />
     <UseFree />
     <Footer />
-    <!-- <Signup /> -->
   </div>
 </template>
 
@@ -19,7 +18,6 @@ import Competitor from "./Competitor.vue";
 import CompExamples from "./CompExamples.vue";
 import UseFree from "./UseFree.vue";
 import Footer from "../container/Footer.vue";
-import Signup from "./SignupEmail.vue";
 
 export default {
   data() {
@@ -33,7 +31,6 @@ export default {
     CompExamples,
     UseFree,
     Footer,
-    // Signup,
   },
 };
 </script>

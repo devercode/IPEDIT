@@ -1,7 +1,11 @@
-<template >
-  <div class="modal is-active">
+<template>
+  <div class="modal" v-bind:class="{ 'is-active': modalSignup }">
     <div class="modal-background"></div>
-    <div class="modal-content">
+    <SignUpEmail
+      v-if="signupEmail"
+      v-on:changeModalSignUp="changeModalSignUp"
+    />
+    <div class="modal-content" v-if="!signupEmail">
       <div class="logo">
         <img
           src="../assets/images/ipedit.png"
@@ -14,7 +18,9 @@
       <!-- login with Email -->
       <div class="field">
         <p class="control">
-          <button class="button">이메일로 가입하기</button>
+          <button class="button" v-on:click="signupEmail = !signupEmail">
+            이메일로 가입하기
+          </button>
         </p>
       </div>
 
@@ -36,9 +42,15 @@
         </p>
       </div>
 
-      <p class="signup">이미 회원이신가요?<span>로그인</span></p>
+      <p class="signup">
+        이미 회원이신가요?<span v-on:click="changeModalSignUp">로그인</span>
+      </p>
     </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+    <button
+      class="modal-close is-large"
+      aria-label="close"
+      v-on:click="changeModalSignUp"
+    ></button>
   </div>
 </template>
 
@@ -47,18 +59,21 @@
 </style>
 
 <script>
+import SignUpEmail from "./SignupEmail.vue";
 export default {
   data() {
-    return {};
+    return {
+      signupEmail: false,
+    };
   },
   props: {
-    modalLogin: Boolean,
+    modalSignup: Boolean,
   },
-  components: {},
+  components: { SignUpEmail },
   methods: {
-    // changeModalLogin: function () {
-    //   this.$emit("changeModalLogin");
-    // },
+    changeModalSignUp: function () {
+      this.$emit("changeModalSignUp");
+    },
   },
 };
 </script>
