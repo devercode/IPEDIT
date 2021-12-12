@@ -26,7 +26,9 @@
                 </div>
               </div>
               <a class="navbar-item item-log"> 로그인 </a>
-              <a class="button btn"> 시작하기 </a>
+              <a class="button btn" v-on:click="modalLogin = !modalLogin">
+                시작하기
+              </a>
             </div>
           </div>
         </div>
@@ -102,7 +104,15 @@
               </div>
             </div>
             <a class="navbar-item"> 로그인 </a>
-            <a class="button btn"> 시작하기 </a>
+            <a class="button btn" v-on:click="modalLogin = !modalLogin">
+              시작하기
+            </a>
+            <div v-if="modalLogin">
+              <Login
+                v-bind:modalLogin="modalLogin"
+                v-on:changeModalLogin="changeModalLogin"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -115,15 +125,27 @@
 </style>
 
 <script>
+import Login from "../components/Login.vue";
 export default {
   data() {
     return {
       activeMenu: false,
       activeEdd: false,
       activeDropdown: false,
+      modalLogin: false,
     };
   },
-  components: {},
-  methods: {},
+  components: { Login },
+  methods: {
+    changeModalLogin: function () {
+      this.modalLogin = false;
+    },
+  },
+  created() {
+    console.log(
+      "propertyComputed sẽ update vì this.property đã thay đổi",
+      this.modalLogin
+    );
+  },
 };
 </script>

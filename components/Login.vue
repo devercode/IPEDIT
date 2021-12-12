@@ -1,5 +1,5 @@
-<template>
-  <div class="modal is-active">
+<template >
+  <div class="modal" v-bind:class="{ 'is-active': modalLogin }">
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="logo">
@@ -56,7 +56,11 @@
 
       <p class="signup">IPEDIT이 처음이신가요?<span>회원가입</span></p>
     </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+    <button
+      class="modal-close is-large"
+      aria-label="close"
+      v-on:click="changeModalLogin"
+    ></button>
   </div>
 </template>
 
@@ -69,6 +73,14 @@ export default {
   data() {
     return {};
   },
+  props: {
+    modalLogin: Boolean,
+  },
   components: {},
+  methods: {
+    changeModalLogin: function () {
+      this.$emit("changeModalLogin");
+    },
+  },
 };
 </script>
