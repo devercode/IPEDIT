@@ -1,9 +1,18 @@
 .competitor {
   background: #fff;
   padding: 240px 0;
+  @media only screen and (max-width: 768px) {
+    padding: 100px 0;
+  }
+  @media only screen and (max-width: 375px) {
+    padding: 10px 0;
+  }
   .competitor__container {
     @media only screen and (max-width: 582px) {
       margin: 50px auto;
+    }
+    @media only screen and (max-width: 375px) {
+      margin: 30px auto;
     }
     h3 {
       font-weight: 600;
@@ -11,17 +20,23 @@
       line-height: 140%;
       letter-spacing: -0.5px;
       color: #212037;
+      @media only screen and (max-width: 375px) {
+        font-size: 20px;
+      }
     }
     .markets {
       margin-top: 120px;
       line-height: 1.2;
-      @media only screen and (max-width: 582px) {
-        margin-top: 70px;
+      @media only screen and (max-width: 768px) {
+        margin-top: 50px;
       }
       p {
         font-weight: bold;
         font-size: 24px;
         color: #7c7f91;
+        @media only screen and (max-width: 375px) {
+          font-size: 18px;
+        }
       }
       h1 {
         font-weight: bold;
@@ -31,7 +46,10 @@
           font-size: 80px;
         }
         @media only screen and (max-width: 582px) {
-          font-size: 14vw;
+          font-size: 11vw;
+        }
+        @media only screen and (max-width: 375px) {
+          font-size: 30px;
         }
         span {
           font-size: 30px;

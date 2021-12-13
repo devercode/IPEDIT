@@ -1,6 +1,9 @@
 .footer {
   background-color: #fff;
   padding: 80px 0;
+  @media only screen and (max-width: 375px) {
+    padding: 40px 0;
+  }
   .footer__container {
     .content {
       ul {
@@ -20,6 +23,10 @@
           font-size: 18px;
           color: #7c7f91;
           cursor: pointer;
+          @media only screen and (max-width: 375px) {
+            padding-right: 20px;
+            font-size: 16px;
+          }
           a {
             color: #7c7f91;
             font-weight: 600;
@@ -30,11 +37,17 @@
     .information {
       font-size: 14px;
       color: #7c7f91;
+      @media only screen and (max-width: 375px) {
+        font-size: 12px;
+      }
     }
     .years {
       margin-top: 10px;
       font-size: 14px;
       color: #7c7f91;
+      @media only screen and (max-width: 375px) {
+        font-size: 12px;
+      }
     }
   }
 }

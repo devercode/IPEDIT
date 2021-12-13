@@ -5,19 +5,26 @@
     // max-width: 1110px;
     padding: 240px 0;
     margin: 0 auto;
-    @media only screen and (max-width: 582px) {
+    @media only screen and (max-width: 768px) {
       padding: 68px 0;
+    }
+    @media only screen and (max-width: 375px) {
+      padding: 30px 0;
     }
     .video {
       background-position: center;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: cover !important;
       height: 624px;
       background: linear-gradient(0deg, #00000033, rgba(0, 0, 0, 0.2));
       box-shadow: 0px 100px 80px -60px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       @media only screen and (max-width: 582px) {
         height: 400px;
+        background: bottom;
+      }
+      @media only screen and (max-width: 375px) {
+        height: 250px;
       }
       .video-img {
         display: flex;
@@ -29,14 +36,17 @@
           width: 40%;
           margin: 0 auto;
         }
-        img {
+        @media only screen and (max-width: 375px) {
+          width: 30%;
         }
       }
     }
     .modal-content {
       width: 80%;
       height: 700px;
-
+      @media only screen and (max-width: 582px) {
+        height: 500px;
+      }
       iframe {
         width: 100%;
         height: 100%;
@@ -50,7 +60,7 @@
       @media only screen and (max-width: 1200px) {
         justify-content: space-around;
       }
-      @media only screen and (max-width: 582px) {
+      @media only screen and (max-width: 768px) {
         padding-top: 50px;
       }
       .module {
@@ -68,6 +78,10 @@
         @media only screen and (max-width: 768px) {
           width: 100%;
         }
+        @media only screen and (max-width: 375px) {
+          padding: 30px 30px !important;
+          height: 350px;
+        }
         .top {
           display: flex;
           justify-content: space-between;
@@ -81,6 +95,9 @@
               height: 240px;
               background: linear-gradient(180deg, #e0e0e0 0%, rgba(224, 224, 224, 0.1) 100%);
               padding: 20px 9px;
+              @media only screen and (max-width: 375px) {
+                height: 195px;
+              }
               p,
               h3 {
                 font-size: 12px;
@@ -110,12 +127,18 @@
                 text-align: center;
                 color: #212037;
                 font-weight: bold;
+                @media only screen and (max-width: 375px) {
+                  font-size: 35px;
+                }
               }
               h2 {
                 font-weight: bold;
                 font-size: 24px;
                 text-align: center;
                 color: #212037;
+                @media only screen and (max-width: 375px) {
+                  font-size: 20px;
+                }
               }
             }
             .minutes {
@@ -156,11 +179,17 @@
             font-weight: 900;
             font-size: 64px;
             color: #ef5da8;
+            @media only screen and (max-width: 375px) {
+              font-size: 44px;
+            }
           }
           h2 {
             font-weight: bold;
             font-size: 38px;
             color: #212037;
+            @media only screen and (max-width: 375px) {
+              font-size: 30px;
+            }
           }
         }
         .top-module_3 {
@@ -174,6 +203,9 @@
             margin-top: 20px;
             @media only screen and (max-width: 768px) {
               width: 45%;
+            }
+            @media only screen and (max-width: 375px) {
+              width: 37%;
             }
             img {
             }

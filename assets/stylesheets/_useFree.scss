@@ -5,6 +5,7 @@
   @media only screen and (max-width: 768px) {
     padding: 58px 0;
     height: auto;
+    margin-top: 50px;
   }
   @media only screen and (max-width: 582px) {
     margin-top: 50px;
@@ -22,6 +23,9 @@
       font-weight: bold;
       font-size: 28px;
       color: #ffffff;
+      @media only screen and (max-width: 375px) {
+        font-size: 16px;
+      }
     }
     .btn-useFree {
       width: 180px;
@@ -32,6 +36,10 @@
       font-weight: bold;
       @media only screen and (max-width: 768px) {
         margin-top: 20px;
+      }
+      @media only screen and (max-width: 375px) {
+        width: 144px;
+        height: 42px;
       }
     }
   }

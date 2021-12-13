@@ -54,7 +54,6 @@
               <div class="select">
                 <select>
                   <option>명세서 유형</option>
-                  <option>With options</option>
                 </select>
               </div>
             </div>
@@ -121,15 +120,21 @@
           <!-- Select country -->
           <div class="select-country">
             <div class="field">
-              <div class="control">
+              <div class="control has-icons-left">
                 <div class="select">
                   <select>
-                    <option v-for="item in countries" :key="item">
+                    <option
+                      v-for="item in countries"
+                      :key="item.dial_code"
+                      :value="item.dial_code"
+                    >
                       <span>{{ item.name }}</span>
                       <span>{{ item.dial_code }}</span>
                     </option>
-                    <option>With options</option>
                   </select>
+                  <div class="icon is-small is-left">
+                    <i class="fas fa-border fa-globe mdi mdi-dark"></i>
+                  </div>
                 </div>
               </div>
             </div>

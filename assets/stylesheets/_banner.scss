@@ -11,19 +11,32 @@
     padding: 360px 0;
     max-width: 383px;
     margin: 0 auto;
-    @media only screen and (max-width: 586px) {
-      padding: 120px 36px;
+    @media only screen and (max-width: 582px) {
+      padding: 160px 36px;
+    }
+    @media only screen and (max-width: 582px) {
+      padding: 113px 36px;
     }
     &__img {
+      @media only screen and (max-width: 375px) {
+        width: 220px;
+        margin: 0 auto;
+      }
     }
     &__text {
       padding: 40px 0;
-      @media only screen and (max-width: 586px) {
+      @media only screen and (max-width: 582px) {
         padding: 20px 0;
       }
       p {
         color: #fff;
         font-size: 24px;
+        @media only screen and (max-width: 582px) {
+          font-size: 18px;
+        }
+        @media only screen and (max-width: 375px) {
+          font-size: 16px;
+        }
       }
       p:nth-child(2) {
         font-weight: bold;
@@ -37,6 +50,16 @@
       font-size: 16px;
       font-weight: 700;
       background-color: #fff;
+      @media only screen and (max-width: 582px) {
+        width: 186px;
+        height: 46px;
+        font-size: 14px;
+      }
+      @media only screen and (max-width: 375px) {
+        font-size: 12px;
+        width: 155px;
+        height: 42px;
+      }
     }
   }
   &__left {
@@ -47,8 +70,11 @@
     @media only screen and (max-width: 992px) {
       width: 100%;
     }
-    @media only screen and (max-width: 586px) {
+    @media only screen and (max-width: 582px) {
       height: 550px;
+    }
+    @media only screen and (max-width: 375px) {
+      height: 400px;
     }
   }
   &__right {
@@ -59,8 +85,11 @@
     @media only screen and (max-width: 992px) {
       width: 100%;
     }
-    @media only screen and (max-width: 586px) {
+    @media only screen and (max-width: 582px) {
       height: 550px;
+    }
+    @media only screen and (max-width: 375px) {
+      height: 400px;
     }
   }
 }
