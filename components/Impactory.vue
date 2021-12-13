@@ -68,13 +68,27 @@
         <div class="module" style="padding: 38px 30px">
           <div class="top top-module_2">
             <h1>NO</h1>
-            <h2>청구항 인용 오류</h2>
+            <!-- <h2>청구항 인용 오류</h2> -->
           </div>
           <div
             class="bottom"
             v-bind:style="{ backgroundImage: 'url(' + highlight + ')' }"
           >
             품질
+          </div>
+
+          <div class="contentt">
+            <div class="contentt__containerr">
+              <ul class="contentt__containerr__listt">
+                <li class="contentt__containerr__listt__itemm">
+                  구성요소 오류
+                </li>
+                <li class="contentt__containerr__listt__itemm">선행사 오류</li>
+                <li class="contentt__containerr__listt__itemm">
+                  청구항 인용 오류
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -111,6 +125,19 @@
           >
             사용 국가
           </div>
+
+          <!-- <div class="contentt">
+            <div class="contentt__containerr">
+              <p class="contentt__containerr__textt">Hello</p>
+
+              <ul class="contentt__containerr__listt">
+                <li class="contentt__containerr__listt__itemm">world !</li>
+                <li class="contentt__containerr__listt__itemm">bob !</li>
+                <li class="contentt__containerr__listt__itemm">users !</li>
+                <li class="contentt__containerr__listt__itemm">everybody !</li>
+              </ul>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

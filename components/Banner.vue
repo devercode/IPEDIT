@@ -1,7 +1,7 @@
 <template>
   <div class="hompage-baner">
     <div
-      class="hompage-baner__left"
+      class="radio-btns__btn hompage-baner__left"
       v-bind:style="{ backgroundImage: 'url(' + banner1 + ')' }"
     >
       <div class="containe">
@@ -22,7 +22,7 @@
     </div>
 
     <div
-      class="hompage-baner__right"
+      class="radio-btns__btn hompage-baner__right"
       v-bind:style="{ backgroundImage: 'url(' + banner2 + ')' }"
     >
       <div class="containe">
