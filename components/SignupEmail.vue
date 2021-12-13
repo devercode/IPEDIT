@@ -190,8 +190,8 @@
           class="content-data"
           v-if="idTabs === 2"
         >
-          <h3 class="is-size-5 title">Delivery informations</h3>
-          <p>delivery</p>
+          <!-- <h3 class="is-size-5 title">Delivery informations</h3>
+          <p>delivery</p> -->
         </div>
       </div>
     </div>
