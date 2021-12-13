@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" v-bind:class="{ 'is-active': modalLogin }">
+  <div class="modal" id="modal" v-bind:class="{ 'is-active': modalLogin }">
     <div class="modal-background"></div>
     <div class="modal-content">
       <div class="logo">
