@@ -15,6 +15,7 @@
     "nuxt": "^2.15.8",
     "sass": "^1.45.0",
     "sass-loader": "10.1.1",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "vue-countup": "^0.1.0"
   }
 }

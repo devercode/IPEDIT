@@ -7,15 +7,15 @@
       </h3>
       <div class="markets">
         <p>사용자 수</p>
-        <h1>10,000<span>명</span></h1>
+        <h1 class="count" id="count"><span>명</span></h1>
       </div>
       <div class="markets">
         <p>처리 사건 수</p>
-        <h1>109,735<span>건</span></h1>
+        <h1 class="count2"><span>건</span></h1>
       </div>
       <div class="markets">
         <p>작성 시간</p>
-        <h1>20,000,000<span>시간</span></h1>
+        <h1 class="count3"><span>시간</span></h1>
       </div>
     </div>
   </div>
@@ -25,11 +25,27 @@
 @import "../assets/stylesheets/competitor.scss";
 </style>
 
-<script>
+<script type='text/javascript'>
 export default {
   data() {
-    return {};
+    return {
+      text: "",
+    };
   },
+  methods: {
+    myFunction: function () {
+      setTimeout(function () {
+        this.text = "60,000";
+      }, 5000);
+      console.log(this.text);
+      // return text;
+    },
+  },
+
   components: {},
+
+  mounted() {
+    this.myFunction();
+  },
 };
 </script>

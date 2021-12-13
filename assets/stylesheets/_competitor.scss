@@ -59,3 +59,57 @@
     }
   }
 }
+@property --num {
+  syntax: "<integer>";
+  initial-value: 10000;
+  inherits: false;
+}
+
+@property --num2 {
+  syntax: "<integer>";
+  initial-value: 109735;
+  inherits: false;
+}
+
+@property --num3 {
+  syntax: "<integer>";
+  initial-value: 20000000;
+  inherits: false;
+}
+
+.count {
+  animation: counter 5s;
+  counter-reset: num var(--num);
+}
+.count::before {
+  content: counter(num);
+}
+
+.count2 {
+  animation: counter 5s;
+  counter-reset: num2 var(--num2);
+}
+.count2::before {
+  content: counter(num2);
+}
+
+.count3 {
+  animation: counter 5s;
+  counter-reset: num3 var(--num3);
+}
+.count3::before {
+  content: counter(num3);
+}
+
+@keyframes counter {
+  from {
+    --num: 100;
+    --num2: 1000;
+    --num3: 10000;
+  }
+  to {
+    --num: 10000;
+    --num2: 109735;
+    --num3: 20000000;
+  }
+}

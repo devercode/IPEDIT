@@ -1,17 +1,23 @@
 <template>
   <div class="examples">
-    <div class="examples__container container">
-      <div
-        v-for="(item, index) in data"
-        :key="index"
-        class="exmodule"
-        v-bind:style="{ backgroundImage: 'url(' + item.background + ')' }"
-      >
-        <div class="module-text">
-          <div class="img-icon">
-            <img v-bind:src="item.img" v-bind:alt="item.img" />
+    <div class="contentt examples__container container">
+      <div v-for="(item, index) in data" :key="index" class="cardd exmodule">
+        <div
+          class="front"
+          v-bind:style="{ backgroundImage: 'url(' + item.background + ')' }"
+        >
+          <div class="module-text">
+            <div class="img-icon">
+              <img v-bind:src="item.img" v-bind:alt="item.img" />
+            </div>
+            <div class="text">
+              <p>{{ item.text_1 }}</p>
+              <p>{{ item.text_2 }}</p>
+            </div>
           </div>
-          <div class="text">
+        </div>
+        <div class="back">
+          <div>
             <p>{{ item.text_1 }}</p>
             <p>{{ item.text_2 }}</p>
           </div>
