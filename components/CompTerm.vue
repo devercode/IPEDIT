@@ -24,7 +24,7 @@
       </div> -->
 
       <div
-        class="navbar-item has-dropdown"
+        class="navbar-item has-dropdown is-hoverable"
         v-on:click="activeDropdown = !activeDropdown"
         v-bind:class="{ 'is-active': activeDropdown }"
       >

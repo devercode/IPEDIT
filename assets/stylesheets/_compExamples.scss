@@ -216,8 +216,7 @@ $orange: hsl(50, 80%, 50%);
 }
 
 .button {
-  $height: 40px;
-  transform: translateZ($height);
+  transform: translateZ(40px);
   cursor: pointer;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -236,7 +235,7 @@ $orange: hsl(50, 80%, 50%);
     position: absolute;
     display: block;
     content: "";
-    transform: translateZ(-$height);
+    transform: translateZ(-40px);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     height: calc(100% - 20px);
@@ -247,19 +246,19 @@ $orange: hsl(50, 80%, 50%);
   }
 
   &:hover {
-    transform: translateZ($height + 15px);
+    transform: translateZ(40 + 15);
 
     &:before {
-      transform: translateZ(-($height + 15px));
+      transform: translateZ(-(40 + 15));
     }
   }
 
   &:active {
-    transform: translateZ($height/2);
+    transform: translateZ(40/2);
 
     &:before {
-      transform: translateZ(-($height/2));
-      top: 12px;
+      transform: translateZ(-40/2);
+      top: 12;
     }
   }
 }
