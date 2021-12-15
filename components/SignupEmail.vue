@@ -1,12 +1,9 @@
 <template>
   <div class="modal is-active">
-    <div class="modal-background"></div>
+    <div class="modal-background" v-on:click="changeModalSignUp"></div>
     <div class="modal-content">
       <div class="logo">
-        <img
-          src="../assets/images/ipedit.png"
-          alt="../assets/images/ipedit.png"
-        />
+        <img :src="logo" alt="../assets/images/ipedit.png" />
       </div>
 
       <p class="signup-title">회원가입</p>
@@ -27,20 +24,14 @@
             v-on:click="ShowTabContent(1)"
             v-bind:class="{ isActive: idTabs === 1 }"
           >
-            <img
-              src="../assets/images/draft.png"
-              alt="../assets/images/draft.png"
-            />
+            <img :src="translate" alt="../assets/images/draft.png" />
           </li>
           <li
             class=""
             v-on:click="ShowTabContent(2)"
             v-bind:class="{ isActive: idTabs === 2 }"
           >
-            <img
-              src="../assets/images/translate.png"
-              alt="../assets/images/translate.png"
-            />
+            <img :src="draft" alt="../assets/images/translate.png" />
           </li>
         </ul>
       </div>
@@ -91,7 +82,9 @@
               <input
                 class="input"
                 type="text"
+                name="name"
                 placeholder="이름"
+                v-model="formData.name"
                 style="border-color: #d2416d"
               />
               <p style="color: #d2416d; font-size: 10px; padding-top: 5px">
@@ -106,11 +99,23 @@
               <input
                 class="input is-success"
                 type="text"
+                name="email"
+                v-model="formData.email"
                 placeholder="이메일 주소"
               />
             </div>
             <div class="control control-button">
-              <button class="button is-link is-light">인증코드 발송</button>
+              <button
+                class="button is-link is-light"
+                :style="[
+                  formData.email !== '' && {
+                    background: '#5C6BC0',
+                    color: '#fff',
+                  },
+                ]"
+              >
+                인증코드 발송
+              </button>
             </div>
           </div>
 
@@ -120,25 +125,49 @@
               <input
                 class="input is-success"
                 type="text"
+                name="verifyEmail"
+                v-model="formData.verifyEmail"
                 placeholder="이메일 인증코드"
               />
             </div>
             <div class="control control-button">
-              <button class="button is-link is-light">인증하기</button>
+              <button
+                class="button is-link is-light"
+                :style="[
+                  formData.verifyEmail !== '' && {
+                    background: '#5C6BC0',
+                    color: '#fff',
+                  },
+                ]"
+              >
+                인증하기
+              </button>
             </div>
           </div>
 
           <!-- password -->
           <div class="field">
             <div class="control">
-              <input class="input" type="text" placeholder="비밀번호" />
+              <input
+                class="input"
+                type="text"
+                placeholder="비밀번호"
+                v-model="formData.password"
+                name="password"
+              />
             </div>
           </div>
 
           <!-- password confirm-->
           <div class="field">
             <div class="control">
-              <input class="input" type="text" placeholder="비밀번호 재입력" />
+              <input
+                class="input"
+                type="text"
+                placeholder="비밀번호 재입력"
+                v-model="formData.confirmPassword"
+                name="confirmPassword"
+              />
             </div>
           </div>
 
@@ -184,10 +213,26 @@
             <!-- Phone -->
             <div class="field field-doubles">
               <div class="control">
-                <input class="input" type="text" placeholder="휴대폰 번호" />
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="휴대폰 번호"
+                  v-model="formData.phone"
+                  name="phone"
+                />
               </div>
               <div class="control control-button">
-                <button class="button is-link is-light">인증코드 발송</button>
+                <button
+                  class="button is-link is-light"
+                  :style="[
+                    formData.phone !== '' && {
+                      background: '#5C6BC0',
+                      color: '#fff',
+                    },
+                  ]"
+                >
+                  인증코드 발송
+                </button>
               </div>
             </div>
           </div>
@@ -195,10 +240,26 @@
           <!-- Phone Code-->
           <div class="field field-doubles">
             <div class="control">
-              <input class="input" type="text" placeholder="휴대폰 인증코드" />
+              <input
+                class="input"
+                type="text"
+                placeholder="휴대폰 인증코드"
+                v-model="formData.verifyPhone"
+                name="verifyPhone"
+              />
             </div>
             <div class="control control-button">
-              <button class="button is-link is-light">인증하기</button>
+              <button
+                class="button is-link is-light"
+                :style="[
+                  formData.verifyPhone !== '' && {
+                    background: '#5C6BC0',
+                    color: '#fff',
+                  },
+                ]"
+              >
+                인증하기
+              </button>
             </div>
           </div>
 
@@ -210,10 +271,26 @@
           <!-- apply Code-->
           <div class="field field-doubles">
             <div class="control">
-              <input class="input" type="text" placeholder="프로모션 코드" />
+              <input
+                class="input"
+                type="text"
+                placeholder="프로모션 코드"
+                v-model="formData.coupon"
+                name="coupon"
+              />
             </div>
             <div class="control control-button">
-              <button class="button is-link is-light">적용하기</button>
+              <button
+                class="button is-link is-light"
+                :style="[
+                  formData.coupon !== '' && {
+                    background: '#5C6BC0',
+                    color: '#fff',
+                  },
+                ]"
+              >
+                적용하기
+              </button>
             </div>
           </div>
 
@@ -227,7 +304,23 @@
           <!-- button submit -->
           <div class="field is-grouped">
             <div class="control btn-submit">
-              <button class="button is-link">가입하기</button>
+              <button
+                class="button is-link"
+                :style="[
+                  formData.name !== '' &&
+                    formData.email !== '' &&
+                    formData.verifyEmail !== '' &&
+                    formData.password !== '' &&
+                    formData.confirmPassword !== '' &&
+                    formData.verifyPhone !== '' &&
+                    formData.coupon !== '' && {
+                      background: '#5C6BC0 !important',
+                      color: '#fff !important',
+                    },
+                ]"
+              >
+                가입하기
+              </button>
             </div>
           </div>
         </div>
@@ -257,6 +350,9 @@
 
 <script>
 import { Country } from "../assets/javascripts/data";
+import Logo from "../assets/images/ipedit.png";
+import Translate from "../assets/images/translate.png";
+import Draft from "../assets/images/draft.png";
 export default {
   data() {
     return {
@@ -267,6 +363,21 @@ export default {
       activeCountry: false,
       type: "명세서 유형",
       country: "",
+      logo: Logo,
+      translate: Translate,
+      draft: Draft,
+      formData: {
+        country: "",
+        type: "",
+        name: "",
+        email: "",
+        verifyEmail: "",
+        password: "",
+        confirmPassword: "",
+        phone: "",
+        verifyPhone: "",
+        coupon: "",
+      },
     };
   },
   props: {
@@ -282,9 +393,11 @@ export default {
     },
     selectItem: function (item) {
       this.type = item;
+      this.formData.type = type;
     },
     selectCountry: function (item) {
       this.country = item;
+      this.formData.country = item;
     },
   },
 };

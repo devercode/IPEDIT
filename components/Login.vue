@@ -6,27 +6,35 @@
       v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
     />
-    <div class="modal-background"></div>
+    <div class="modal-background" v-on:click="changeModalLogin"></div>
     <div
       class="modal-content"
       v-bind:style="[modalSignup ? { display: 'none' } : { display: 'block' }]"
     >
       <div class="logo">
-        <img
-          src="../assets/images/ipedit.png"
-          alt="../assets/images/ipedit.png"
-        />
+        <img :src="logo" alt="../assets/images/ipedit.png" />
       </div>
       <!-- Input username -->
       <div class="field">
         <div class="control">
-          <input class="input" type="text" placeholder="이메일" />
+          <input
+            class="input"
+            type="text"
+            placeholder="이메일"
+            name="username"
+            v-on:change="handleValue"
+          />
         </div>
       </div>
 
       <div class="field">
         <div class="control">
-          <input class="input" type="email" placeholder="비밀번호 " />
+          <input
+            class="input"
+            type="email"
+            placeholder="비밀번호 "
+            name="password"
+          />
         </div>
       </div>
 
@@ -43,7 +51,18 @@
       <!-- login with Email -->
       <div class="field">
         <p class="control">
-          <button class="button">로그인</button>
+          <button
+            class="button"
+            :style="[
+              data.userName !== '' &&
+                data.password !== '' && {
+                  background: '#5C6BC0',
+                  color: '#fff',
+                },
+            ]"
+          >
+            로그인
+          </button>
         </p>
       </div>
 
@@ -51,11 +70,7 @@
 
       <!-- login with Goolge -->
       <div class="field">
-        <img
-          src="../assets/images/google.png"
-          alt=""
-          style="position: absolute"
-        />
+        <img :src="google" alt="" style="position: absolute" />
         <p class="control">
           <button class="button google">Google로 로그인하기</button>
         </p>
@@ -63,11 +78,7 @@
 
       <!-- login with apple -->
       <div class="field">
-        <img
-          src="../assets/images/apple.png"
-          alt=""
-          style="position: absolute"
-        />
+        <img :src="apple" alt="" style="position: absolute" />
         <p class="control">
           <button class="button apple">Apple로 로그인하기</button>
         </p>
@@ -92,11 +103,18 @@
 
 <script>
 import SignUp from "./SignUp.vue";
+import Logo from "../assets/images/ipedit.png";
+import Google from "../assets/images/google.png";
+import Apple from "../assets/images/apple.png";
 export default {
   data() {
     return {
       modalSignup: false,
       modalSigin: false,
+      logo: Logo,
+      google: Google,
+      apple: Apple,
+      data: { userName: "", password: "" },
     };
   },
   props: {
@@ -113,8 +131,11 @@ export default {
     openModalSignUp: function () {
       this.modalSignup = true;
     },
+    handleValue: function (e) {
+      this.data = { [e.target.name]: e.target.value };
+    },
   },
-  mounted() {},
+
   created() {
     document.onkeydown = (evt) => {
       evt = evt || window.event;

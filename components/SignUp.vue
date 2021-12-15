@@ -1,17 +1,14 @@
 <template>
   <!-- v-bind:class="{ 'is-active': modalSignup }" -->
   <div class="modal is-active">
-    <div class="modal-background"></div>
+    <div class="modal-background" v-on:click="changeModalSignUp"></div>
     <SignUpEmail
       v-if="signupEmail"
       v-on:changeModalSignUp="changeModalSignUp"
     />
     <div class="modal-content" v-if="!signupEmail">
       <div class="logo">
-        <img
-          src="../assets/images/ipedit.png"
-          alt="../assets/images/ipedit.png"
-        />
+        <img :src="logo" alt="../assets/images/ipedit.png" />
       </div>
 
       <p class="signup-title">회원가입</p>
@@ -29,11 +26,7 @@
 
       <!-- login with Goolge -->
       <div class="field">
-        <img
-          src="../assets/images/google.png"
-          alt=""
-          style="position: absolute"
-        />
+        <img :src="google" alt="" style="position: absolute" />
         <p class="control">
           <button class="button google">Google로 시작하기</button>
         </p>
@@ -41,11 +34,7 @@
 
       <!-- login with apple -->
       <div class="field">
-        <img
-          src="../assets/images/apple.png"
-          alt=""
-          style="position: absolute"
-        />
+        <img :src="apple" alt="" style="position: absolute" />
         <p class="control">
           <button class="button apple">Apple로 시작하기</button>
         </p>
@@ -68,11 +57,18 @@
 </style>
 
 <script>
+import Logo from "../assets/images/ipedit.png";
+import Google from "../assets/images/google.png";
+import Apple from "../assets/images/apple.png";
+
 import SignUpEmail from "./SignupEmail.vue";
 export default {
   data() {
     return {
       signupEmail: false,
+      logo: Logo,
+      google: Google,
+      apple: Apple,
     };
   },
   props: {

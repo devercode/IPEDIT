@@ -1,8 +1,8 @@
 @import "./global.scss";
 
-// ::-webkit-scrollbar {
-//   width: 0px;
-// }
+::-webkit-scrollbar {
+  width: 0px;
+}
 
 @keyframes fadein {
   from {
@@ -65,8 +65,8 @@
       animation: fadein 0.5s;
     }
     .modal-content {
-      width: 80%;
-      height: 700px;
+      width: 65%;
+      height: 80%;
       @media only screen and (max-width: 582px) {
         height: 500px;
       }

@@ -5,18 +5,20 @@
 .navbar-dropdown {
   border: none;
   padding-top: 16px;
-  padding-left: 6px;
+  padding-left: 10px;
   padding-right: 6px;
   overflow: auto;
   height: 200px;
   background: #fff;
   z-index: 111111111;
+  padding-right: 0;
   .navbar-item {
     display: flex;
     flex-direction: column;
     padding: 6px;
     margin: 0;
     height: 30px;
+    padding-top: 8px;
     @media only screen and (max-width: 1023px) {
       padding: 1rem 0.75rem;
     }

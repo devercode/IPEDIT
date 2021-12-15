@@ -14,12 +14,8 @@
       </div>
 
       <!-- modal video -->
-      <div
-        class="modal"
-        v-bind:class="{ 'is-active': modalVideo }"
-        @keydown.esc="modalVideo = false"
-      >
-        <div class="modal-background"></div>
+      <div class="modal" v-bind:class="{ 'is-active': modalVideo }">
+        <div class="modal-background" v-on:click="modalVideo = false"></div>
         <div class="modal-content">
           <iframe
             width="420"
