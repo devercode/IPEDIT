@@ -78,122 +78,75 @@
           </div>
           <!-- name -->
           <div class="field">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                name="name"
-                placeholder="이름"
-                v-model="formData.name"
-                :style="[formData.name === '' && { borderColor: '#d2416d' }]"
-              />
-              <p
-                style="color: #d2416d; font-size: 10px; padding-top: 5px"
-                v-if="formData.name === ''"
-              >
-                에러메세지는 여기에
-              </p>
-            </div>
+            <Input
+              grandClass="field"
+              fatherClass="control"
+              className="input"
+              type="text"
+              name="name"
+              placeHolder="이름"
+              :vModel="formData.name"
+              errorText="에러메세지는 여기에"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!-- email -->
           <div class="field field-doubles">
-            <div class="control has-icons-left has-icons-right">
-              <input
-                class="input is-success"
-                type="text"
-                name="email"
-                v-model="formData.email"
-                placeholder="이메일 주소"
-                :style="[formData.email === '' && { borderColor: '#d2416d' }]"
-              />
-            </div>
-            <div class="control control-button">
-              <button
-                class="button is-link is-light"
-                :style="[
-                  formData.email !== '' && {
-                    background: '#5C6BC0',
-                    color: '#fff',
-                  },
-                ]"
-              >
-                인증코드 발송
-              </button>
-            </div>
+            <Input
+              grandClass="field field-doubles"
+              fatherClass="control has-icons-left has-icons-right"
+              className="input is-success"
+              type="text"
+              name="email"
+              placeHolder="이메일 주소"
+              :vModel="formData.email"
+              buttonRequire="인증코드 발송"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!--verify email -->
           <div class="field field-doubles">
-            <div class="control has-icons-left has-icons-right">
-              <input
-                class="input is-success"
-                type="text"
-                name="verifyEmail"
-                v-model="formData.verifyEmail"
-                placeholder="이메일 인증코드"
-                :style="[
-                  formData.verifyEmail === '' && { borderColor: '#d2416d' },
-                ]"
-              />
-            </div>
-            <div class="control control-button">
-              <button
-                class="button is-link is-light"
-                :style="[
-                  formData.verifyEmail !== '' && {
-                    background: '#5C6BC0',
-                    color: '#fff',
-                  },
-                ]"
-              >
-                인증하기
-              </button>
-            </div>
+            <Input
+              fatherClass="control has-icons-left has-icons-right"
+              className="input is-success"
+              type="text"
+              name="verifyEmail"
+              placeHolder="이메일 인증코드"
+              :vModel="formData.verifyEmail"
+              buttonRequire="인증하기"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!-- password -->
           <div class="field">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="비밀번호"
-                v-model="formData.password"
-                name="password"
-                :style="[
-                  formData.password === '' && { borderColor: '#d2416d' },
-                ]"
-              />
-              <p
-                style="color: #d2416d; font-size: 10px; padding-top: 5px"
-                v-if="formData.password.split('').length < 8"
-              >
-                비밀번호가 일치하지 않습니다
-              </p>
-            </div>
+            <Input
+              fatherClass="control"
+              className="input"
+              type="text"
+              name="password"
+              placeHolder="비밀번호"
+              :vModel="formData.password"
+              errorText="비밀번호가 일치하지 않습니다"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!-- password confirm-->
           <div class="field">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="비밀번호 재입력"
-                v-model="formData.confirmPassword"
-                name="confirmPassword"
-                :style="[
-                  formData.confirmPassword === '' && { borderColor: '#d2416d' },
-                ]"
-              />
-              <p
-                style="color: #d2416d; font-size: 10px; padding-top: 5px"
-                v-if="formData.confirmPassword !== formData.password"
-              >
-                비밀번호가 일치하지 않습니다
-              </p>
-            </div>
+            <Input
+              fatherClass="control"
+              className="input"
+              type="text"
+              name="confirmPassword"
+              placeHolder="비밀번호 재입력"
+              :vModel="formData.confirmPassword"
+              errorText="비밀번호가 일치하지 않습니다"
+              :oldPass="formData.password"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!-- COUNTRY -->
@@ -237,65 +190,32 @@
 
             <!-- Phone -->
             <div class="field field-doubles">
-              <div class="control">
-                <input
-                  class="input"
-                  type="text"
-                  placeholder="휴대폰 번호"
-                  v-model="formData.phone"
-                  name="phone"
-                  :style="[formData.phone === '' && { borderColor: '#d2416d' }]"
-                />
-                <p
-                  style="color: #d2416d; font-size: 10px; padding-top: 5px"
-                  v-if="formData.phone === ''"
-                >
-                  올바른 휴대폰 번호가 아닙니다
-                </p>
-              </div>
-              <div class="control control-button">
-                <button
-                  class="button is-link is-light"
-                  :style="[
-                    formData.phone !== '' && {
-                      background: '#5C6BC0',
-                      color: '#fff',
-                    },
-                  ]"
-                >
-                  인증코드 발송
-                </button>
-              </div>
+              <Input
+                fatherClass="control"
+                className="input"
+                type="text"
+                name="phone"
+                placeHolder="휴대폰 번호"
+                :vModel="formData.phone"
+                errorText="올바른 휴대폰 번호가 아닙니다"
+                buttonRequire="인증코드 발송"
+                v-on:handleChange="handleChangeData"
+              />
             </div>
           </div>
 
           <!-- Phone Code-->
           <div class="field field-doubles">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="휴대폰 인증코드"
-                v-model="formData.verifyPhone"
-                name="verifyPhone"
-                :style="[
-                  formData.verifyPhone === '' && { borderColor: '#d2416d' },
-                ]"
-              />
-            </div>
-            <div class="control control-button">
-              <button
-                class="button is-link is-light"
-                :style="[
-                  formData.verifyPhone !== '' && {
-                    background: '#5C6BC0',
-                    color: '#fff',
-                  },
-                ]"
-              >
-                인증하기
-              </button>
-            </div>
+            <Input
+              fatherClass="control"
+              className="input"
+              type="text"
+              name="verifyPhone"
+              placeHolder="휴대폰 인증코드"
+              :vModel="formData.verifyPhone"
+              buttonRequire="인증하기"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <!-- Promotion code -->
@@ -305,35 +225,17 @@
 
           <!-- apply Code-->
           <div class="field field-doubles">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="프로모션 코드"
-                v-model="formData.coupon"
-                name="coupon"
-                :style="[formData.coupon === '' && { borderColor: '#d2416d' }]"
-              />
-              <p
-                style="color: #d2416d; font-size: 10px; padding-top: 5px"
-                v-if="formData.coupon === ''"
-              >
-                유효하지 않은 프로모션 코드입니다
-              </p>
-            </div>
-            <div class="control control-button">
-              <button
-                class="button is-link is-light"
-                :style="[
-                  formData.coupon !== '' && {
-                    background: '#5C6BC0',
-                    color: '#fff',
-                  },
-                ]"
-              >
-                적용하기
-              </button>
-            </div>
+            <Input
+              fatherClass="control"
+              className="input"
+              type="text"
+              name="coupon"
+              placeHolder="프로모션 코드"
+              :vModel="formData.coupon"
+              errorText="유효하지 않은 프로모션 코드입니다"
+              buttonRequire="적용하기"
+              v-on:handleChange="handleChangeData"
+            />
           </div>
 
           <div class="services">
@@ -397,6 +299,7 @@ import { Country } from "../assets/javascripts/data";
 import Logo from "../assets/images/ipedit.png";
 import Translate from "../assets/images/translate.png";
 import Draft from "../assets/images/draft.png";
+import Input from "./Inputs.vue";
 export default {
   data() {
     return {
@@ -427,8 +330,14 @@ export default {
   props: {
     modalLogin: Boolean,
   },
-  components: {},
+  components: { Input },
   methods: {
+    handleChangeData: function (e) {
+      this.formData = {
+        ...this.formData,
+        [e.target.name]: e.target.value,
+      };
+    },
     ShowTabContent: function (data) {
       this.idTabs = data;
     },
@@ -437,7 +346,7 @@ export default {
     },
     selectItem: function (item) {
       this.type = item;
-      this.formData.type = type;
+      this.formData.type = item;
     },
     selectCountry: function (item) {
       this.country = item;
