@@ -1,0 +1,121 @@
+@import "./global.scss";
+.competitor {
+  background: #fff;
+  padding: 240px 0;
+  @media only screen and (max-width: 768px) {
+    padding: 100px 0;
+  }
+  @media only screen and (max-width: 375px) {
+    padding: 10px 0;
+  }
+  .competitor__container {
+    @media only screen and (max-width: 1023px) {
+      padding: 0 40px;
+    }
+    @media only screen and (max-width: 582px) {
+      margin: 50px auto;
+    }
+    @media only screen and (max-width: 375px) {
+      margin: 30px auto;
+    }
+    h3 {
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 140%;
+      letter-spacing: -0.5px;
+      color: #212037;
+      @media only screen and (max-width: 375px) {
+        font-size: 20px;
+      }
+    }
+    .markets {
+      margin-top: 120px;
+      line-height: 1.2;
+      @media only screen and (max-width: 768px) {
+        margin-top: 50px;
+      }
+      p {
+        font-weight: bold;
+        font-size: 24px;
+        color: #7c7f91;
+        @media only screen and (max-width: 375px) {
+          font-size: 18px;
+        }
+      }
+      h1 {
+        font-weight: bold;
+        font-size: 96px;
+        color: #212037;
+        @media only screen and (max-width: 768px) {
+          font-size: 80px;
+        }
+        @media only screen and (max-width: 582px) {
+          font-size: 11vw;
+        }
+        @media only screen and (max-width: 375px) {
+          font-size: 30px;
+        }
+        span {
+          font-size: 30px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@property --num {
+  syntax: "<integer>";
+  initial-value: 10000;
+  inherits: false;
+}
+
+@property --num2 {
+  syntax: "<integer>";
+  initial-value: 109735;
+  inherits: false;
+}
+
+@property --num3 {
+  syntax: "<integer>";
+  initial-value: 20000000;
+  inherits: false;
+}
+
+.count {
+  animation: counter 2s;
+  counter-reset: num var(--num);
+}
+.count::before {
+  content: counter(num);
+}
+
+.count2 {
+  animation: counter 2s;
+  counter-reset: num2 var(--num2);
+}
+.count2::before {
+  content: counter(num2);
+}
+
+.count3 {
+  animation: counter 2s;
+  counter-reset: num3 var(--num3);
+}
+.count3::before {
+  content: counter(num3);
+}
+
+.count:hover {
+  @keyframes counter {
+    from {
+      --num: 100;
+      --num2: 1000;
+      --num3: 10000;
+    }
+    to {
+      --num: 10000;
+      --num2: 109735;
+      --num3: 20000000;
+    }
+  }
+}

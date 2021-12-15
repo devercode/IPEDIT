@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Pretendard";
+  src: local("Pretendard"), url("../fonts/Pretendard-Regular.otf") format("truetype");
+}
+
+#__layout {
+  background: #f6f7f9;
+}
+.btn {
+  color: #fff;
+  width: 120px;
+  height: 48px;
+  right: 0px;
+  top: calc(50% - 48px / 2);
+  background: #5c6bc0;
+  border-radius: 6px;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+span,
+a {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: normal;
+}
+.navbar-link:not(.is-arrowless)::after,
+.select:not(.is-multiple):not(.is-loading)::after {
+  border: 2px solid #7c7f90;
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  content: " ";
+  display: block;
+  height: 0.625em;
+  margin-top: -0.4375em;
+  pointer-events: none;
+  position: absolute;
+  top: 45%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 0.625em;
+}
+.container {
+  max-width: 1110px !important;
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px !important;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px !important;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px !important;
+  }
+}
+@media (max-width: 582px) {
+  .container {
+    max-width: 90% !important;
+  }
+}
+$speed: 1s;
+$opacity-transition: opacity $speed ease-in-out;
+
+.modal-header {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  height: 16px;
+  text-decoration: none;
+  width: 16px;
+
+  svg {
+    width: 16px;
+  }
+}
+
+.modal-wrapper {
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.modal {
+  animation: fadein 0.5s;
+}
+.modal-content {
+  border-radius: 8px;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
