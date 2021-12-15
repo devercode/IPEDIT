@@ -85,9 +85,12 @@
                 name="name"
                 placeholder="이름"
                 v-model="formData.name"
-                style="border-color: #d2416d"
+                :style="[formData.name === '' && { borderColor: '#d2416d' }]"
               />
-              <p style="color: #d2416d; font-size: 10px; padding-top: 5px">
+              <p
+                style="color: #d2416d; font-size: 10px; padding-top: 5px"
+                v-if="formData.name === ''"
+              >
                 에러메세지는 여기에
               </p>
             </div>
@@ -102,6 +105,7 @@
                 name="email"
                 v-model="formData.email"
                 placeholder="이메일 주소"
+                :style="[formData.email === '' && { borderColor: '#d2416d' }]"
               />
             </div>
             <div class="control control-button">
@@ -128,6 +132,9 @@
                 name="verifyEmail"
                 v-model="formData.verifyEmail"
                 placeholder="이메일 인증코드"
+                :style="[
+                  formData.verifyEmail === '' && { borderColor: '#d2416d' },
+                ]"
               />
             </div>
             <div class="control control-button">
@@ -154,7 +161,16 @@
                 placeholder="비밀번호"
                 v-model="formData.password"
                 name="password"
+                :style="[
+                  formData.password === '' && { borderColor: '#d2416d' },
+                ]"
               />
+              <p
+                style="color: #d2416d; font-size: 10px; padding-top: 5px"
+                v-if="formData.password.split('').length < 8"
+              >
+                비밀번호가 일치하지 않습니다
+              </p>
             </div>
           </div>
 
@@ -167,7 +183,16 @@
                 placeholder="비밀번호 재입력"
                 v-model="formData.confirmPassword"
                 name="confirmPassword"
+                :style="[
+                  formData.confirmPassword === '' && { borderColor: '#d2416d' },
+                ]"
               />
+              <p
+                style="color: #d2416d; font-size: 10px; padding-top: 5px"
+                v-if="formData.confirmPassword !== formData.password"
+              >
+                비밀번호가 일치하지 않습니다
+              </p>
             </div>
           </div>
 
@@ -219,7 +244,14 @@
                   placeholder="휴대폰 번호"
                   v-model="formData.phone"
                   name="phone"
+                  :style="[formData.phone === '' && { borderColor: '#d2416d' }]"
                 />
+                <p
+                  style="color: #d2416d; font-size: 10px; padding-top: 5px"
+                  v-if="formData.phone === ''"
+                >
+                  올바른 휴대폰 번호가 아닙니다
+                </p>
               </div>
               <div class="control control-button">
                 <button
@@ -246,6 +278,9 @@
                 placeholder="휴대폰 인증코드"
                 v-model="formData.verifyPhone"
                 name="verifyPhone"
+                :style="[
+                  formData.verifyPhone === '' && { borderColor: '#d2416d' },
+                ]"
               />
             </div>
             <div class="control control-button">
@@ -277,7 +312,14 @@
                 placeholder="프로모션 코드"
                 v-model="formData.coupon"
                 name="coupon"
+                :style="[formData.coupon === '' && { borderColor: '#d2416d' }]"
               />
+              <p
+                style="color: #d2416d; font-size: 10px; padding-top: 5px"
+                v-if="formData.coupon === ''"
+              >
+                유효하지 않은 프로모션 코드입니다
+              </p>
             </div>
             <div class="control control-button">
               <button
