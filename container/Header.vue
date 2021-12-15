@@ -115,7 +115,7 @@
         <div class="navbar-item" style="padding-right: 0">
           <div class="buttons">
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link"> 한국어 </a>
+              <a class="navbar-link dropdown-option"> 한국어 </a>
               <div class="navbar-dropdown">
                 <a class="navbar-item">
                   <p>English</p>

@@ -1,5 +1,6 @@
 <template>
   <div class="term">
+    <div style="position: absolute" v-on:click="activeDropdown = false"></div>
     <div class="term__container container">
       <h1>{{ title }}</h1>
       <!-- select -->

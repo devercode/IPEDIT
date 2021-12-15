@@ -205,6 +205,12 @@
     }
   }
 }
+.dropdown-option {
+  .navbar-link[data-v-f9f29bee]:not(.is-arrowless)::after,
+  .select[data-v-f9f29bee]:not(.is-multiple):not(.is-loading)::after {
+    top: 40%;
+  }
+}
 .navbar-burger {
   height: max-content;
   margin-right: -12px;
@@ -262,7 +268,7 @@
 .navbar-link:not(.is-arrowless)::after {
   border-color: #7c7f91;
   margin-top: -8px;
-  right: 10px;
+  right: 13px;
   @media only screen and (max-width: 1023px) {
     margin-top: -0.5em;
   }
