@@ -29,7 +29,11 @@
 
       <!-- login with Goolge -->
       <div class="field">
-        <img src="../assets/images/google.png" alt="" />
+        <img
+          src="../assets/images/google.png"
+          alt=""
+          style="position: absolute"
+        />
         <p class="control">
           <button class="button google">Google로 시작하기</button>
         </p>
@@ -37,7 +41,11 @@
 
       <!-- login with apple -->
       <div class="field">
-        <img src="../assets/images/apple.png" alt="" />
+        <img
+          src="../assets/images/apple.png"
+          alt=""
+          style="position: absolute"
+        />
         <p class="control">
           <button class="button apple">Apple로 시작하기</button>
         </p>
