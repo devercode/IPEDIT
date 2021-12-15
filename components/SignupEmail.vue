@@ -353,9 +353,11 @@
                     formData.email !== '' &&
                     formData.verifyEmail !== '' &&
                     formData.password !== '' &&
+                    formData.password.split('').length >= 8 &&
                     formData.confirmPassword !== '' &&
                     formData.verifyPhone !== '' &&
-                    formData.coupon !== '' && {
+                    formData.coupon !== '' &&
+                    formData.password === formData.confirmPassword && {
                       background: '#5C6BC0 !important',
                       color: '#fff !important',
                     },
