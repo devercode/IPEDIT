@@ -24,23 +24,33 @@
       font-weight: bold;
       font-size: 28px;
       color: #ffffff;
-      @media only screen and (max-width: 375px) {
-        font-size: 16px;
+      @media only screen and (max-width: 767px) {
+        width: 100%;
       }
     }
-    .btn-useFree {
-      width: 180px;
-      height: 56px;
-      background: #ffffff;
-      color: #212037;
-      font-size: 16px;
-      font-weight: bold;
-      @media only screen and (max-width: 768px) {
-        margin-top: 20px;
+    .div_btn {
+      @media only screen and (max-width: 767px) {
+        width: 100%;
       }
-      @media only screen and (max-width: 375px) {
-        width: 144px;
-        height: 42px;
+      .btn-useFree {
+        width: 180px;
+        height: 56px;
+        background: #ffffff;
+        color: #212037;
+        font-size: 16px;
+        font-weight: bold;
+        &:hover {
+          background-color: #fff !important;
+          color: #212037 !important;
+          opacity: 0.8;
+        }
+        @media only screen and (max-width: 768px) {
+          margin-top: 20px;
+        }
+        @media only screen and (max-width: 375px) {
+          width: 144px;
+          height: 42px;
+        }
       }
     }
   }

@@ -3,26 +3,6 @@
     <div style="position: absolute" v-on:click="activeDropdown = false"></div>
     <div class="term__container container">
       <h1>{{ title }}</h1>
-      <!-- select -->
-      <!-- <div class="field">
-        <div class="control">
-          <div class="select">
-            <select>
-              <option
-                style="
-                  background: #fff !important;
-                  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
-                "
-                v-for="item in arrSelect"
-                :key="item"
-              >
-                {{ item }}
-              </option>
-            </select>
-          </div>
-        </div>
-      </div> -->
-
       <div
         class="navbar-item has-dropdown is-hoverable"
         v-on:click="activeDropdown = !activeDropdown"

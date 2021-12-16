@@ -2,9 +2,48 @@
 ::-webkit-scrollbar {
   width: 5px;
 }
+.sign-up {
+  .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar-item.has-dropdown:focus .navbar-link,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: #fff;
+  }
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+  }
+  .sign-up__email {
+    @media only screen and (max-width: 582px) {
+      top: -27px !important;
+      left: 137px !important;
+    }
+  }
+  .delete::after,
+  .delete::before,
+  .modal-close::after,
+  .modal-close::before {
+    background-color: grey;
+  }
+}
+.sign-up__email {
+  .modal-close {
+    top: -22px;
+    left: 240px;
+    position: relative;
+  }
+  .delete::after,
+  .delete::before,
+  .modal-close::after,
+  .modal-close::before {
+    background-color: grey;
+  }
+}
+
 .navbar-dropdown {
+  margin-top: 10px;
   border: none;
-  padding-top: 16px;
+  padding-top: 6px;
   padding-left: 6px;
   padding-right: 6px;
   overflow: auto;
@@ -83,12 +122,14 @@
   margin-top: -4px;
   right: 10px;
 }
-
+.field:not(:last-child) {
+  margin-bottom: 0;
+}
 .navbar-item,
 .has-dropdown,
 .is-hoverable {
   border: 1px solid #dbdbdb;
-  border-radius: 4px;
+  border-radius: 6px;
   height: 52px;
   width: 100%;
   a {
@@ -113,8 +154,8 @@
   padding: 40px;
   text-align: center;
   @media only screen and (max-width: 582px) {
-    width: 90%;
-    padding: 20px;
+    width: 320px;
+    padding: 40px 20px;
   }
 
   .logo {
@@ -128,6 +169,7 @@
   }
   .field {
     position: relative;
+    margin-bottom: 10px;
     .control {
       input {
         box-shadow: none;
@@ -203,8 +245,11 @@
     span {
       color: #5c6bc0;
       font-weight: bold;
-      padding-left: 5px;
+      margin-left: 5px;
       cursor: pointer;
+      &:hover {
+        border-bottom: 2px solid #5c6bc0 !important;
+      }
     }
   }
   //Signup with email
@@ -330,7 +375,10 @@
   .select-country {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
+    .navbar-item {
+      border-radius: 6px;
+    }
     @media only screen and (max-width: 582px) {
       flex-direction: column;
     }
@@ -367,5 +415,25 @@
     width: 100%;
     height: 52px !important;
     margin-top: 8px;
+  }
+}
+.contact__text {
+  font-weight: bold;
+  font-size: 24px;
+  color: #212037;
+  padding-bottom: 20px;
+  text-align: left;
+}
+.contact-us {
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    position: absolute;
+  }
+  .delete::after,
+  .delete::before,
+  .modal-close::after,
+  .modal-close::before {
+    background-color: grey;
   }
 }

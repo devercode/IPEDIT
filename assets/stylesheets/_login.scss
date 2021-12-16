@@ -2,19 +2,36 @@
 ::-webkit-scrollbar {
   width: 0px;
 }
+.modal-close {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+}
+.delete::after,
+.delete::before,
+.modal-close::after,
+.modal-close::before {
+  background-color: grey;
+}
 .modal-content {
   transition: 1s;
   background-color: #fff;
   width: 540px;
   height: 582px;
-  padding: 40px;
+  padding: 30px;
   text-align: center;
 
   @media only screen and (max-width: 582px) {
-    width: 90%;
+    width: 320px;
+    padding: 40px 20px;
   }
   .logo {
-    padding-bottom: 30px;
+  }
+  .signup-title {
+    padding: 16px 0;
+    font-weight: bold;
+    font-size: 16px;
+    color: #212037;
   }
   .field {
     position: relative;
@@ -57,7 +74,7 @@
       left: 22px;
       top: 14px;
       @media only screen and (max-width: 582px) {
-        left: 8px;
+        left: 16px;
       }
     }
   }
@@ -69,13 +86,16 @@
     padding: 17px 0;
     padding-top: 7px;
     label,
-    p {
+    a {
       font-family: Pretendard;
       font-size: 12px;
       color: #7c7f91;
       display: flex;
       cursor: pointer;
       align-items: center;
+      &:hover {
+        border-bottom: 2px solid #7c7f91;
+      }
       input {
         margin-right: 6px;
       }
@@ -97,8 +117,11 @@
     span {
       color: #5c6bc0;
       font-weight: bold;
-      padding-left: 5px;
+      margin-left: 5px;
       cursor: pointer;
+      &:hover {
+        border-bottom: 2px solid #5c6bc0 !important;
+      }
     }
   }
 }

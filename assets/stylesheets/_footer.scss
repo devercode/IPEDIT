@@ -7,23 +7,39 @@
   }
   .footer__container {
     .content {
+      display: flex;
+      align-items: center;
+      @media only screen and (max-width: 990px) {
+        flex-direction: column;
+        align-items: baseline;
+      }
+      .logo-footer {
+        margin-right: 60px;
+        @media only screen and (max-width: 990px) {
+          margin-bottom: 30px;
+        }
+      }
       ul {
         display: flex;
         list-style: none;
-        margin-left: 0;
+        margin: 0;
+        align-items: center;
         @media only screen and (max-width: 992px) {
-          flex-wrap: wrap;
           justify-content: center;
         }
-        li:nth-child(1) {
-          padding-right: 60px;
+        @media only screen and (max-width: 767px) {
+          flex-direction: column;
+          align-items: baseline;
         }
         li {
           padding-right: 40px;
           font-weight: 600;
-          font-size: 18px;
+          font-size: 16px;
           color: #7c7f91;
           cursor: pointer;
+          @media only screen and (max-width: 767px) {
+            padding-bottom: 20px;
+          }
           @media only screen and (max-width: 375px) {
             padding-right: 20px;
             font-size: 16px;
@@ -31,21 +47,27 @@
           a {
             color: #7c7f91;
             font-weight: 600;
+            &:hover {
+              color: #7c7f91 !important;
+              border-bottom: 2px solid #7c7f90;
+            }
           }
         }
       }
     }
     .information {
-      font-size: 14px;
+      font-size: 12px;
       color: #7c7f91;
+      font-family: "Pretendard";
       @media only screen and (max-width: 375px) {
         font-size: 12px;
       }
     }
     .years {
       margin-top: 10px;
-      font-size: 14px;
+      font-size: 12px;
       color: #7c7f91;
+      font-family: "Pretendard";
       @media only screen and (max-width: 375px) {
         font-size: 12px;
       }

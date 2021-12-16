@@ -1,7 +1,39 @@
 <template>
+  <div class="omrs-input-group">
+    <label class="omrs-input-filled">
+      <input
+        class="input"
+        required
+        :name="name"
+        :style="[!checkConditional() && { borderColor: '#d2416d' }]"
+        :type="type"
+        v-model="vModel"
+        v-on:change="handleChange"
+      />
+
+      <span class="omrs-input-label">{{ placeHolder }}</span>
+      <!-- <span class="omrs-input-helper">에러메세지는 여기에</span> -->
+    </label>
+    <div
+      class="control control-button"
+      :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
+    >
+      <button
+        :style="[
+          vModel !== '' && {
+            background: '#5C6BC0',
+            color: '#fff',
+          },
+        ]"
+        class="button"
+      >
+        {{ buttonRequire }}
+      </button>
+    </div>
+  </div>
   <!-- Input username -->
   <!-- <div class="field"> -->
-  <div :class="fatherClass">
+  <!-- <div :class="fatherClass">
     <input
       :class="className"
       :type="type"
@@ -11,7 +43,6 @@
       v-model="vModel"
       v-on:change="handleChange"
     />
-    <!-- text Error -->
     <p
       style="color: #d2416d; font-size: 10px; padding-top: 5px"
       v-if="!checkConditional()"
@@ -19,7 +50,6 @@
       {{ errorText }}
     </p>
 
-    <!-- Button -->
     <div
       class="control control-button"
       :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
@@ -36,7 +66,8 @@
         {{ buttonRequire }}
       </button>
     </div>
-  </div>
+  </div> -->
+
   <!-- </div> -->
 </template>
 

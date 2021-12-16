@@ -12,15 +12,17 @@
       v-on:changeModalSignUp="changeModalSignUp"
       v-on:openModalLogin="openModalLogin"
     />
+    <ContactUs v-bind:isContact="isContact" v-on:closeContact="closeContact" />
+
     <div class="navbar-brand">
       <a class="navbar-item logo" href="/">
-        <img src="../assets/images/ipedit.png" width="112" height="28" />
+        <img src="../assets/images/ipedit.svg" width="112" height="28" />
       </a>
 
       <!-- responsive-edd -->
       <div class="responsive-edd">
         <div class="navbar-end endd">
-          <div class="navbar-item">
+          <div class="navbar-item" style="margin-right: 0">
             <div class="buttons">
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link" v-on:click="activeEdd = !activeEdd">
@@ -32,10 +34,10 @@
                   style="z-index: 111111"
                 >
                   <a class="navbar-item">
-                    <p>English</p>
+                    <p style="font-family: Noto Sans JP">English</p>
                   </a>
                   <a class="navbar-item">
-                    <p>日本語</p>
+                    <p style="font-family: Noto Sans JP">日本語</p>
                   </a>
                 </div>
               </div>
@@ -76,7 +78,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a
             class="navbar-link"
-            style="width: max-content"
+            style="width: max-content; background: none"
             v-on:click="activeDropdown = !activeDropdown"
           >
             Products
@@ -105,32 +107,42 @@
         <a class="navbar-item"> Impact </a>
         <a class="navbar-item"> Stats </a>
         <a class="navbar-item"> Why IPEDIT? </a>
-        <a class="navbar-item"> Contact us </a>
+        <a class="navbar-item" v-on:click="isContact = !isContact">
+          Contact us
+        </a>
         <a class="button btn btn-respon" v-on:click="modalLogin = !modalLogin">
           시작하기
         </a>
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item" style="padding-right: 0">
+        <div class="navbar-item" style="padding-right: 0; margin-right: 0">
           <div class="buttons">
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link dropdown-option"> 한국어 </a>
+              <a
+                class="navbar-link dropdown-option"
+                style="width: max-content; background: none"
+              >
+                한국어
+              </a>
               <div class="navbar-dropdown">
                 <a class="navbar-item">
-                  <p>English</p>
+                  <p style="font-family: Noto Sans JP">English</p>
                 </a>
                 <a class="navbar-item">
-                  <p>日本語</p>
+                  <p style="font-family: Noto Sans JP">日本語</p>
                 </a>
               </div>
             </div>
-            <a class="navbar-item" v-on:click="modalLogin = !modalLogin">
+            <a
+              class="navbar-item navbar-item-modal"
+              v-on:click="modalLogin = !modalLogin"
+            >
               로그인
             </a>
-            <a class="button btn" v-on:click="modalSignup = !modalSignup">
-              시작하기
-            </a>
+            <!-- <a class="button btn"> 시작하기 </a> -->
+            <Button v-on:click="modalSignup = !modalSignup" text="시작하기">
+            </Button>
           </div>
         </div>
       </div>
@@ -144,8 +156,9 @@
 </style>
 
 <script>
-import Login from "../components/Login.vue";
-import SignUp from "../components/SignUp.vue";
+import Login from "./Login.vue";
+import SignUp from "./SignUp.vue";
+import ContactUs from "./ContactUs.vue";
 export default {
   data() {
     return {
@@ -154,9 +167,10 @@ export default {
       activeDropdown: false,
       modalLogin: false,
       modalSignup: false,
+      isContact: false,
     };
   },
-  components: { Login, SignUp },
+  components: { Login, SignUp, ContactUs },
   methods: {
     changeModalLogin: function () {
       this.modalLogin = false;
@@ -167,12 +181,9 @@ export default {
     changeModalSignUp: function () {
       this.modalSignup = false;
     },
+    closeContact: function () {
+      this.isContact = false;
+    },
   },
-  // created() {
-  //   console.log(
-  //     "propertyComputed sẽ update vì this.property đã thay đổi",
-  //     this.modalLogin
-  //   );
-  // },
 };
 </script>

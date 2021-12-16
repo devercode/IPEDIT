@@ -2,16 +2,16 @@
   <div class="footer">
     <div class="footer__container container">
       <div class="content">
+        <div class="logo-footer">
+          <img
+            src="../assets/images/iconFooter.svg"
+            alt="../assets/images/iconFooter.svg"
+          />
+        </div>
         <ul>
-          <li>
-            <img
-              src="../assets/images/iconFooter.png"
-              alt="../assets/images/iconFooter.png"
-            />
-          </li>
-          <li>IPEDIT draft</li>
-          <li>IPEDIT translate</li>
-          <li>회사소개</li>
+          <li><a> IPEDIT draft</a></li>
+          <li><a>IPEDIT translate</a></li>
+          <li><a href="https://ipactory.com">회사소개</a></li>
           <li><a href="/term">이용약관</a></li>
           <li><a href="/privacy">개인정보이용방침</a></li>
         </ul>

@@ -18,6 +18,11 @@
 <script>
 import Header from "../container/Header.vue";
 import Footer from "../container/Footer.vue";
+import Banner from "../container/Banner.vue";
+import Impactory from "../container/Impactory.vue";
+import Competitor from "../container/Competitor.vue";
+import CompExamples from "../container/CompExamples.vue";
+import UseFree from "../container/UseFree.vue";
 
 export default {
   data() {
@@ -25,7 +30,11 @@ export default {
   },
   components: {
     Header,
-
+    Banner,
+    Competitor,
+    UseFree,
+    Impactory,
+    CompExamples,
     Footer,
   },
 };

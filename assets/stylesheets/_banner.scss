@@ -10,42 +10,58 @@
       background-color: rgba(#000, 0.5);
     }
   }
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 990px) {
     flex-direction: column;
+  }
+  .radio-btns__btn {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    @media only screen and (max-width: 990px) {
+      height: 421px;
+      opacity: 0.9;
+    }
+    @media only screen and (max-width: 375px) {
+      height: 345px;
+    }
   }
   .containe {
     width: 100%;
     max-height: 240px;
     text-align: center;
-    padding: 360px 0;
     max-width: auto;
     margin: 0 auto;
-    @media only screen and (max-width: 582px) {
-      max-width: 500px;
-      padding: 190px 36px;
+    @media only screen and (max-width: 1279px) {
+      padding: 0 50px;
     }
     @media only screen and (max-width: 375px) {
-      max-width: 500px;
-      padding: 130px 36px;
+      padding: 0 20px;
     }
-
     &__img {
-      @media only screen and (max-width: 375px) {
-        width: 220px;
+      @media only screen and (max-width: 1279px) {
+        width: 393px;
         margin: 0 auto;
+      }
+      @media only screen and (max-width: 990px) {
+        width: 306px;
+        margin: 0 auto;
+      }
+      @media only screen and (max-width: 375px) {
+        width: 229px;
       }
     }
     &__text {
       padding: 40px 0;
-      @media only screen and (max-width: 582px) {
+      @media only screen and (max-width: 375px) {
         padding: 20px 0;
       }
       p {
         color: #fff;
         font-size: 24px;
-        @media only screen and (max-width: 582px) {
-          font-size: 18px;
-        }
         @media only screen and (max-width: 375px) {
           font-size: 16px;
         }
@@ -62,6 +78,14 @@
       font-size: 16px;
       font-weight: 700;
       background-color: #fff;
+      &:hover {
+        background-color: #fff !important;
+        opacity: 0.8;
+      }
+      :active {
+        background-color: #fff !important;
+        opacity: 0.6;
+      }
       @media only screen and (max-width: 582px) {
         width: 186px;
         height: 46px;
@@ -81,7 +105,7 @@
     background-size: cover;
     transition: 0.3s;
 
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 990px) {
       width: 100%;
     }
     @media only screen and (max-width: 582px) {
@@ -98,7 +122,7 @@
     background-size: cover;
     transition: 0.3s;
 
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 990px) {
       width: 100%;
     }
     @media only screen and (max-width: 582px) {

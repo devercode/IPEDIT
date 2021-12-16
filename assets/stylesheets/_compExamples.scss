@@ -9,7 +9,7 @@
       justify-content: space-around;
     }
     @media only screen and (max-width: 768px) {
-      margin: 50px auto;
+      margin: 120px auto;
     }
     .exmodule {
       cursor: pointer;
@@ -18,7 +18,7 @@
       margin-bottom: 20px;
       background-repeat: no-repeat;
       border-radius: 10px;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 375px) {
         width: 100%;
         background-size: cover;
       }
@@ -52,6 +52,9 @@
           flex-direction: column;
           padding-top: 30px;
           line-height: 120%;
+          p {
+            font-weight: 700;
+          }
           @media only screen and (max-width: 375px) {
             padding-top: 0;
             p {
@@ -180,8 +183,16 @@ $orange: hsl(50, 80%, 50%);
 .back {
   background: #fff;
   transform: rotateY(-180deg);
+  padding: 45px 30px;
   p {
-    font-size: 32px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #7c7f91;
+    padding-bottom: 20px;
+    line-height: 140%;
+  }
+  p:nth-child(3) {
+    padding-bottom: 0;
   }
 
   .button {

@@ -12,7 +12,11 @@
     opacity: 1;
   }
 }
-
+.modal-close {
+  position: relative;
+  left: 1200px;
+  top: 40px;
+}
 .impactory {
   width: 100%;
   background: #f6f7f9;
@@ -21,10 +25,7 @@
     padding: 240px 0;
     margin: 0 auto;
     @media only screen and (max-width: 768px) {
-      padding: 68px 0;
-    }
-    @media only screen and (max-width: 375px) {
-      padding: 30px 0;
+      padding: 120px 0;
     }
     .video {
       background-position: center;
@@ -34,17 +35,31 @@
       background: linear-gradient(0deg, #00000033, rgba(0, 0, 0, 0.2));
       box-shadow: 0px 100px 80px -60px rgb(0 0 0 / 10%);
       border-radius: 10px;
+      position: relative;
       @media only screen and (max-width: 992px) {
         background: none;
         height: 500px;
         background-position: center !important;
       }
-      @media only screen and (max-width: 582px) {
+      @media only screen and (max-width: 767px) {
         height: 400px;
         background: bottom;
+        margin-bottom: 80px;
       }
       @media only screen and (max-width: 375px) {
         height: 250px;
+      }
+      .iframe-desktop {
+        position: absolute;
+      }
+      .video-img-desktop {
+        width: 100%;
+        height: max-content !important;
+        top: 40%;
+        position: relative;
+        @media only screen and (max-width: 767px) {
+          top: 30%;
+        }
       }
       .video-img {
         display: flex;
@@ -52,8 +67,9 @@
         justify-content: center;
         height: 100%;
         cursor: pointer;
-        @media only screen and (max-width: 582px) {
-          width: 40%;
+        @media only screen and (max-width: 767px) {
+          width: 150px;
+          margin: 0 auto;
           margin: 0 auto;
         }
         @media only screen and (max-width: 375px) {
@@ -63,6 +79,10 @@
     }
     .modal {
       animation: fadein 0.5s;
+      // display: none;
+      @media only screen and (max-width: 1024px) {
+        // display: flex;
+      }
     }
     .modal-content {
       width: 65%;
@@ -96,11 +116,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 1279px) {
           margin-bottom: 20px;
-        }
-        @media only screen and (max-width: 768px) {
-          width: 100%;
+          // width: 270px;
+          // height: 336px;
         }
         @media only screen and (max-width: 375px) {
           padding: 30px 30px !important;
@@ -119,6 +138,7 @@
               height: 240px;
               background: linear-gradient(180deg, #e0e0e0 0%, rgba(224, 224, 224, 0.1) 100%);
               padding: 20px 9px;
+              border-radius: 8px;
               @media only screen and (max-width: 375px) {
                 height: 195px;
               }
@@ -190,6 +210,8 @@
                 font-size: 24px;
                 text-align: center;
                 color: #212037;
+                position: relative;
+                top: 6px;
               }
             }
           }
@@ -204,6 +226,9 @@
             font-weight: 900;
             font-size: 64px;
             color: #ef5da8;
+            @media only screen and (max-width: 1279px) {
+              font-size: 50px;
+            }
             @media only screen and (max-width: 375px) {
               font-size: 44px;
             }
@@ -231,6 +256,12 @@
             box-shadow: 0px 40px 40px -20px rgba(0, 0, 0, 0.05);
             margin-top: 20px;
             transition: 0.2s all;
+            height: 90px;
+            cursor: pointer;
+            @media only screen and (max-width: 1279px) {
+              // width: 87px;
+              // height: 70px;
+            }
             @media only screen and (max-width: 768px) {
               width: 45%;
             }
@@ -239,7 +270,10 @@
             }
             img {
               height: 100%;
-              object-fit: contain;
+              object-fit: cover;
+              width: 100%;
+              border-radius: 10px;
+              box-shadow: 0px 10px 20px rgb(0 0 0 / 10%);
             }
           }
         }
@@ -315,6 +349,10 @@
 
       &__itemm {
         font-size: 38px;
+        font-family: "Pretendard";
+        @media only screen and (max-width: 1279px) {
+          font-size: 24px;
+        }
         @media only screen and (max-width: 582px) {
           font-size: 20px;
         }
@@ -341,23 +379,23 @@
   }
   16.66%,
   29.32% {
-    transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -35%, 0);
   }
   33.32%,
   45.98% {
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -70%, 0);
   }
   49.98%,
   62.64% {
-    transform: translate3d(0, -75%, 0);
+    transform: translate3d(0, 0, 0);
   }
   66.64%,
   79.3% {
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -35%, 0);
   }
   83.3%,
   95.96% {
-    transform: translate3d(0, -25%, 0);
+    transform: translate3d(0, -70%, 0);
   }
 }
 

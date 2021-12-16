@@ -1,19 +1,37 @@
 @import "./global.scss";
+.navbar-item-modal {
+  &:hover {
+    border-bottom: 2px solid #7c7f90;
+  }
+}
 .navbar {
+  height: 80px;
   padding: 16px 40px;
   @media only screen and (max-width: 1023px) {
+    padding: 0;
+  }
+  @media only screen and (max-width: 767px) {
+    height: 52px;
   }
   @media only screen and (max-width: 375px) {
-    padding-bottom: 15px !important;
+    padding: 0 !important;
   }
 
   @media only screen and (max-width: 375px) {
+    padding-bottom: 15px !important;
     padding: 16px 15px;
     padding-bottom: 0;
   }
   .navbar-brand {
     justify-content: space-between;
     align-items: center;
+    min-height: 0;
+    @media only screen and (max-width: 1023px) {
+      padding: 16px 40px;
+    }
+    @media only screen and (max-width: 375px) {
+      min-height: auto;
+    }
     .navbar-item {
       img {
         width: 150px;
@@ -31,7 +49,8 @@
     padding-right: 0;
   }
   .navbar-item {
-    padding-right: 22px;
+    margin-right: 22px;
+    padding-right: 0;
   }
   .navbar-link {
     padding-right: 33px;
@@ -58,8 +77,9 @@
   }
 }
 .navbar-menu {
+  margin-top: -2px;
   @media only screen and (max-width: 1023px) {
-    padding-top: 20px;
+    // padding-top: 20px;
     padding-bottom: 0;
     margin-bottom: -10px;
     box-shadow: none;
@@ -71,6 +91,7 @@
 }
 .navbar-start {
   @media only screen and (max-width: 1023px) {
+    padding: 0 40px;
     .navbar-link {
       padding-bottom: 0;
     }
@@ -120,10 +141,10 @@
     @media only screen and (max-width: 1023px) {
       display: block;
       .navbar-item {
-        padding-right: 16px;
+        // padding-right: 16px;
       }
     }
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 768px) {
       .item-log,
       .btn {
         display: none;
@@ -133,7 +154,7 @@
 }
 .navbar-dropdown {
   border: none;
-  padding-top: 16px;
+  padding-top: 6px;
   padding-left: 6px;
   padding-right: 6px;
   .navbar-item {
