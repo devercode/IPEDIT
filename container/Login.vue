@@ -6,10 +6,19 @@
       v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
     />
+    <ResetPassword
+      v-bind:modalResetPass="modalResetPass"
+      v-on:changeModalLogin="changeModalLogin"
+      v-on:closeModalResetPassword="closeModalResetPassword"
+    />
     <div class="modal-background is-clipped"></div>
     <div
       class="modal-content"
-      v-bind:style="[modalSignup ? { display: 'none' } : { display: 'block' }]"
+      v-bind:style="[
+        modalSignup || modalResetPass
+          ? { display: 'none' }
+          : { display: 'block' },
+      ]"
     >
       <button
         class="modal-close is-large"
@@ -56,7 +65,9 @@
           <input type="checkbox" checked="checked" />
           <span class="checkmark"></span>
         </label>
-        <a class="forget-pass">비밀번호 찾기</a>
+        <a class="forget-pass" v-on:click="openModalResetPassword"
+          >비밀번호 찾기</a
+        >
       </div>
 
       <!-- login with Email -->
@@ -106,9 +117,11 @@
 
 <script>
 import SignUp from "./SignUp.vue";
+import ResetPassword from "./ResetPassword.vue";
 import Logo from "../assets/images/ipedit.svg";
 import Google from "../assets/images/google.svg";
 import Apple from "../assets/images/apple.svg";
+import Input from "../components/Inputs.vue";
 export default {
   data() {
     return {
@@ -118,13 +131,14 @@ export default {
       google: Google,
       apple: Apple,
       checkConditional: false,
+      modalResetPass: false,
       data: { userName: "", password: "" },
     };
   },
   props: {
     modalLogin: Boolean,
   },
-  components: { SignUp },
+  components: { SignUp, ResetPassword, Input },
   methods: {
     changeModalLogin: function () {
       this.$emit("changeModalLogin");
@@ -138,6 +152,12 @@ export default {
     handleValue: function (e) {
       this.checkConditional = true;
       this.data = { [e.target.name]: e.target.value };
+    },
+    openModalResetPassword: function () {
+      this.modalResetPass = true;
+    },
+    closeModalResetPassword: function () {
+      this.modalResetPass = false;
     },
   },
   mounted() {},

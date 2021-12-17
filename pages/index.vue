@@ -7,6 +7,7 @@
     <CompExamples />
     <UseFree />
     <Footer />
+    <Reset />
   </div>
 </template>
 
@@ -23,12 +24,14 @@ import Impactory from "../container/Impactory.vue";
 import Competitor from "../container/Competitor.vue";
 import CompExamples from "../container/CompExamples.vue";
 import UseFree from "../container/UseFree.vue";
+import Reset from "../container/ResetPassword.vue";
 
 export default {
   data() {
     return {};
   },
   components: {
+    Reset,
     Header,
     Banner,
     Competitor,
