@@ -141,12 +141,18 @@ export default {
   },
 
   created() {
-    document.onkeydown = (evt) => {
+    // document.onkeydown = (evt) => {
+    //   evt = evt || window.event;
+    //   if (evt.keyCode == 27) {
+    //     this.$emit("changeModalLogin");
+    //   }
+    // };
+    window.addEventListener("keydown", (evt) => {
       evt = evt || window.event;
       if (evt.keyCode == 27) {
         this.$emit("changeModalLogin");
       }
-    };
+    });
   },
 };
 </script>

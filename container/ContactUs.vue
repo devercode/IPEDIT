@@ -149,12 +149,12 @@ export default {
     this.country = item;
   },
   created() {
-    document.onkeydown = (evt) => {
+    window.addEventListener("keydown", (evt) => {
       evt = evt || window.event;
       if (evt.keyCode == 27) {
         this.$emit("closeContact");
       }
-    };
+    });
   },
 };
 </script>

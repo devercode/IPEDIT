@@ -187,12 +187,12 @@ export default {
   created() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
-    document.onkeydown = (evt) => {
+    window.addEventListener("keydown", (evt) => {
       evt = evt || window.event;
-      if (evt.keyCode === 27) {
+      if (evt.keyCode == 27) {
         this.modalVideo = false;
       }
-    };
+    });
   },
 };
 </script>

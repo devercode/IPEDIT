@@ -52,16 +52,13 @@ export default {
 
     scrollFunction: function () {
       if (
-        document.body.scrollTop > 2000 ||
-        document.documentElement.scrollTop > 2000
+        window.scrollY >= 2000
+        // ||
+        // document.documentElement.scrollTop > 2000
       ) {
         document.getElementById("count").className = "count";
         document.getElementById("count2").className = "count2";
         document.getElementById("count3").className = "count3";
-      } else {
-        // document.getElementById("count").className = "";
-        // document.getElementById("count2").className = "";
-        // document.getElementById("count3").className = "";
       }
     },
   },
