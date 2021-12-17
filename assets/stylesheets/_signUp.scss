@@ -15,8 +15,10 @@
   }
   .sign-up__email {
     @media only screen and (max-width: 582px) {
-      top: -27px !important;
-      left: 137px !important;
+      .modal-close {
+        top: -27px !important;
+        left: 137px !important;
+      }
     }
   }
   .delete::after,

@@ -4,7 +4,7 @@
     id="modal"
     v-bind:class="{ 'is-active': isContact }"
   >
-    <!-- <div class="modal-background" v-on:click="closeContact"></div> -->
+    <div class="modal-background"></div>
     <div class="modal-content" style="padding: 30px">
       <button
         class="modal-close is-large"
@@ -13,45 +13,37 @@
       ></button>
       <h1 class="contact__text">Contact us</h1>
       <!-- Input username -->
-      <div class="field">
-        <Input
-          fatherClass="control"
-          className="input"
-          type="text"
-          name="nameContact"
-          placeHolder="이름*"
-        />
-      </div>
+      <Input
+        fatherClass="control"
+        className="input"
+        type="text"
+        name="nameContact"
+        placeHolder="이름*"
+      />
 
-      <div class="field">
-        <Input
-          fatherClass="control"
-          className="input"
-          type="text"
-          name="company"
-          placeHolder="회사명"
-        />
-      </div>
+      <Input
+        fatherClass="control"
+        className="input"
+        type="text"
+        name="company"
+        placeHolder="회사명"
+      />
 
-      <div class="field">
-        <Input
-          fatherClass="control"
-          className="input"
-          type="text"
-          name="emailContact"
-          placeHolder="이메일 주소*"
-        />
-      </div>
+      <Input
+        fatherClass="control"
+        className="input"
+        type="text"
+        name="emailContact"
+        placeHolder="이메일 주소*"
+      />
 
-      <div class="field">
-        <Input
-          fatherClass="control"
-          className="input"
-          type="text"
-          name="phoneContact"
-          placeHolder="휴대폰 번호"
-        />
-      </div>
+      <Input
+        fatherClass="control"
+        className="input"
+        type="text"
+        name="phoneContact"
+        placeHolder="휴대폰 번호"
+      />
 
       <!-- Select country -->
       <div class="select-country">
@@ -89,7 +81,7 @@
         </div>
       </div>
 
-      <div class="field">
+      <!-- <div class="field">
         <Input
           fatherClass="control"
           className="input"
@@ -98,13 +90,31 @@
           placeHolder="내용*"
           style="height: 160px"
         />
+      </div> -->
+      <div class="omrs-input-group">
+        <label class="omrs-input-filled">
+          <textarea
+            class="input"
+            required
+            name="note"
+            placeHolder="내용*"
+            style="height: 160px"
+            v-on:change="handleChange"
+          />
+        </label>
       </div>
 
       <!-- login with Email -->
       <Button
         text="보내기"
         :disabled="true"
-        style="width: 69px; height: 36px; float: right"
+        style="
+          width: 69px;
+          height: 36px;
+          float: right;
+          margin-top: 30px;
+          font-size: 14px;
+        "
       />
     </div>
   </div>

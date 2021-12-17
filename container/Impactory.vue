@@ -22,8 +22,8 @@
           v-on:click="modalVideo = !modalVideo"
         >
           <img
-            src="../assets/images/playcircle.png"
-            alt="../assets/images/playcircle.png"
+            src="../assets/images/playcircle.svg"
+            alt="../assets/images/playcircle.svg"
           />
         </div>
       </div>
@@ -49,7 +49,7 @@
       </div>
 
       <div class="box-containe">
-        <div class="module" style="padding: 38px 60px">
+        <div class="module top-module_1" style="padding: 38px 60px">
           <div class="top">
             <!-- left -->
             <div class="left">
@@ -156,9 +156,9 @@
 </style>
 
 <script>
-import VideoArea from "../assets/images/VideoArea.png";
-import Rectangle3 from "../assets/images/Rectangle 3.png";
-import Rectangle6 from "../assets/images/Rectangle 6.png";
+import VideoArea from "../assets/images/VideoArea.svg";
+import Rectangle3 from "../assets/images/Rectangle 3.svg";
+import Rectangle6 from "../assets/images/Rectangle 6.svg";
 import Highlight from "../assets/images/img_highlight_1.svg";
 export default {
   data() {
@@ -181,22 +181,12 @@ export default {
       this.width = window.innerWidth;
     },
   },
+  // destroyed() {
+  //   window.removeEventListener("resize", this.handleResize);
+  // },
   created() {
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
-  },
-  destroyed() {
-    window.removeEventListener("resize", this.handleResize);
-  },
-  mounted() {
-    document.onkeydown = (evt) => {
-      evt = evt || window.event;
-      if (evt.keyCode === 27) {
-        this.modalVideo = false;
-      }
-    };
-  },
-  created() {
     document.onkeydown = (evt) => {
       evt = evt || window.event;
       if (evt.keyCode === 27) {

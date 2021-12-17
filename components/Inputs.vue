@@ -5,14 +5,17 @@
         class="input"
         required
         :name="name"
-        :style="[!checkConditional() && { borderColor: '#d2416d' }]"
+        :style="[
+          checkConditional &&
+            !checkConditionalFunction() && { borderColor: '#d2416d' },
+        ]"
         :type="type"
         v-model="vModel"
         v-on:change="handleChange"
       />
 
       <span class="omrs-input-label">{{ placeHolder }}</span>
-      <!-- <span class="omrs-input-helper">에러메세지는 여기에</span> -->
+      <!-- <span class="omrs-input-helper">{{ errorText }}</span> -->
     </label>
     <div
       class="control control-button"
@@ -31,44 +34,6 @@
       </button>
     </div>
   </div>
-  <!-- Input username -->
-  <!-- <div class="field"> -->
-  <!-- <div :class="fatherClass">
-    <input
-      :class="className"
-      :type="type"
-      :placeholder="placeHolder"
-      :name="name"
-      :style="[!checkConditional() && { borderColor: '#d2416d' }]"
-      v-model="vModel"
-      v-on:change="handleChange"
-    />
-    <p
-      style="color: #d2416d; font-size: 10px; padding-top: 5px"
-      v-if="!checkConditional()"
-    >
-      {{ errorText }}
-    </p>
-
-    <div
-      class="control control-button"
-      :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
-    >
-      <button
-        class="button is-link is-light"
-        :style="[
-          vModel !== '' && {
-            background: '#5C6BC0',
-            color: '#fff',
-          },
-        ]"
-      >
-        {{ buttonRequire }}
-      </button>
-    </div>
-  </div> -->
-
-  <!-- </div> -->
 </template>
 
 <style lang="scss" scoped>
@@ -94,13 +59,14 @@ export default {
     errorText: String,
     buttonRequire: String,
     oldPass: String,
+    checkConditional: Boolean,
   },
   components: {},
   methods: {
     handleChange: function (e) {
       this.$emit("handleChange", e);
     },
-    checkConditional: function () {
+    checkConditionalFunction: function () {
       if (this.name === "password") {
         if (this.vModel.split("").length >= 8) {
           return true;

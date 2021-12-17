@@ -1,6 +1,6 @@
 <template>
   <div class="modal sign-up__email is-active">
-    <!-- <div class="modal-background" v-on:click="changeModalSignUp"></div> -->
+    <div class="modal-background"></div>
     <div class="modal-content">
       <button
         class="modal-close is-large"
@@ -90,12 +90,13 @@
           <!-- name -->
           <div class="field">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               grandClass="field"
               fatherClass="control"
               className="input"
               type="text"
               name="name"
+              :checkConditional="checkConditional"
               placeHolder="이름"
               :vModel="formData.name"
               errorText="에러메세지는 여기에"
@@ -106,7 +107,7 @@
           <!-- email -->
           <div class="field field-doubles">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               grandClass="field field-doubles"
               fatherClass="control has-icons-left has-icons-right"
               className="input is-success"
@@ -114,6 +115,7 @@
               name="email"
               placeHolder="이메일 주소"
               :vModel="formData.email"
+              :checkConditional="checkConditional"
               buttonRequire="인증코드 발송"
               v-on:handleChange="handleChangeData"
             />
@@ -122,13 +124,14 @@
           <!--verify email -->
           <div class="field field-doubles">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               fatherClass="control has-icons-left has-icons-right"
               className="input is-success"
               type="text"
               name="verifyEmail"
               placeHolder="이메일 인증코드"
               :vModel="formData.verifyEmail"
+              :checkConditional="checkConditional"
               buttonRequire="인증하기"
               v-on:handleChange="handleChangeData"
             />
@@ -137,13 +140,14 @@
           <!-- password -->
           <div class="field">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               fatherClass="control"
               className="input"
               type="password"
               name="password"
               placeHolder="비밀번호"
               :vModel="formData.password"
+              :checkConditional="checkConditional"
               errorText="비밀번호가 일치하지 않습니다"
               v-on:handleChange="handleChangeData"
             />
@@ -152,7 +156,7 @@
           <!-- password confirm-->
           <div class="field">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               fatherClass="control"
               className="input"
               type="password"
@@ -160,6 +164,7 @@
               placeHolder="비밀번호 재입력"
               :vModel="formData.confirmPassword"
               errorText="비밀번호가 일치하지 않습니다"
+              :checkConditional="checkConditional"
               :oldPass="formData.password"
               v-on:handleChange="handleChangeData"
             />
@@ -209,7 +214,7 @@
             <!-- Phone -->
             <div class="field field-doubles">
               <Input
-                style="height: 52px; margin-bottom: 12px"
+                style="height: 52px"
                 fatherClass="control"
                 className="input"
                 type="text"
@@ -217,6 +222,7 @@
                 placeHolder="휴대폰 번호"
                 :vModel="formData.phone"
                 errorText="올바른 휴대폰 번호가 아닙니다"
+                :checkConditional="checkConditional"
                 buttonRequire="인증코드 발송"
                 v-on:handleChange="handleChangeData"
               />
@@ -226,7 +232,7 @@
           <!-- Phone Code-->
           <div class="field field-doubles">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               fatherClass="control"
               className="input"
               type="text"
@@ -234,6 +240,7 @@
               placeHolder="휴대폰 인증코드"
               :vModel="formData.verifyPhone"
               buttonRequire="인증하기"
+              :checkConditional="checkConditional"
               v-on:handleChange="handleChangeData"
             />
           </div>
@@ -246,7 +253,7 @@
           <!-- apply Code-->
           <div class="field field-doubles">
             <Input
-              style="height: 52px; margin-bottom: 12px"
+              style="height: 52px"
               fatherClass="control"
               className="input"
               type="text"
@@ -254,6 +261,7 @@
               placeHolder="프로모션 코드"
               :vModel="formData.coupon"
               errorText="유효하지 않은 프로모션 코드입니다"
+              :checkConditional="checkConditional"
               buttonRequire="적용하기"
               v-on:handleChange="handleChangeData"
             />
@@ -270,6 +278,7 @@
           <div class="field is-grouped">
             <div class="control btn-submit">
               <button
+                v-on:click="checkConditional = true"
                 class="button is-link"
                 :style="[
                   formData.name !== '' &&
@@ -331,6 +340,7 @@ export default {
       translate: Translate,
       draft: Draft,
       Korea: Korea,
+      checkConditional: false,
       formData: {
         country: "",
         type: "",

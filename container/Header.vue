@@ -47,7 +47,7 @@
               >
                 로그인
               </a>
-              <a class="button btn" v-on:click="modalLogin = !modalLogin">
+              <a class="button btn" v-on:click="modalSignup = !modalSignup">
                 시작하기
               </a>
             </div>
@@ -110,7 +110,10 @@
         <a class="navbar-item" v-on:click="isContact = !isContact">
           Contact us
         </a>
-        <a class="button btn btn-respon" v-on:click="modalLogin = !modalLogin">
+        <a
+          class="button btn btn-respon"
+          v-on:click="modalSignup = !modalSignup"
+        >
           시작하기
         </a>
       </div>

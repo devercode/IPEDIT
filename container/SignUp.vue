@@ -1,7 +1,7 @@
 <template>
   <!-- v-bind:class="{ 'is-active': modalSignup }" -->
   <div class="modal sign-up is-active">
-    <!-- <div class="modal-background" v-on:click="changeModalSignUp"></div> -->
+    <div class="modal-background"></div>
     <SignUpEmail
       v-if="signupEmail"
       v-on:changeModalSignUp="changeModalSignUp"

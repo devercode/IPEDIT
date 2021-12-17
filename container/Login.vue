@@ -6,7 +6,7 @@
       v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
     />
-    <!-- <div class="modal-background" v-on:click="changeModalLogin"></div> -->
+    <div class="modal-background"></div>
     <div
       class="modal-content"
       v-bind:style="[modalSignup ? { display: 'none' } : { display: 'block' }]"

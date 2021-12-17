@@ -2,6 +2,9 @@
 .competitor {
   background: #fff;
   padding: 240px 0;
+  @media only screen and (max-width: 992px) {
+    padding: 120px 0;
+  }
   @media only screen and (max-width: 768px) {
     padding: 100px 0;
   }
