@@ -22,7 +22,7 @@
       </div>
 
       <!-- tabs -->
-      <div class="tabs-containe">
+      <!-- <div class="tabs-containe">
         <ul>
           <li
             class=""
@@ -39,7 +39,31 @@
             <img :src="draft" alt="../assets/images/translate.svg" />
           </li>
         </ul>
+      </div> -->
+      <div class="containerr">
+        <div class="tabss">
+          <input type="radio" id="radio-1" name="tabs" />
+          <label
+            class="tabb"
+            for="radio-1"
+            v-on:click="ShowTabContent(1)"
+            v-bind:class="{ isActive: idTabs === 1 }"
+          >
+            <img :src="draft"
+          /></label>
+          <input type="radio" id="radio-2" name="tabs" />
+          <label
+            class="tabb"
+            for="radio-2"
+            v-on:click="ShowTabContent(2)"
+            v-bind:class="{ isActive: idTabs === 2 }"
+          >
+            <img class="translate__img" :src="translate" style="width: 162px"
+          /></label>
+          <span class="glider"></span>
+        </div>
       </div>
+
       <!-- tabs content -->
       <div class="px-2" id="tab-content">
         <!-- content 1 -->

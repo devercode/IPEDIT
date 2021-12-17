@@ -19,6 +19,7 @@
     />
     <SignUp
       v-if="!modalSigin && modalSignup"
+      v-bind:modalLogin="modalLogin"
       v-bind:modalSignup="modalSignup"
       v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
@@ -47,6 +48,7 @@ export default {
     },
     openModalLogin: function () {
       this.modalLogin = true;
+      console.log("b", this.modalLogin);
     },
     changeModalLogin: function () {
       this.modalLogin = false;

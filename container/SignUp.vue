@@ -6,6 +6,11 @@
       v-if="signupEmail"
       v-on:changeModalSignUp="changeModalSignUp"
     />
+    <Login
+      v-bind:modalLogin="modalLogin"
+      v-on:changeModalLogin="changeModalLogin"
+      v-on:openModalLogin="openModalLogin"
+    />
     <div class="modal-content" v-if="!signupEmail">
       <button
         class="modal-close is-large"
@@ -30,7 +35,7 @@
 
       <!-- login with Goolge -->
       <div class="field">
-        <img :src="google" alt="" style="position: absolute" />
+        <img :src="google" alt="" style="position: absolute; left: 16px" />
         <p class="control">
           <!-- <button class="button google"></button> -->
           <Button class="google" text="Google로 시작하기"> </Button>
@@ -39,7 +44,7 @@
 
       <!-- login with apple -->
       <div class="field">
-        <img :src="apple" alt="" style="position: absolute" />
+        <img :src="apple" alt="" style="position: absolute; left: 16px" />
         <p class="control">
           <Button class="apple" text="Apple로 시작하기"> </Button>
           <!-- <button class="button apple">Apple로 시작하기</button> -->
@@ -74,6 +79,7 @@ export default {
   },
   props: {
     modalSignup: Boolean,
+    modalLogin: Boolean,
   },
   components: { SignUpEmail },
   methods: {
@@ -82,6 +88,7 @@ export default {
       this.$emit("changeModalSignUp");
     },
     openModalLogin: function () {
+      console.log("a", this.modalLogin);
       this.$emit("changeModalSignUp");
       this.$emit("openModalLogin");
     },
@@ -102,5 +109,6 @@ export default {
       }
     });
   },
+  mounted() {},
 };
 </script>

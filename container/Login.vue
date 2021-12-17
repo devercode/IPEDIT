@@ -139,7 +139,9 @@ export default {
       this.data = { [e.target.name]: e.target.value };
     },
   },
-
+  mounted() {
+    console.log("a", this.modalLogin);
+  },
   created() {
     // document.onkeydown = (evt) => {
     //   evt = evt || window.event;

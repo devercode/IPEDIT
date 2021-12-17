@@ -60,6 +60,12 @@
       font-weight: bold;
       height: 56px;
       border: 1px solid #f1f1f1;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
     }
     .apple {
       background-color: #000 !important;
@@ -67,6 +73,12 @@
       font-weight: bold;
       height: 56px;
       border: 1px solid #f1f1f1;
+      &:hover {
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 0.6;
+      }
     }
     img {
       position: absolute;
