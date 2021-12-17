@@ -87,10 +87,12 @@
       &:hover {
         background-color: #fff !important;
         opacity: 0.8;
+        border-color: #fff !important;
       }
       :active {
         background-color: #fff !important;
         opacity: 0.6;
+        border-color: #fff !important;
       }
       @media only screen and (max-width: 582px) {
         width: 186px;

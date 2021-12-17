@@ -79,7 +79,6 @@ export default {
         }
       } else if (this.name === "confirmPassword") {
         if (this.vModel === this.oldPass) {
-          console.log(this.oldPass);
           return true;
         }
       } else {

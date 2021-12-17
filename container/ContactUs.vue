@@ -56,11 +56,11 @@
           <a class="navbar-link">
             <img
               v-bind:style="[
-                country === '' ? { display: 'none' } : { display: 'block' },
+                countryText === '' ? { display: 'none' } : { display: 'block' },
               ]"
               src="../assets/images/Korea.svg"
             />
-            {{ country.dial_code }}
+            {{ countryText.dial_code }}
           </a>
           <div
             class="navbar-dropdown"
@@ -81,16 +81,6 @@
         </div>
       </div>
 
-      <!-- <div class="field">
-        <Input
-          fatherClass="control"
-          className="input"
-          type="text"
-          name="phoneContact"
-          placeHolder="내용*"
-          style="height: 160px"
-        />
-      </div> -->
       <div class="omrs-input-group">
         <label class="omrs-input-filled">
           <textarea
@@ -132,7 +122,7 @@ export default {
   data() {
     return {
       countries: Country,
-      country: "",
+      countryText: "",
       activeCountry: false,
     };
   },
@@ -144,9 +134,9 @@ export default {
     closeContact: function () {
       this.$emit("closeContact");
     },
-  },
-  selectCountry: function (item) {
-    this.country = item;
+    selectCountry: function (item) {
+      this.countryText = item;
+    },
   },
   created() {
     window.addEventListener("keydown", (evt) => {
