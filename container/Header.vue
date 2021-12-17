@@ -2,16 +2,15 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <Login
       v-if="modalLogin"
-      v-bind:modalLogin="true"
+      v-bind:modalLogin="modalLogin"
       v-on:changeModalLogin="changeModalLogin"
-      v-on:openModalLogin="openModalLogin"
     />
     <SignUp
       v-if="modalSignup"
       v-bind:modalSignup="modalSignup"
-      v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
       v-on:openModalLogin="openModalLogin"
+      v-on:changeModalLogin="changeModalLogin"
     />
     <ContactUs v-bind:isContact="isContact" v-on:closeContact="closeContact" />
 

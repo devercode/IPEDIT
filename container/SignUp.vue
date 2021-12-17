@@ -6,11 +6,11 @@
       v-if="signupEmail"
       v-on:changeModalSignUp="changeModalSignUp"
     />
-    <Login
+    <!-- <Login
       v-bind:modalLogin="modalLogin"
       v-on:changeModalLogin="changeModalLogin"
       v-on:openModalLogin="openModalLogin"
-    />
+    /> -->
     <div class="modal-content" v-if="!signupEmail">
       <button
         class="modal-close is-large"
@@ -75,6 +75,7 @@ export default {
       logo: Logo,
       google: Google,
       apple: Apple,
+      loginFrUp: false,
     };
   },
   props: {
@@ -93,13 +94,6 @@ export default {
     },
   },
   created() {
-    // document.onkeydown = (evt) => {
-    //   evt = evt || window.event;
-    //   if (evt.keyCode == 27) {
-    //     this.$emit("changeModalLogin");
-    //     this.$emit("changeModalSignUp");
-    //   }
-    // };
     window.addEventListener("keydown", (evt) => {
       evt = evt || window.event;
       if (evt.keyCode == 27) {

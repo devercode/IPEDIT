@@ -13,17 +13,16 @@
       </div>
     </div>
     <Login
+      v-if="modalLogin"
       v-bind:modalLogin="modalLogin"
       v-on:changeModalLogin="changeModalLogin"
-      v-on:openModalLogin="openModalLogin"
     />
     <SignUp
-      v-if="!modalSigin && modalSignup"
-      v-bind:modalLogin="modalLogin"
+      v-if="modalSignup"
       v-bind:modalSignup="modalSignup"
-      v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
       v-on:openModalLogin="openModalLogin"
+      v-on:changeModalLogin="changeModalLogin"
     />
   </div>
 </template>
@@ -34,11 +33,17 @@
 
 <script>
 import SignUp from "./SignUp.vue";
+import Login from "./Login.vue";
 export default {
   data() {
-    return { modalLogin: false, modalSignup: false, modalSigin: false };
+    return {
+      modalLogin: false,
+      modalSignup: false,
+      modalSigin: false,
+      loginFree: false,
+    };
   },
-  components: { SignUp },
+  components: { SignUp, Login },
   methods: {
     changeModalSignUp: function () {
       document.querySelector("html").classList.remove("is-clipped");

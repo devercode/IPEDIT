@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" id="modal" v-bind:class="{ 'is-active': modalLogin }">
+  <div class="modal" v-bind:class="{ 'is-active': modalLogin }">
     <SignUp
       v-if="!modalSigin && modalSignup"
       v-bind:modalSignup="modalSignup"
