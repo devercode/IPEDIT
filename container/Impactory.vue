@@ -34,13 +34,13 @@
       <div
         class="modal"
         v-bind:class="{ 'is-active': modalVideo }"
-        v-if="width < 991"
+        v-if="width < 991 && modalVideo"
       >
         <div class="modal-content">
           <button
             class="modal-close is-large"
             aria-label="close"
-            v-on:click="modalVideo = false"
+            v-on:click="handlePlay"
           ></button>
           <iframe
             src="https://www.youtube.com/embed/hF5b-9iAN1k"
@@ -179,7 +179,6 @@ export default {
   components: {},
   methods: {
     handlePlay: function () {
-      console.log("a", this.videoDesktop);
       this.modalVideo = !this.modalVideo;
     },
     handleResize() {

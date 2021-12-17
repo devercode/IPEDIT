@@ -88,7 +88,6 @@ export default {
       this.$emit("changeModalSignUp");
     },
     openModalLogin: function () {
-      console.log("a", this.modalLogin);
       this.$emit("changeModalSignUp");
       this.$emit("openModalLogin");
     },

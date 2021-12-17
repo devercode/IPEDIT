@@ -189,10 +189,12 @@
 .dropdown-products {
   width: 220px;
   height: max-content;
-  .navbar-item {
+  .hover_products {
     &:hover {
-      background: none !important;
+      background-color: #fafafa !important;
     }
+  }
+  .navbar-item {
     p:nth-child(1) {
       font-size: 18px;
       padding-bottom: 8px !important;
@@ -256,6 +258,7 @@
     margin-bottom: 20px !important;
   }
 }
+
 .navbar-item:hover {
   background-color: #fff !important;
 }

@@ -34,10 +34,10 @@
                   v-bind:class="{ showDropEdd: !activeEdd }"
                   style="z-index: 111111"
                 >
-                  <a class="navbar-item">
+                  <a class="navbar-item" style="margin-right: 0">
                     <p style="font-family: Noto Sans JP">English</p>
                   </a>
-                  <a class="navbar-item">
+                  <a class="navbar-item" style="margin-right: 0">
                     <p style="font-family: Noto Sans JP">日本語</p>
                   </a>
                 </div>
@@ -88,14 +88,14 @@
             class="navbar-dropdown dropdown-products"
             v-bind:class="{ showDropRespon: !activeDropdown }"
           >
-            <a class="navbar-item">
+            <a class="navbar-item hover_products">
               <p>IPEDIT draft</p>
               <p>
                 더 쉽고 빠르게, 더 높은 품질로!<br />
                 특허 명세서 작성 전용 에디터
               </p>
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item hover_products">
               <p>IPEDIT draft</p>
               <p>
                 더 쉽고 빠르게, 더 높은 품질로!<br />
@@ -130,10 +130,10 @@
                 한국어
               </a>
               <div class="navbar-dropdown">
-                <a class="navbar-item">
+                <a class="navbar-item" style="margin-right: 0">
                   <p style="font-family: Noto Sans JP">English</p>
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" style="margin-right: 0">
                   <p style="font-family: Noto Sans JP">日本語</p>
                 </a>
               </div>
