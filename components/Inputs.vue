@@ -1,37 +1,43 @@
 <template>
-  <div class="omrs-input-group">
-    <label class="omrs-input-filled">
-      <input
-        class="input"
-        required
-        :name="name"
-        :style="[
-          checkConditional &&
-            !checkConditionalFunction() && { borderColor: '#d2416d' },
-        ]"
-        :type="type"
-        v-model="vModel"
-        v-on:change="handleChange"
-      />
-
-      <span class="omrs-input-label">{{ placeHolder }}</span>
-      <!-- <span class="omrs-input-helper">{{ errorText }}</span> -->
-    </label>
-    <div
-      class="control control-button"
-      :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
-    >
-      <button
-        :style="[
-          vModel !== '' && {
-            background: '#5C6BC0',
-            color: '#fff',
-          },
-        ]"
-        class="button"
+  <div style="width: 100%; position: relative; height: max-content">
+    <div class="omrs-input-group">
+      <label class="omrs-input-filled">
+        <input
+          class="input"
+          required
+          :name="name"
+          :style="[
+            checkConditional &&
+              !checkConditionalFunction() && { borderColor: '#d2416d' },
+          ]"
+          :type="type"
+          v-model="vModel"
+          v-on:change="handleChange"
+        />
+        <span class="omrs-input-label">{{ placeHolder }}</span>
+      </label>
+      <div
+        class="control control-button"
+        :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
       >
-        {{ buttonRequire }}
-      </button>
+        <button
+          :style="[
+            vModel !== '' && {
+              background: '#5C6BC0',
+              color: '#fff',
+            },
+          ]"
+          class="button"
+        >
+          {{ buttonRequire }}
+        </button>
+      </div>
+    </div>
+    <div
+      v-if="checkConditional && !checkConditionalFunction()"
+      style="margin: -6px 0px 10px; font-size: 10px; color: #d2416d"
+    >
+      <span class="omrs-input-helper">{{ errorText && errorText }}</span>
     </div>
   </div>
 </template>

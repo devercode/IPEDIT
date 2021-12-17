@@ -171,7 +171,7 @@
   }
   .field {
     position: relative;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     .control {
       input {
         box-shadow: none;
@@ -360,7 +360,7 @@
         position: absolute;
         right: 10px;
         text-align: right;
-        top: 8px;
+        top: 10px;
         width: max-content;
       }
       button {

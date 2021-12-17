@@ -34,7 +34,7 @@
       <p class="or">또는</p>
 
       <!-- login with Goolge -->
-      <div class="field">
+      <div class="field" style="margin-bottom: 12px">
         <img :src="google" alt="" style="position: absolute; left: 16px" />
         <p class="control">
           <!-- <button class="button google"></button> -->
@@ -43,7 +43,7 @@
       </div>
 
       <!-- login with apple -->
-      <div class="field">
+      <div class="field" style="margin-bottom: 12px">
         <img :src="apple" alt="" style="position: absolute; left: 16px" />
         <p class="control">
           <Button class="apple" text="Apple로 시작하기"> </Button>

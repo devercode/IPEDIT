@@ -21,25 +21,6 @@
         </p>
       </div>
 
-      <!-- tabs -->
-      <!-- <div class="tabs-containe">
-        <ul>
-          <li
-            class=""
-            v-on:click="ShowTabContent(1)"
-            v-bind:class="{ isActive: idTabs === 1 }"
-          >
-            <img :src="translate" alt="../assets/images/draft.svg" />
-          </li>
-          <li
-            class=""
-            v-on:click="ShowTabContent(2)"
-            v-bind:class="{ isActive: idTabs === 2 }"
-          >
-            <img :src="draft" alt="../assets/images/translate.svg" />
-          </li>
-        </ul>
-      </div> -->
       <div class="containerr">
         <div class="tabss">
           <input type="radio" id="radio-1" name="tabs" />
@@ -114,7 +95,7 @@
           <!-- name -->
           <div class="field">
             <Input
-              style="height: 52px"
+              style=""
               grandClass="field"
               fatherClass="control"
               className="input"
@@ -131,8 +112,7 @@
           <!-- email -->
           <div class="field field-doubles">
             <Input
-              style="height: 52px"
-              grandClass="field field-doubles"
+              style=""
               fatherClass="control has-icons-left has-icons-right"
               className="input is-success"
               type="text"
@@ -148,7 +128,7 @@
           <!--verify email -->
           <div class="field field-doubles">
             <Input
-              style="height: 52px"
+              style=""
               fatherClass="control has-icons-left has-icons-right"
               className="input is-success"
               type="text"
@@ -164,7 +144,7 @@
           <!-- password -->
           <div class="field">
             <Input
-              style="height: 52px"
+              style=""
               fatherClass="control"
               className="input"
               type="password"
@@ -180,7 +160,7 @@
           <!-- password confirm-->
           <div class="field">
             <Input
-              style="height: 52px"
+              style=""
               fatherClass="control"
               className="input"
               type="password"
@@ -238,7 +218,7 @@
             <!-- Phone -->
             <div class="field field-doubles">
               <Input
-                style="height: 52px"
+                style=""
                 fatherClass="control"
                 className="input"
                 type="text"
@@ -256,7 +236,7 @@
           <!-- Phone Code-->
           <div class="field field-doubles">
             <Input
-              style="height: 52px"
+              style=""
               fatherClass="control"
               className="input"
               type="text"
@@ -277,7 +257,7 @@
           <!-- apply Code-->
           <div class="field field-doubles">
             <Input
-              style="height: 52px"
+              style=""
               fatherClass="control"
               className="input"
               type="text"
@@ -312,8 +292,7 @@
                     formData.password.split('').length >= 8 &&
                     formData.confirmPassword !== '' &&
                     formData.verifyPhone !== '' &&
-                    formData.coupon !== '' &&
-                    formData.password === formData.confirmPassword && {
+                    formData.coupon !== '' && {
                       background: '#5C6BC0 !important',
                       color: '#fff !important',
                     },

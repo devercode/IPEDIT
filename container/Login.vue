@@ -22,32 +22,31 @@
 
       <p class="signup-title">로그인</p>
       <!-- Input username -->
-      <div class="omrs-input-group">
-        <label class="omrs-input-filled omrs-input-danger">
-          <input
-            class="input"
-            required
-            name="username"
-            type="text"
-            v-on:change="handleValue"
-          />
-          <span class="omrs-input-label">이메일</span>
-          <!-- <span class="omrs-input-helper">Helper Text</span> -->
-        </label>
+      <div class="field">
+        <Input
+          style="height: 52px"
+          className="input"
+          type="text"
+          name="username"
+          placeHolder="이메일"
+          :vModel="data.username"
+          :checkConditional="checkConditional"
+          v-on:handleChange="handleValue"
+        />
       </div>
 
-      <div class="omrs-input-group">
-        <label class="omrs-input-filled omrs-input-danger">
-          <input
-            class="input"
-            required
-            name="password"
-            type="password"
-            v-on:change="handleValue"
-          />
-          <span class="omrs-input-label">비밀번호</span>
-          <!-- <span class="omrs-input-helper">Helper Text</span> -->
-        </label>
+      <!-- Input password -->
+      <div class="field">
+        <Input
+          style="height: 52px"
+          className="input"
+          type="password"
+          name="passwordLogin"
+          placeHolder="비밀번호"
+          :vModel="data.password"
+          :checkConditional="checkConditional"
+          v-on:handleChange="handleValue"
+        />
       </div>
 
       <!-- Remember password -->
@@ -118,6 +117,7 @@ export default {
       logo: Logo,
       google: Google,
       apple: Apple,
+      checkConditional: false,
       data: { userName: "", password: "" },
     };
   },
@@ -136,12 +136,11 @@ export default {
       this.modalSignup = true;
     },
     handleValue: function (e) {
+      this.checkConditional = true;
       this.data = { [e.target.name]: e.target.value };
     },
   },
-  mounted() {
-    console.log("a", this.modalLogin);
-  },
+  mounted() {},
   created() {
     // document.onkeydown = (evt) => {
     //   evt = evt || window.event;
