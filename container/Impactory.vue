@@ -22,10 +22,7 @@
           :style="[modalVideo ? { display: 'none' } : { display: 'flex' }]"
           v-on:click="handlePlay"
         >
-          <img
-            src="../assets/images/playcircle.svg"
-            alt="../assets/images/playcircle.svg"
-          />
+          <img :src="playCircle" />
         </div>
       </div>
 
@@ -118,28 +115,16 @@
         <div class="module" style="padding: 38px 30px">
           <div class="top top-module_3">
             <div class="top-img">
-              <img
-                src="../assets/images/Korea.svg"
-                alt="../assets/images/Korea.svg"
-              />
+              <img :src="korea" />
             </div>
             <div class="top-img">
-              <img
-                src="../assets/images/USA.svg"
-                alt="../assets/images/USA.svg"
-              />
+              <img :src="usa" />
             </div>
             <div class="top-img">
-              <img
-                src="~/assets/images/Sec.svg"
-                alt="../assets/images/Sec.svg"
-              />
+              <img :src="sec" />
             </div>
             <div class="top-img">
-              <img
-                src="../assets/images/Japan.svg"
-                alt="../assets/images/Japan.svg"
-              />
+              <img :src="japan" />
             </div>
           </div>
           <div
@@ -164,6 +149,11 @@ import VideoArea from "../assets/images/VideoArea.svg";
 import Rectangle3 from "../assets/images/Rectangle 3.svg";
 import Rectangle6 from "../assets/images/Rectangle 6.svg";
 import Highlight from "../assets/images/img_highlight_1.svg";
+import Korea from "../assets/images/Korea.svg";
+import USA from "../assets/images/USA.svg";
+import Sec from "../assets/images/Sec.svg";
+import Japan from "../assets/images/Japan.svg";
+import Playcircle from "../assets/images/playcircle.svg";
 export default {
   data() {
     return {
@@ -171,6 +161,11 @@ export default {
       rectangle3: Rectangle3,
       rectangle6: Rectangle6,
       highlight: Highlight,
+      korea: Korea,
+      japan: Japan,
+      playCircle: Playcircle,
+      sec: Sec,
+      usa: USA,
       modalVideo: false,
       videoDesktop: true,
       width: "",

@@ -154,9 +154,11 @@ export default {
       this.data = { [e.target.name]: e.target.value };
     },
     openModalResetPassword: function () {
+      document.querySelector("html").classList.add("is-clipped");
       this.modalResetPass = true;
     },
     closeModalResetPassword: function () {
+      document.querySelector("html").classList.remove("is-clipped");
       this.modalResetPass = false;
     },
   },
