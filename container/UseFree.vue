@@ -41,14 +41,15 @@ export default {
   components: { SignUp },
   methods: {
     changeModalSignUp: function () {
+      document.querySelector("html").classList.remove("is-clipped");
       this.modalSignup = false;
     },
     openModalSignUp: function () {
+      document.querySelector("html").classList.add("is-clipped");
       this.modalSignup = true;
     },
     openModalLogin: function () {
       this.modalLogin = true;
-      console.log("b", this.modalLogin);
     },
     changeModalLogin: function () {
       this.modalLogin = false;

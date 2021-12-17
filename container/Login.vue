@@ -6,7 +6,7 @@
       v-on:changeModalLogin="changeModalLogin"
       v-on:changeModalSignUp="changeModalSignUp"
     />
-    <div class="modal-background"></div>
+    <div class="modal-background is-clipped"></div>
     <div
       class="modal-content"
       v-bind:style="[modalSignup ? { display: 'none' } : { display: 'block' }]"
@@ -142,12 +142,6 @@ export default {
   },
   mounted() {},
   created() {
-    // document.onkeydown = (evt) => {
-    //   evt = evt || window.event;
-    //   if (evt.keyCode == 27) {
-    //     this.$emit("changeModalLogin");
-    //   }
-    // };
     window.addEventListener("keydown", (evt) => {
       evt = evt || window.event;
       if (evt.keyCode == 27) {

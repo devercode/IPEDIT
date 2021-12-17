@@ -5,6 +5,9 @@
 <style lang="scss" scoped>
 @import "../assets/stylesheets/main.sass";
 @import "../assets/stylesheets/global.scss";
+html {
+  overflow-y: hidden !important;
+}
 </style>;
 
 <script>

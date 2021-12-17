@@ -2,9 +2,15 @@
   font-family: "Pretendard";
   src: local("Pretendard"), url("../fonts/Pretendard-Regular.otf") format("truetype");
 }
-
+html {
+  overflow-y: hidden !important;
+}
 #__layout {
   background: #f6f7f9;
+}
+.modal {
+  height: 100vh;
+  overflow-y: hidden;
 }
 .btn {
   font-family: "Pretendard";

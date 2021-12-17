@@ -42,15 +42,10 @@
                   </a>
                 </div>
               </div>
-              <a
-                class="navbar-item item-log"
-                v-on:click="modalLogin = !modalLogin"
-              >
+              <a class="navbar-item item-log" v-on:click="openModalLogin">
                 로그인
               </a>
-              <a class="button btn" v-on:click="modalSignup = !modalSignup">
-                시작하기
-              </a>
+              <a class="button btn" v-on:click="openModalSignUp"> 시작하기 </a>
             </div>
           </div>
         </div>
@@ -108,13 +103,8 @@
         <a class="navbar-item"> Impact </a>
         <a class="navbar-item"> Stats </a>
         <a class="navbar-item"> Why IPEDIT? </a>
-        <a class="navbar-item" v-on:click="isContact = !isContact">
-          Contact us
-        </a>
-        <a
-          class="button btn btn-respon"
-          v-on:click="modalSignup = !modalSignup"
-        >
+        <a class="navbar-item" v-on:click="openContact"> Contact us </a>
+        <a class="button btn btn-respon" v-on:click="openModalSignUp">
           시작하기
         </a>
       </div>
@@ -140,13 +130,11 @@
             </div>
             <a
               class="navbar-item navbar-item-modal"
-              v-on:click="modalLogin = !modalLogin"
+              v-on:click="openModalLogin"
             >
               로그인
             </a>
-            <!-- <a class="button btn"> 시작하기 </a> -->
-            <Button v-on:click="modalSignup = !modalSignup" text="시작하기">
-            </Button>
+            <Button v-on:click="openModalSignUp" text="시작하기"> </Button>
           </div>
         </div>
       </div>
@@ -176,16 +164,31 @@ export default {
   },
   components: { Login, SignUp, ContactUs },
   methods: {
-    changeModalLogin: function () {
-      this.modalLogin = false;
-    },
+    // login
     openModalLogin: function () {
+      document.querySelector("html").classList.add("is-clipped");
       this.modalLogin = true;
     },
+    changeModalLogin: function () {
+      document.querySelector("html").classList.remove("is-clipped");
+      this.modalLogin = false;
+    },
+    // Register
+    openModalSignUp: function () {
+      document.querySelector("html").classList.add("is-clipped");
+      this.modalSignup = true;
+    },
     changeModalSignUp: function () {
+      document.querySelector("html").classList.remove("is-clipped");
       this.modalSignup = false;
     },
+    // Contact
+    openContact: function () {
+      document.querySelector("html").classList.add("is-clipped");
+      this.isContact = true;
+    },
     closeContact: function () {
+      document.querySelector("html").classList.remove("is-clipped");
       this.isContact = false;
     },
   },
