@@ -5,8 +5,8 @@
         class="video"
         v-bind:style="{ backgroundImage: 'url(' + videoArea + ')' }"
       >
-        <!-- <iframe
-          :style="[modalVideo ? { display: 'block' } : { display: 'none' }]"
+        <iframe
+          v-if="width >= 991 && modalVideo"
           class="iframe-desktop"
           width="100%"
           height="100%"
@@ -15,11 +15,12 @@
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe> -->
+        ></iframe>
+
         <div
           class="video-img video-img-desktop"
           :style="[modalVideo ? { display: 'none' } : { display: 'flex' }]"
-          v-on:click="modalVideo = !modalVideo"
+          v-on:click="handlePlay"
         >
           <img
             src="../assets/images/playcircle.svg"
@@ -29,7 +30,12 @@
       </div>
 
       <!-- modal video -->
-      <div class="modal" v-bind:class="{ 'is-active': modalVideo }">
+
+      <div
+        class="modal"
+        v-bind:class="{ 'is-active': modalVideo }"
+        v-if="width < 991"
+      >
         <div class="modal-content">
           <button
             class="modal-close is-large"
@@ -37,9 +43,7 @@
             v-on:click="modalVideo = false"
           ></button>
           <iframe
-            width="420"
-            height="315"
-            src="https://www.youtube.com/embed/hF5b-9iAN1k?autoplay=1"
+            src="https://www.youtube.com/embed/hF5b-9iAN1k"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -176,6 +180,7 @@ export default {
   methods: {
     handlePlay: function () {
       console.log("a", this.videoDesktop);
+      this.modalVideo = !this.modalVideo;
     },
     handleResize() {
       this.width = window.innerWidth;
