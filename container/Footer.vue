@@ -3,10 +3,7 @@
     <div class="footer__container container">
       <div class="content">
         <div class="logo-footer">
-          <img
-            src="../assets/images/iconFooter.svg"
-            alt="../assets/images/iconFooter.svg"
-          />
+          <img :src="logo" />
         </div>
         <ul>
           <li><a> IPEDIT draft</a></li>
@@ -31,9 +28,12 @@
 </style>
 
 <script>
+import Logo from "../assets/images/iconFooter.svg";
 export default {
   data() {
-    return {};
+    return {
+      logo: Logo,
+    };
   },
   components: {},
 };
