@@ -50,14 +50,16 @@ export default {
       instance.update(that.endVal + 100);
     },
     scrollFunction: function () {
-      if (
-        window.scrollY >= 2000
-        // ||
-        // document.documentElement.scrollTop > 2000
-      ) {
-        document.getElementById("count").className = "count";
-        document.getElementById("count2").className = "count2";
-        document.getElementById("count3").className = "count3";
+      if (typeof window !== "undefined") {
+        if (
+          window.scrollY >= 2000
+          // ||
+          // document.documentElement.scrollTop > 2000
+        ) {
+          document.getElementById("count").className = "count";
+          document.getElementById("count2").className = "count2";
+          document.getElementById("count3").className = "count3";
+        }
       }
     },
   },
@@ -65,7 +67,9 @@ export default {
   components: { ICountUp },
 
   created() {
-    window.addEventListener("scroll", this.scrollFunction);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", this.scrollFunction);
+    }
   },
 };
 </script>

@@ -214,16 +214,18 @@ export default {
     },
     scrollToHeader: function (type) {
       let offset = document.getElementById(type)?.offsetTop;
-      switch (type) {
-        case "Impact":
-          window.scrollTo(0, offset);
-          break;
-        case "Stats":
-          window.scrollTo(0, offset);
-          break;
-        case "IPEDIT":
-          window.scrollTo(0, offset);
-          break;
+      if (typeof window !== "undefined") {
+        switch (type) {
+          case "Impact":
+            window.scrollTo(0, offset);
+            break;
+          case "Stats":
+            window.scrollTo(0, offset);
+            break;
+          case "IPEDIT":
+            window.scrollTo(0, offset);
+            break;
+        }
       }
     },
   },

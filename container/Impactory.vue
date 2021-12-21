@@ -177,28 +177,34 @@ export default {
       this.modalVideo = !this.modalVideo;
     },
     handleResize() {
-      this.width = window.innerWidth;
+      if (typeof window !== "undefined") {
+        this.width = window.innerWidth;
+      }
     },
 
     scrollFunction: function () {
-      if (window.scrollY >= 1646) {
-        document
-          .getElementById("minutes__top")
-          .classList.add("minutes__top__animation");
+      if (typeof window !== "undefined") {
+        if (window.scrollY >= 1646) {
+          document
+            .getElementById("minutes__top")
+            .classList.add("minutes__top__animation");
+        }
       }
     },
   },
 
   created() {
-    window.addEventListener("scroll", this.scrollFunction);
-    window.addEventListener("resize", this.handleResize);
-    this.handleResize();
-    window.addEventListener("keydown", (evt) => {
-      evt = evt || window.event;
-      if (evt.keyCode == 27) {
-        this.modalVideo = false;
-      }
-    });
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", this.scrollFunction);
+      window.addEventListener("resize", this.handleResize);
+      this.handleResize();
+      window.addEventListener("keydown", (evt) => {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+          this.modalVideo = false;
+        }
+      });
+    }
   },
 };
 </script>
