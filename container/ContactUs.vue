@@ -58,7 +58,7 @@
               v-bind:style="[
                 countryText === '' ? { display: 'none' } : { display: 'block' },
               ]"
-              src="../assets/images/Korea.svg"
+              :src="countryText.img"
             />
             {{ countryText.dial_code }}
           </a>
@@ -73,7 +73,7 @@
               :key="item"
               v-on:click="selectCountry(item)"
             >
-              <img src="../assets/images/Korea.svg" />
+              <img :src="item.img" />
               <span class="nameCountry">{{ item.name }}</span>
               <span class="dial_code">{{ item.dial_code }}</span>
             </a>

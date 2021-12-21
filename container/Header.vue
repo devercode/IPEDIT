@@ -26,17 +26,25 @@
             <div class="buttons">
               <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link" v-on:click="activeEdd = !activeEdd">
-                  한국어
+                  {{ language }}
                 </a>
                 <div
                   class="navbar-dropdown"
                   v-bind:class="{ showDropEdd: !activeEdd }"
                   style="z-index: 111111"
                 >
-                  <a class="navbar-item" style="margin-right: 0">
+                  <a
+                    class="navbar-item"
+                    style="margin-right: 0"
+                    v-on:click="this.language = 'English'"
+                  >
                     <p>English</p>
                   </a>
-                  <a class="navbar-item" style="margin-right: 0">
+                  <a
+                    class="navbar-item"
+                    style="margin-right: 0"
+                    v-on:click="this.language = '日本語'"
+                  >
                     <p>日本語</p>
                   </a>
                 </div>
@@ -164,24 +172,6 @@ import Login from "./Login.vue";
 import SignUp from "./SignUp.vue";
 import ContactUs from "./ContactUs.vue";
 export default {
-  // setup() {
-  //   const i18n = useI18n();
-  //   i18n.createI18n({
-  //     locale: "en",
-  //     messages: {
-  //       en: {
-  //         home: "Home",
-  //       },
-  //     },
-  //   });
-
-  //   const { current, changeLocale } = i18n;
-
-  //   return {
-  //     current,
-  //     changeLocale,
-  //   };
-  // },
   data() {
     return {
       activeMenu: false,

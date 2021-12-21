@@ -448,7 +448,7 @@
                   :key="item"
                   v-on:click="selectCountry(item)"
                 >
-                  <img :src="item.img" />
+                  <!-- <img :src="item.img" /> -->
                   <span class="nameCountry">{{ item.name }}</span>
                   <span class="dial_code">{{ item.dial_code }}</span>
                 </a>
