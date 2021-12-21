@@ -1,5 +1,5 @@
 <template>
-  <div class="competitor" v-on:scroll="scrollFunction">
+  <div class="competitor" id="Stats" v-on:scroll="scrollFunction">
     <div class="competitor__container container">
       <h3>
         아직도 사용 전이신가요?<br />

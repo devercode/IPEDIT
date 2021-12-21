@@ -7,11 +7,11 @@
 .navbar {
   height: 80px;
   padding: 16px 40px;
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: 1024px) {
     padding: 0;
   }
   @media only screen and (max-width: 768px) {
-    height: 52px;
+    height: 52px !important;
   }
   @media only screen and (max-width: 375px) {
     padding: 0 !important;
@@ -27,9 +27,11 @@
     align-items: center;
     min-height: 0;
     @media only screen and (max-width: 1023px) {
-      padding: 20px 40px;
+      height: 80px !important;
+      padding: 20px;
     }
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 768px) {
+      height: auto !important;
       min-height: auto;
     }
     .navbar-item {
@@ -51,6 +53,14 @@
   .navbar-item {
     margin-right: 22px;
     padding-right: 0;
+    .buttons {
+      .navbar-item {
+        padding-top: 3px;
+        @media only screen and (max-width: 1023px) {
+          padding-top: 0px;
+        }
+      }
+    }
   }
   .navbar-link {
     padding-right: 33px;
@@ -86,12 +96,18 @@
   }
   @media only screen and (max-width: 768px) {
     margin-bottom: 0;
-    padding-bottom: 10px;
+    padding: 20px 0;
   }
 }
 .navbar-start {
+  .navbar-item {
+    padding-top: 3px;
+    @media only screen and (max-width: 1023px) {
+      padding-top: 0;
+    }
+  }
   @media only screen and (max-width: 1023px) {
-    padding: 0 40px;
+    padding: 0 20px;
     .navbar-link {
       padding-bottom: 0;
     }

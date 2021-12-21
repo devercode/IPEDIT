@@ -4,29 +4,33 @@
     margin: 240px auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    @media only screen and (max-width: 1200px) {
-      justify-content: space-around;
-    }
+    // justify-content: space-between;
+    gap: 30px;
     @media only screen and (max-width: 992px) {
+      max-width: 871px !important;
       margin: 160px auto;
     }
     @media only screen and (max-width: 768px) {
       margin: 120px auto;
+      flex-direction: column;
     }
     .exmodule {
       cursor: pointer;
       width: 350px;
       height: 320px;
-      margin-bottom: 20px;
+      // margin-bottom: 20px;
       background-repeat: no-repeat;
       border-radius: 10px;
-      @media only screen and (max-width: 375px) {
-        width: 100%;
-        background-size: cover;
+      @media only screen and (max-width: 1280px) {
+        width: 270px;
       }
-      @media only screen and (max-width: 375px) {
-        height: 218px;
+      @media only screen and (max-width: 991px) {
+        width: 339px;
+      }
+      @media only screen and (max-width: 768px) {
+        background-size: cover;
+        width: 315px;
+        height: 220px;
       }
       .front {
         height: 100%;
@@ -39,7 +43,8 @@
         justify-content: center;
         .img-icon {
           @media only screen and (max-width: 768px) {
-            width: 80px;
+            width: 61px;
+            height: 62px;
           }
           img {
           }
@@ -64,7 +69,6 @@
           }
           @media only screen and (max-width: 375px) {
             font-size: 24px;
-            padding-top: 0;
           }
         }
       }
@@ -148,7 +152,7 @@ $orange: hsl(50, 80%, 50%);
 .front,
 .back {
   display: flex;
-  border-radius: 6px;
+  border-radius: 10px;
   background-position: center;
   background-size: cover;
   text-align: center;
@@ -195,6 +199,9 @@ $orange: hsl(50, 80%, 50%);
     color: #7c7f91;
     padding-bottom: 20px;
     line-height: 140%;
+    @media only screen and (max-width: 768px) {
+      font-size: 14px;
+    }
   }
   p:nth-child(3) {
     padding-bottom: 0;

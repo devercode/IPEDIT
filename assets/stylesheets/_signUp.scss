@@ -1,7 +1,5 @@
 @import "./global.scss";
-::-webkit-scrollbar {
-  width: 5px;
-}
+
 .sign-up {
   .navbar-item.has-dropdown.is-active .navbar-link,
   .navbar-item.has-dropdown:focus .navbar-link,
@@ -53,7 +51,7 @@
   background: #fff !important;
   z-index: 999999;
   position: absolute;
-  width: max-content;
+  width: 100%;
   .navbar-item {
     display: flex;
     flex-direction: column;

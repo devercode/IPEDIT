@@ -1,5 +1,5 @@
 <template>
-  <div class="modal" v-bind:class="{ 'is-active': modalLogin }">
+  <div class="modal moda-login" v-bind:class="{ 'is-active': modalLogin }">
     <SignUp
       v-if="!modalSigin && modalSignup"
       v-bind:modalSignup="modalSignup"
@@ -11,7 +11,10 @@
       v-on:changeModalLogin="changeModalLogin"
       v-on:closeModalResetPassword="closeModalResetPassword"
     />
-    <div class="modal-background is-clipped"></div>
+    <div
+      class="modal-background"
+      :style="[modalSignup && { backgroundColor: '#0a0a0a1a' }]"
+    ></div>
     <div
       class="modal-content"
       v-bind:style="[

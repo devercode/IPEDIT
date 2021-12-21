@@ -1,16 +1,14 @@
 <template>
   <!-- v-bind:class="{ 'is-active': modalSignup }" -->
   <div class="modal sign-up is-active">
-    <div class="modal-background"></div>
+    <div
+      class="modal-background"
+      :style="[modalLogin && { backgroundColor: '#0a0a0a1a' }]"
+    ></div>
     <SignUpEmail
       v-if="signupEmail"
       v-on:changeModalSignUp="changeModalSignUp"
     />
-    <!-- <Login
-      v-bind:modalLogin="modalLogin"
-      v-on:changeModalLogin="changeModalLogin"
-      v-on:openModalLogin="openModalLogin"
-    /> -->
     <div class="modal-content" v-if="!signupEmail">
       <button
         class="modal-close is-large"

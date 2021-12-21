@@ -1,7 +1,5 @@
 @import "./global.scss";
-::-webkit-scrollbar {
-  width: 10px;
-}
+
 .navbar-dropdown {
   border: none;
   padding-top: 16px;
@@ -65,7 +63,7 @@
   width: 150px;
   border-radius: 6px;
   padding: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   @media only screen and (max-width: 375px) {
     margin-bottom: 20px;
   }
@@ -150,14 +148,14 @@
         color: #212037;
         padding-bottom: 10px;
         @media only screen and (max-width: 768px) {
-          padding-bottom: 16px;
+          padding-bottom: 10px;
         }
       }
       p {
         font-size: 14px;
         color: #7c7f91;
         @media only screen and (max-width: 768px) {
-          padding-bottom: 12px;
+          // padding-bottom: 12px;
         }
       }
     }

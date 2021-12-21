@@ -34,10 +34,10 @@
                   style="z-index: 111111"
                 >
                   <a class="navbar-item" style="margin-right: 0">
-                    <p style="font-family: Noto Sans JP">English</p>
+                    <p>English</p>
                   </a>
                   <a class="navbar-item" style="margin-right: 0">
-                    <p style="font-family: Noto Sans JP">日本語</p>
+                    <p>日本語</p>
                   </a>
                 </div>
               </div>
@@ -99,9 +99,14 @@
           </div>
         </div>
 
-        <a class="navbar-item"> Impact </a>
-        <a class="navbar-item"> Stats </a>
-        <a class="navbar-item"> Why IPEDIT? </a>
+        <a class="navbar-item" v-on:click="scrollToHeader('Impact')">
+          Impact
+          <!-- {{ t("title", {}, { locale: lang }) }} -->
+        </a>
+        <a class="navbar-item" v-on:click="scrollToHeader('Stats')"> Stats </a>
+        <a class="navbar-item" v-on:click="scrollToHeader('IPEDIT')">
+          Why IPEDIT?
+        </a>
         <a class="navbar-item" v-on:click="openContact"> Contact us </a>
         <a class="button btn btn-respon" v-on:click="openModalSignUp">
           시작하기
@@ -116,14 +121,22 @@
                 class="navbar-link dropdown-option"
                 style="width: max-content; background: none"
               >
-                한국어
+                {{ language }}
               </a>
               <div class="navbar-dropdown">
-                <a class="navbar-item" style="margin-right: 0">
-                  <p style="font-family: Noto Sans JP">English</p>
+                <a
+                  class="navbar-item"
+                  style="margin-right: 0"
+                  v-on:click="this.language = 'English'"
+                >
+                  <p>English</p>
                 </a>
-                <a class="navbar-item" style="margin-right: 0">
-                  <p style="font-family: Noto Sans JP">日本語</p>
+                <a
+                  class="navbar-item"
+                  style="margin-right: 0"
+                  v-on:click="this.language = '日本語'"
+                >
+                  <p>日本語</p>
                 </a>
               </div>
             </div>
@@ -150,7 +163,26 @@
 import Login from "./Login.vue";
 import SignUp from "./SignUp.vue";
 import ContactUs from "./ContactUs.vue";
+import { useI18n } from "vue-i18n-lite";
 export default {
+  // setup() {
+  //   const i18n = useI18n();
+  //   i18n.createI18n({
+  //     locale: "en",
+  //     messages: {
+  //       en: {
+  //         home: "Home",
+  //       },
+  //     },
+  //   });
+
+  //   const { current, changeLocale } = i18n;
+
+  //   return {
+  //     current,
+  //     changeLocale,
+  //   };
+  // },
   data() {
     return {
       activeMenu: false,
@@ -159,6 +191,7 @@ export default {
       modalLogin: false,
       modalSignup: false,
       isContact: false,
+      language: "한국어",
     };
   },
   components: { Login, SignUp, ContactUs },
@@ -189,6 +222,20 @@ export default {
     closeContact: function () {
       document.querySelector("html").classList.remove("is-clipped");
       this.isContact = false;
+    },
+    scrollToHeader: function (type) {
+      let offset = document.getElementById(type)?.offsetTop;
+      switch (type) {
+        case "Impact":
+          window.scrollTo(0, offset);
+          break;
+        case "Stats":
+          window.scrollTo(0, offset);
+          break;
+        case "IPEDIT":
+          window.scrollTo(0, offset);
+          break;
+      }
     },
   },
 };

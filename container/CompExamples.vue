@@ -1,5 +1,5 @@
 <template>
-  <div class="examples">
+  <div class="examples" id="IPEDIT">
     <div class="contentt examples__container container">
       <div v-for="(item, index) in data" :key="index" class="cardd exmodule">
         <div

@@ -2,15 +2,33 @@
   font-family: "Pretendard";
   src: local("Pretendard"), url("../fonts/Pretendard-Regular.otf") format("truetype");
 }
-html {
-  overflow-y: hidden !important;
+::-webkit-scrollbar {
+  width: 6px;
 }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f175;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+
 #__layout {
   background: #f6f7f9;
 }
 .modal {
   height: 100vh;
   overflow-y: hidden;
+}
+.modal-close {
+  &:hover {
+    background-color: #0a0a0a08 !important;
+  }
 }
 .btn {
   font-family: "Pretendard";
@@ -41,7 +59,7 @@ html {
   &:active {
     background: #4a58b2 !important;
     border-color: #4a58b2;
-    opacity: 1 !important;
+    opacity: 0.6 !important;
     border-radius: 6px !important;
     color: #fff !important;
   }
@@ -82,22 +100,22 @@ a:hover {
 }
 @media (max-width: 1280px) {
   .container {
-    max-width: 872px !important;
+    max-width: 900px !important;
   }
 }
 @media (max-width: 992px) {
   .container {
-    max-width: 710px !important;
+    max-width: 738px !important;
   }
 }
 @media (max-width: 768px) {
   .container {
-    max-width: 90% !important;
+    max-width: 85% !important;
   }
 }
 @media (max-width: 582px) {
   .container {
-    max-width: 90% !important;
+    max-width: 85% !important;
   }
 }
 $speed: 1s;
@@ -292,5 +310,5 @@ div.omrs-input-group {
   color: #000;
   padding-top: 25px;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }

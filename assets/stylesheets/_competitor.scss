@@ -6,20 +6,15 @@
     padding: 120px 0;
   }
   @media only screen and (max-width: 768px) {
-    padding: 100px 0;
+    padding: 120px 0;
   }
-  @media only screen and (max-width: 375px) {
-    padding: 10px 0;
-  }
+
   .competitor__container {
     @media only screen and (max-width: 1023px) {
-      padding: 0 40px;
+      // padding: 0 40px;
     }
-    @media only screen and (max-width: 582px) {
-      margin: 50px auto;
-    }
-    @media only screen and (max-width: 375px) {
-      margin: 30px auto;
+    @media only screen and (max-width: 768px) {
+      padding: 0;
     }
     h3 {
       font-weight: 600;
@@ -34,8 +29,11 @@
     .markets {
       margin-top: 120px;
       line-height: 1.2;
+      @media only screen and (max-width: 992px) {
+        margin-top: 80px;
+      }
       @media only screen and (max-width: 768px) {
-        margin-top: 50px;
+        margin-top: 60px;
       }
       p {
         font-weight: bold;

@@ -1,6 +1,6 @@
 @import "./global.scss";
-::-webkit-scrollbar {
-  width: 0px;
+.moda-login {
+  animation: none !important;
 }
 .modal-close {
   top: 10px;
@@ -13,19 +13,24 @@
 .modal-close::before {
   background-color: grey;
 }
+.modal-background {
+  background-color: #0a0a0a62 !important;
+}
 .modal-content {
   transition: 1s;
   background-color: #fff;
   width: 540px;
   height: 582px;
-  padding: 30px;
+  padding: 40px;
   text-align: center;
 
   @media only screen and (max-width: 582px) {
     width: 320px;
     padding: 40px 20px;
   }
-  .logo {
+
+  .forget-pass {
+    height: 20px;
   }
   .signup-title {
     padding: 16px 0;
@@ -55,6 +60,7 @@
         height: 52px;
       }
     }
+
     .google {
       background-color: #fff !important;
       color: #212037 !important;

@@ -1,5 +1,5 @@
 <template>
-  <div class="impactory">
+  <div class="impactory" id="Impact" v-on:scroll="scrollFunction">
     <div class="impactory__container container">
       <div
         class="video"
@@ -67,7 +67,7 @@
                 <h2>빠르게!</h2>
               </div>
               <div class="minutes">
-                <div class="minutes__top">
+                <div class="minutes__top" id="minutes__top">
                   <p>1페이지 기준</p>
                   <h2>2분</h2>
                 </div>
@@ -179,11 +179,18 @@ export default {
     handleResize() {
       this.width = window.innerWidth;
     },
+
+    scrollFunction: function () {
+      if (window.scrollY >= 1646) {
+        document
+          .getElementById("minutes__top")
+          .classList.add("minutes__top__animation");
+      }
+    },
   },
-  // destroyed() {
-  //   window.removeEventListener("resize", this.handleResize);
-  // },
+
   created() {
+    window.addEventListener("scroll", this.scrollFunction);
     window.addEventListener("resize", this.handleResize);
     this.handleResize();
     window.addEventListener("keydown", (evt) => {
