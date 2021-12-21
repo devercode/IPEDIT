@@ -46,12 +46,12 @@
   padding-top: 6px;
   padding-left: 6px;
   padding-right: 6px;
-  overflow: auto;
+  overflow-y: scroll;
   height: 200px;
   background: #fff !important;
   z-index: 999999;
   position: absolute;
-  width: 100%;
+  width: max-content;
   .navbar-item {
     display: flex;
     flex-direction: column;

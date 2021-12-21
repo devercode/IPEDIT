@@ -49,7 +49,6 @@ export default {
       const that = this;
       instance.update(that.endVal + 100);
     },
-
     scrollFunction: function () {
       if (
         window.scrollY >= 2000
