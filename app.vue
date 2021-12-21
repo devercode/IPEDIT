@@ -13,7 +13,6 @@ html {
 <script>
 // import "./main";
 import Main from "./pages";
-import { useI18n } from "vue-i18n";
 
 export default {
   data() {

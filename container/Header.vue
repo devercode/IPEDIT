@@ -163,7 +163,6 @@
 import Login from "./Login.vue";
 import SignUp from "./SignUp.vue";
 import ContactUs from "./ContactUs.vue";
-import { useI18n } from "vue-i18n-lite";
 export default {
   // setup() {
   //   const i18n = useI18n();
