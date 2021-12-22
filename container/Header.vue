@@ -90,14 +90,14 @@
             class="navbar-dropdown dropdown-products"
             v-bind:class="{ showDropRespon: !activeDropdown }"
           >
-            <a class="navbar-item hover_products">
+            <a class="navbar-item hover_products" @click="activeMenu = false">
               <p>IPEDIT draft</p>
               <p>
                 더 쉽고 빠르게, 더 높은 품질로!<br />
                 특허 명세서 작성 전용 에디터
               </p>
             </a>
-            <a class="navbar-item hover_products">
+            <a class="navbar-item hover_products" @click="activeMenu = false">
               <p>IPEDIT draft</p>
               <p>
                 더 쉽고 빠르게, 더 높은 품질로!<br />
@@ -116,6 +116,16 @@
           Why IPEDIT?
         </a>
         <a class="navbar-item" v-on:click="openContact"> Contact us </a>
+        <a
+          class="
+            navbar-item navbar-item-modal
+            item-login-header
+            respon-text-signup
+          "
+          v-on:click="openModalLogin"
+        >
+          로그인
+        </a>
         <a class="button btn btn-respon" v-on:click="openModalSignUp">
           시작하기
         </a>
@@ -131,6 +141,8 @@
               <a
                 class="navbar-link dropdown-option"
                 style="width: max-content; background: none; height: 50px"
+                @mouseover="upHere = true"
+                @mouseleave="upHere = false"
               >
                 {{ language }}
               </a>
@@ -138,7 +150,7 @@
                 <a
                   class="navbar-item"
                   style="margin-right: 0"
-                  v-on:click="this.language = 'English'"
+                  v-on:click="handleLanguage('English')"
                 >
                   <p>English</p>
                 </a>
@@ -183,6 +195,7 @@ export default {
       modalLogin: false,
       modalSignup: false,
       isContact: false,
+      upHere: false,
       language: "한국어",
     };
   },
@@ -215,7 +228,13 @@ export default {
       document.querySelector("html").classList.remove("is-clipped");
       this.isContact = false;
     },
+    handleLanguage: function (lang) {
+      this.language = lang;
+      this.upHere = true;
+      console.log(this.upHere);
+    },
     scrollToHeader: function (type) {
+      this.activeMenu = false;
       let offset = document.getElementById(type)?.offsetTop;
       if (typeof window !== "undefined") {
         switch (type) {
@@ -226,7 +245,7 @@ export default {
             window.scrollTo(0, offset);
             break;
           case "IPEDIT":
-            window.scrollTo(0, offset);
+            window.scrollTo(0, offset - 200);
             break;
         }
       }

@@ -15,11 +15,20 @@
     background-color: #e0e0e0 !important;
   }
 }
+.respon-text-signup {
+  display: none;
+  @media only screen and (max-width: 767px) {
+    display: block;
+  }
+}
 .item-login-header {
   margin-right: 10px;
   // margin-right: 0 !important;
   padding-right: 24px !important;
   padding-left: 24px !important;
+  @media only screen and (max-width: 767px) {
+    padding-left: 0 !important;
+  }
   &:hover {
     background-color: #f5f5f5 !important;
   }
@@ -31,6 +40,7 @@
   padding: 16px 40px;
   position: fixed;
   width: 100%;
+  z-index: 999999999999;
   @media only screen and (max-width: 1024px) {
     padding: 0;
   }
@@ -296,6 +306,7 @@
 .btn-respon {
   display: none !important;
   @media only screen and (max-width: 767px) {
+    font-weight: bold;
     display: flex !important;
     width: 100% !important;
     height: 36px !important;

@@ -66,7 +66,7 @@
                 <h1>60%</h1>
                 <h2>빠르게!</h2>
               </div>
-              <div class="minutes">
+              <div class="minutes" v-on:click="animationModule">
                 <div class="minutes__top" id="minutes__top">
                   <p>1페이지 기준</p>
                   <h2>2분</h2>
@@ -168,6 +168,7 @@ export default {
       usa: USA,
       modalVideo: false,
       videoDesktop: true,
+      animate: false,
       width: "",
     };
   },
@@ -182,14 +183,20 @@ export default {
       }
     },
 
-    scrollFunction: function () {
-      if (typeof window !== "undefined") {
-        if (window.scrollY >= 1646) {
-          document
-            .getElementById("minutes__top")
-            .classList.add("minutes__top__animation");
-        }
-      }
+    // scrollFunction: function () {
+    //   if (typeof window !== "undefined") {
+    //     if (window.scrollY >= 1646) {
+    //       document
+    //         .getElementById("minutes__top")
+    //         .classList.add("minutes__top__animation");
+    //     }
+    //   }
+    // },
+    animationModule: function () {
+      this.animate = true;
+      document
+        .getElementById("minutes__top")
+        .classList.add("minutes__top__animation");
     },
   },
 

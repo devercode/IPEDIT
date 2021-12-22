@@ -6,10 +6,10 @@
     flex-wrap: wrap;
     // justify-content: space-between;
     gap: 30px;
+    // @media only screen and (max-width: 1279px) {
+    //   margin: 240px 60px !important;
+    // }
     @media only screen and (max-width: 1279px) {
-      margin: 240px 60px !important;
-    }
-    @media only screen and (max-width: 991px) {
       margin: 120px 30px !important;
     }
     @media only screen and (max-width: 767px) {
@@ -24,7 +24,9 @@
       background-repeat: no-repeat;
       border-radius: 10px;
       @media only screen and (max-width: 1279px) {
-        width: 47%;
+        width: 339px;
+
+        // width: 47%;
       }
       @media only screen and (max-width: 991px) {
         // width: 339px;
