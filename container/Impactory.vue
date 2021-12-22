@@ -184,6 +184,11 @@ export default {
   methods: {
     handlePlay: function () {
       this.modalVideo = !this.modalVideo;
+      if (this.modalVideo) {
+        document.querySelector("html").classList.add("is-clipped");
+      } else {
+        document.querySelector("html").classList.remove("is-clipped");
+      }
     },
     handleResize() {
       if (typeof window !== "undefined") {
