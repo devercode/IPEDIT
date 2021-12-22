@@ -6,11 +6,13 @@
     flex-wrap: wrap;
     // justify-content: space-between;
     gap: 30px;
-    @media only screen and (max-width: 992px) {
-      max-width: 871px !important;
-      margin: 160px auto;
+    @media only screen and (max-width: 1279px) {
+      margin: 240px 60px !important;
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 991px) {
+      margin: 120px 30px !important;
+    }
+    @media only screen and (max-width: 767px) {
       margin: 120px auto;
       flex-direction: column;
     }
@@ -21,15 +23,15 @@
       // margin-bottom: 20px;
       background-repeat: no-repeat;
       border-radius: 10px;
-      @media only screen and (max-width: 1280px) {
-        width: 270px;
+      @media only screen and (max-width: 1279px) {
+        width: 47%;
       }
       @media only screen and (max-width: 991px) {
-        width: 339px;
+        // width: 339px;
       }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         background-size: cover;
-        width: 315px;
+        width: 100%;
         height: 220px;
       }
       .front {
@@ -42,7 +44,7 @@
         align-items: center;
         justify-content: center;
         .img-icon {
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 767px) {
             width: 61px;
             height: 62px;
           }
@@ -63,7 +65,7 @@
           p {
             font-weight: 700;
           }
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 767px) {
             padding-top: 20px;
             font-size: 24px;
           }
@@ -199,7 +201,7 @@ $orange: hsl(50, 80%, 50%);
     color: #7c7f91;
     padding-bottom: 20px;
     line-height: 140%;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       font-size: 14px;
     }
   }
@@ -224,7 +226,11 @@ $orange: hsl(50, 80%, 50%);
     transform: rotateY(180deg);
 
     .button {
-      background: linear-gradient(135deg, adjust-hue($secondary, -20deg), $secondary);
+      background: linear-gradient(
+        135deg,
+        adjust-hue($secondary, -20deg),
+        $secondary
+      );
 
       &:before {
         box-shadow: 0 0 10px 10px rgba($secondary, 0.25);

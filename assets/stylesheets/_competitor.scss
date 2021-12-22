@@ -2,10 +2,10 @@
 .competitor {
   background: #fff;
   padding: 240px 0;
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 991px) {
     padding: 120px 0;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     padding: 120px 0;
   }
 
@@ -13,7 +13,7 @@
     @media only screen and (max-width: 1023px) {
       // padding: 0 40px;
     }
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       padding: 0;
     }
     h3 {
@@ -22,24 +22,24 @@
       line-height: 140%;
       letter-spacing: -0.5px;
       color: #212037;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         font-size: 24px;
       }
     }
     .markets {
       margin-top: 120px;
       line-height: 1.2;
-      @media only screen and (max-width: 992px) {
+      @media only screen and (max-width: 991px) {
         margin-top: 80px;
       }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         margin-top: 60px;
       }
       p {
         font-weight: bold;
         font-size: 24px;
         color: #7c7f91;
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
           font-size: 18px;
         }
       }
@@ -47,7 +47,7 @@
         font-weight: bold;
         font-size: 96px;
         color: #212037;
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
           font-size: 48px;
         }
         // @media only screen and (max-width: 582px) {
@@ -59,7 +59,7 @@
         span {
           font-size: 30px;
           font-weight: bold;
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: 767px) {
             font-size: 18px;
           }
         }

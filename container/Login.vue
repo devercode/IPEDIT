@@ -1,5 +1,9 @@
 <template>
-  <div class="modal moda-login" v-bind:class="{ 'is-active': modalLogin }">
+  <div
+    class="modal moda-login"
+    v-bind:class="{ 'is-active': modalLogin }"
+    style="animation: fadein 0.5s"
+  >
     <SignUp
       v-if="!modalSigin && modalSignup"
       v-bind:modalSignup="modalSignup"

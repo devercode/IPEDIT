@@ -1,6 +1,6 @@
 @import "./global.scss";
-.moda-login {
-  animation: none !important;
+.modal {
+  animation: fadein 0.5s !important;
 }
 .modal-close {
   top: 10px;
@@ -23,7 +23,7 @@
   height: 582px;
   padding: 40px;
   text-align: center;
-
+  animation: fadein 0.5s !important;
   @media only screen and (max-width: 582px) {
     width: 320px;
     padding: 40px 20px;
@@ -174,11 +174,21 @@
 .checkmark {
   position: absolute;
   top: 2px;
+  opacity: 0.8;
   left: 0;
   height: 13.5px;
   width: 13.5px;
   border: 1px solid #7c7f91;
   border-radius: 3px;
+  &:hover {
+    opacity: 1;
+  }
+  &:active {
+    box-shadow: 0px 0px 1px 2px #ced3ec;
+  }
+  &:focus {
+    box-shadow: 0px 0px 1px 2px #ced3ec;
+  }
 }
 
 /* On mouse-over, add a grey background color */
@@ -211,6 +221,6 @@
   width: 5px;
   height: 8px;
   border: 1px solid white;
-  border-width: 0 2px 2px 0;
+  border-width: 0 2.3px 2.3px 0;
   transform: rotate(45deg);
 }

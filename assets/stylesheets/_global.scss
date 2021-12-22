@@ -17,7 +17,9 @@
   background: #e0e0e0;
   border-radius: 10px;
 }
-
+.modal-background {
+  background-color: #0a0a0a62 !important;
+}
 #__layout {
   background: #f6f7f9;
 }
@@ -97,25 +99,34 @@ a:hover {
 }
 .container {
   max-width: 1110px !important;
+  // max-width: auto !important;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
   .container {
-    max-width: 900px !important;
+    // max-width: 900px !important;
+    max-width: 100% !important;
+    margin: auto 60px !important;
   }
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .container {
-    max-width: 738px !important;
+    // max-width: 738px !important;
+    max-width: 100% !important;
+    margin: auto 30px !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .container {
-    max-width: 85% !important;
+    // max-width: 85% !important;
+    max-width: 100% !important;
+    margin: auto 30px !important;
   }
 }
 @media (max-width: 582px) {
   .container {
-    max-width: 85% !important;
+    // max-width: 85% !important;
+    max-width: 100% !important;
+    margin: auto 30px !important;
   }
 }
 $speed: 1s;
@@ -251,7 +262,9 @@ div.omrs-input-group {
   color: #7c7f90;
 }
 
-.omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+.omrs-input-underlined:not(.omrs-input-danger)
+  > input:focus
+  + .omrs-input-label,
 .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
   color: #1e4bd1;
 }

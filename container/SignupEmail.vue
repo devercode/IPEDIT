@@ -64,7 +64,7 @@
             </a>
             <div
               class="navbar-dropdown"
-              style="height: max-content; bacground: #fff"
+              style="height: max-content; background: #fff; width:100%"
               :style="[!activeDropdown && { display: 'none' }]"
             >
               <a

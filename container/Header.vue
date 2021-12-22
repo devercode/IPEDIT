@@ -122,16 +122,19 @@
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item" style="padding-right: 0; margin-right: 0">
+        <div
+          class="navbar-item"
+          style="padding-right: 0; margin-right: 0; padding-top: 8px !important"
+        >
           <div class="buttons">
             <div class="navbar-item has-dropdown is-hoverable">
               <a
                 class="navbar-link dropdown-option"
-                style="width: max-content; background: none"
+                style="width: max-content; background: none; height: 50px"
               >
                 {{ language }}
               </a>
-              <div class="navbar-dropdown">
+              <div class="navbar-dropdown" style="margin-top: -4px">
                 <a
                   class="navbar-item"
                   style="margin-right: 0"

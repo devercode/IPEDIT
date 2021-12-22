@@ -2,7 +2,7 @@
 .hompage-baner {
   width: 100%;
   display: flex;
-
+  padding-top: 80px;
   &:hover .radio-btns__btn:not(:hover) {
     filter: grayscale(100%);
 
@@ -13,6 +13,9 @@
   @media only screen and (max-width: 990px) {
     flex-direction: column;
   }
+  @media only screen and (max-width: 767px) {
+    padding-top: 52px;
+  }
   .radio-btns__btn {
     background-attachment: fixed;
     background-position: center;
@@ -22,11 +25,11 @@
     display: flex;
     align-items: center;
     @media only screen and (max-width: 990px) {
-      height: 421px;
+      height: 400px;
       opacity: 0.9;
     }
-    @media only screen and (max-width: 768px) {
-      height: 345px;
+    @media only screen and (max-width: 767px) {
+      height: 690px;
     }
   }
   .containe {
@@ -50,7 +53,7 @@
         width: 306px;
         margin: 0 auto;
       }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         width: 230px;
       }
       @media only screen and (max-width: 375px) {
@@ -59,13 +62,13 @@
     }
     &__text {
       padding: 40px 0;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         padding: 20px 0;
       }
       p {
         color: #fff;
         font-size: 24px;
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
           font-size: 18px;
         }
         @media only screen and (max-width: 375px) {

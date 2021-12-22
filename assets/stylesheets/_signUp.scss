@@ -1,5 +1,7 @@
 @import "./global.scss";
-
+.modal {
+  animation: fadein 0.5s;
+}
 .sign-up {
   .navbar-item.has-dropdown.is-active .navbar-link,
   .navbar-item.has-dropdown:focus .navbar-link,
@@ -145,8 +147,11 @@
 .modal-content::-webkit-scrollbar {
   width: 10px;
 }
+// .modal-background {
+//   background-color: rgb(10 10 10 / 40%);
+// }
 .modal-background {
-  background-color: rgb(10 10 10 / 40%);
+  background-color: #0a0a0a00 !important;
 }
 .modal-content {
   background-color: #fff;
@@ -289,7 +294,8 @@
       border-radius: 4px;
       cursor: pointer;
       img {
-        filter: invert(15%) sepia(1%) saturate(40%) hue-rotate(334deg) brightness(93%) contrast(96%);
+        filter: invert(15%) sepia(1%) saturate(40%) hue-rotate(334deg)
+          brightness(93%) contrast(96%);
         width: 140px;
         @media only screen and (max-width: 582px) {
           width: 100px;
@@ -476,7 +482,8 @@ input[type="radio"] {
     width: 134px;
     height: 14px;
     object-fit: contain;
-    filter: invert(37%) sepia(93%) saturate(0%) hue-rotate(284deg) brightness(96%) contrast(107%);
+    filter: invert(37%) sepia(93%) saturate(0%) hue-rotate(284deg)
+      brightness(96%) contrast(107%);
     @media only screen and (max-width: 582px) {
       width: 97px;
     }
@@ -489,7 +496,8 @@ input[type="radio"] {
   }
 }
 .isActive {
-  filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(284deg) brightness(96%) contrast(107%);
+  filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(284deg)
+    brightness(96%) contrast(107%);
 }
 .notification {
   display: flex;

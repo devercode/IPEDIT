@@ -82,7 +82,7 @@
   flex-direction: column;
   justify-content: space-between;
   line-height: 2;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     background: #fff !important;
   }
 }
@@ -91,7 +91,7 @@
   background: #f6f7f9 !important;
   margin-top: 60px;
   padding-bottom: 60px;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 767px) {
     background: #fff !important;
     margin-top: 0;
     padding-bottom: 0;
@@ -100,7 +100,7 @@
     margin: 0 auto;
     padding: 60px;
     background: #fff;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       padding: 20px;
     }
     h1 {
@@ -109,7 +109,7 @@
       text-transform: uppercase;
       color: #212037;
       padding-bottom: 40px;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         padding-bottom: 20px;
         font-size: 18px;
       }
@@ -139,7 +139,7 @@
     .rule-containe {
       text-align: left;
       padding-bottom: 40px;
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 767px) {
         padding-bottom: 20px;
       }
       h3 {
@@ -147,14 +147,14 @@
         font-size: 18px;
         color: #212037;
         padding-bottom: 10px;
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
           padding-bottom: 10px;
         }
       }
       p {
         font-size: 14px;
         color: #7c7f91;
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 767px) {
           // padding-bottom: 12px;
         }
       }
