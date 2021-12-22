@@ -398,6 +398,9 @@
               width: 69px;
               height: 66px;
             }
+            @media only screen and (max-width: 773px) {
+              width: 65px;
+            }
             @media only screen and (max-width: 767px) {
               width: 100px;
               height: 80px;
