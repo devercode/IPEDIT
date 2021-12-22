@@ -5,7 +5,7 @@
     v-bind:class="{ 'is-active': isContact }"
   >
     <div class="modal-background"></div>
-    <div class="modal-content" style="padding: 30px">
+    <div class="modal-content" style="padding: 30px 20px">
       <button
         class="modal-close is-large"
         aria-label="close"
