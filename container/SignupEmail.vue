@@ -79,7 +79,7 @@
             </div>
           </div>
 
-          <div class="services" style="margin-top: 6px">
+          <div class="services">
             <h3>서비스 및 유형 <span>*</span></h3>
           </div>
           <!-- name -->
@@ -165,13 +165,13 @@
           </div>
 
           <!-- COUNTRY -->
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <h3>휴대폰 인증 <span>*</span></h3>
           </div>
           <!-- Select country -->
           <div class="select-country">
             <div
-              class="navbar-item has-dropdown field"
+              class="navbar-item has-dropdown field select-country__mobile"
               style="width: 27%"
               :style="[activeCountry && { border: '1px solid #5C6BC0' }]"
               v-on:click="activeCountry = !activeCountry"
@@ -196,7 +196,7 @@
               </a>
               <div
                 class="navbar-dropdown"
-                style="background: #fff; height: 280px"
+                style="background: #fff; width: 280px"
                 :style="[!activeCountry && { display: 'none' }]"
               >
                 <a
@@ -247,7 +247,7 @@
           </div>
 
           <!-- Promotion code -->
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <h3>프로모션 코드</h3>
           </div>
 
@@ -333,7 +333,7 @@
             </div>
           </div>
 
-          <div class="services" style="margin-top: 6px">
+          <div class="services">
             <h3>서비스 및 유형 <span>*</span></h3>
           </div>
           <!-- name -->
@@ -404,7 +404,6 @@
           <!-- password confirm-->
           <div class="field">
             <Input
-              style=""
               fatherClass="control"
               className="input"
               type="password"

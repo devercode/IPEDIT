@@ -77,7 +77,7 @@
           </a>
           <div
             class="navbar-dropdown"
-            style="background: #fff; height: 280px"
+            style="background: #fff; width: 280px"
             :style="[!activeCountry && { display: 'none' }]"
           >
             <a
@@ -101,7 +101,7 @@
             required
             name="note"
             placeHolder="내용*"
-            style="height: 160px; color: #212037"
+            style="height: 160px; color: #000; font-size: 14px"
             v-on:change="handleChange"
           />
         </label>
