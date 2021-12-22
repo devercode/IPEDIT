@@ -152,7 +152,7 @@
               </div>
             </div>
             <a
-              class="navbar-item navbar-item-modal"
+              class="navbar-item navbar-item-modal item-login-header"
               v-on:click="openModalLogin"
             >
               로그인

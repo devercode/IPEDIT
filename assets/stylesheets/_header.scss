@@ -11,8 +11,19 @@
     // border-bottom: 2px solid #7c7f90;
     background-color: #f5f5f5 !important;
   }
-  &:focus {
-    background-color: #e0e0e0;
+  &:active {
+    background-color: #e0e0e0 !important;
+  }
+}
+.item-login-header {
+  margin-right: 10px;
+  // margin-right: 0 !important;
+  padding-right: 24px !important;
+  padding-left: 24px !important;
+  &:hover {
+    background-color: #f5f5f5 !important;
+  }
+  &:activer {
   }
 }
 .navbar {
@@ -39,12 +50,13 @@
     justify-content: space-between;
     align-items: center;
     min-height: 0;
-    @media only screen and (max-width: 1023px) {
+    @media only screen and (max-width: 1024px) {
       height: 80px !important;
-      padding: 20px;
+      padding: 0 40px;
     }
     @media only screen and (max-width: 767px) {
       height: 52px !important;
+      padding: 0 20px;
       min-height: auto;
     }
     .navbar-item {
@@ -64,14 +76,13 @@
     padding-right: 0;
   }
   .navbar-item {
-    margin-right: 22px;
     padding-right: 0;
+    @media only screen and (max-width: 1023px) {
+      margin-right: 22px;
+    }
     .buttons {
       .navbar-item {
         // padding-top: 3px;
-        @media only screen and (max-width: 1023px) {
-          // padding-top: 0px;
-        }
       }
     }
   }
@@ -119,11 +130,14 @@
       padding-top: 0;
     }
   }
-  @media only screen and (max-width: 1023px) {
-    padding: 0 20px;
+  @media only screen and (max-width: 1024px) {
+    padding: 0 40px;
     .navbar-link {
       padding-bottom: 0;
     }
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 0 20px;
   }
 }
 .showDropEdd {
@@ -289,7 +303,7 @@
 }
 
 .navbar-item:hover {
-  background-color: #fff !important;
+  // background-color: #fff !important;
 }
 .navbar-item,
 .navbar-link {
