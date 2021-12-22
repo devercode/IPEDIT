@@ -74,6 +74,12 @@
         margin: 0 auto;
         margin-bottom: 80px;
       }
+      @media only screen and (max-width: 375px) {
+        height: 315px;
+        width: 315px;
+        margin: 0 auto;
+        margin-bottom: 80px;
+      }
       .iframe-desktop {
         position: absolute;
       }
