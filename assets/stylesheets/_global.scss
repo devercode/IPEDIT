@@ -32,6 +32,10 @@
     background-color: #0a0a0a08 !important;
   }
 }
+.button.is-focused:not(:active),
+.button:focus:not(:active) {
+  box-shadow: none;
+}
 .btn {
   font-family: "Pretendard";
   color: #fff;
@@ -202,6 +206,18 @@ $opacity-transition: opacity $speed ease-in-out;
 .disable {
   background: #e0e0e0;
   color: #bdbdbd;
+  border-color: #e0e0e0 !important;
+  &:hover {
+    color: #bdbdbd !important;
+    border-radius: 4px !important;
+  }
+  &:focus {
+    color: #bdbdbd !important;
+  }
+  &:active {
+    border-color: #e0e0e0 !important;
+    color: #bdbdbd !important;
+  }
 }
 
 .control-button {
