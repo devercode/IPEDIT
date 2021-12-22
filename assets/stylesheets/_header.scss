@@ -80,6 +80,9 @@
     @media only screen and (max-width: 1023px) {
       margin-right: 22px;
     }
+    @media only screen and (max-width: 767px) {
+      margin-right: 0;
+    }
     .buttons {
       .navbar-item {
         // padding-top: 3px;
