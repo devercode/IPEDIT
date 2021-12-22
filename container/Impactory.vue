@@ -20,7 +20,7 @@
         <div
           class="video-img video-img-desktop"
           :style="[modalVideo ? { display: 'none' } : { display: 'flex' }]"
-          v-on:click="handlePlay"
+          v-on:click="handlePlay(width >= 991 ? 'normal' : 'modal')"
         >
           <img :src="playCircle" />
         </div>
@@ -37,7 +37,7 @@
           <button
             class="modal-close is-large"
             aria-label="close"
-            v-on:click="handlePlay"
+            v-on:click="handlePlay('modal')"
           ></button>
           <iframe
             src="https://www.youtube.com/embed/hF5b-9iAN1k"
@@ -182,12 +182,15 @@ export default {
   },
   components: {},
   methods: {
-    handlePlay: function () {
+    handlePlay: function (type) {
       this.modalVideo = !this.modalVideo;
-      if (this.modalVideo) {
-        document.querySelector("html").classList.add("is-clipped");
-      } else {
-        document.querySelector("html").classList.remove("is-clipped");
+      console.log(type);
+      if (type === "modal") {
+        if (this.modalVideo) {
+          document.querySelector("html").classList.add("is-clipped");
+        } else {
+          document.querySelector("html").classList.remove("is-clipped");
+        }
       }
     },
     handleResize() {
