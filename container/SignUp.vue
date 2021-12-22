@@ -3,7 +3,7 @@
   <div class="modal sign-up is-active">
     <div
       class="modal-background"
-      :style="[modalLogin && { backgroundColor: '#0a0a0a1a' }]"
+      :style="[modalLogin && { backgroundColor: '#0a0a0a0d ' }]"
     ></div>
     <SignUpEmail
       v-if="signupEmail"

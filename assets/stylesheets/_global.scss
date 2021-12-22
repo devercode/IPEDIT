@@ -17,9 +17,9 @@
   background: #e0e0e0;
   border-radius: 10px;
 }
-.modal-background {
-  background-color: #0a0a0a62 !important;
-}
+// .modal-background {
+//   background-color: #0a0a0a62 !important;
+// }
 #__layout {
   background: #f6f7f9;
 }
@@ -107,6 +107,24 @@ a:hover {
     max-width: 100% !important;
     margin: auto 60px !important;
   }
+}
+.input:active {
+  box-shadow: none !important;
+}
+.input:active,
+.input:focus,
+.is-active.input,
+.is-active.textarea,
+.is-focused.input,
+.is-focused.textarea,
+.select select.is-active,
+.select select.is-focused,
+.select select:active,
+.select select:focus,
+.textarea:active,
+.textarea:focus {
+  box-shadow: none !important;
+  border-color: #f1f1f1 !important;
 }
 @media (max-width: 991px) {
   .container {
@@ -262,16 +280,14 @@ div.omrs-input-group {
   color: #7c7f90;
 }
 
-.omrs-input-underlined:not(.omrs-input-danger)
-  > input:focus
-  + .omrs-input-label,
+.omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
 .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
-  color: #1e4bd1;
+  // color: #1e4bd1;
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
 .omrs-input-filled:not(.omrs-input-danger) > input:focus {
-  border-color: #1e4bd1;
+  // border-color: #1e4bd1;
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,

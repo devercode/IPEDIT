@@ -53,18 +53,31 @@
           v-on:click="activeCountry = !activeCountry"
           v-bind:class="{ 'is-active': activeCountry }"
         >
-          <a class="navbar-link">
+          <a
+            class="navbar-link"
+            :style="[
+              countryText === ''
+                ? { color: '#7C7F90', paddingLeft: '10px' }
+                : { color: '#212037', paddingLeft: '10px' },
+            ]"
+          >
             <img
               v-bind:style="[
-                countryText === '' ? { display: 'none' } : { display: 'block' },
+                countryText === ''
+                  ? { display: 'none', marginRight: '10px' }
+                  : { display: 'block', marginRight: '10px' },
               ]"
               :src="countryText.img"
             />
-            {{ countryText.dial_code }}
+            {{
+              countryText === ""
+                ? "국가 선택"
+                : countryText.name + " " + countryText.dial_code
+            }}
           </a>
           <div
             class="navbar-dropdown"
-            style="background: #fff"
+            style="background: #fff; height: 280px"
             :style="[!activeCountry && { display: 'none' }]"
           >
             <a
@@ -88,7 +101,7 @@
             required
             name="note"
             placeHolder="내용*"
-            style="height: 160px"
+            style="height: 160px; color: #212037"
             v-on:change="handleChange"
           />
         </label>
@@ -99,7 +112,7 @@
         text="보내기"
         :disabled="true"
         style="
-          width: 69px;
+          width: 280px;
           height: 36px;
           float: right;
           margin-top: 30px;

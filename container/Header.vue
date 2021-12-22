@@ -205,6 +205,7 @@ export default {
     openModalLogin: function () {
       document.querySelector("html").classList.add("is-clipped");
       this.modalLogin = true;
+      this.activeMenu = false;
     },
     changeModalLogin: function () {
       document.querySelector("html").classList.remove("is-clipped");
@@ -214,6 +215,7 @@ export default {
     openModalSignUp: function () {
       document.querySelector("html").classList.add("is-clipped");
       this.modalSignup = true;
+      this.activeMenu = false;
     },
     changeModalSignUp: function () {
       document.querySelector("html").classList.remove("is-clipped");
@@ -223,6 +225,7 @@ export default {
     openContact: function () {
       document.querySelector("html").classList.add("is-clipped");
       this.isContact = true;
+      this.activeMenu = false;
     },
     closeContact: function () {
       document.querySelector("html").classList.remove("is-clipped");

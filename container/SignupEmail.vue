@@ -7,7 +7,7 @@
         aria-label="close"
         v-on:click="changeModalSignUp"
       ></button>
-      <div class="logo">
+      <div class="logo" style="margin-top: -22px">
         <img :src="logo" alt="../assets/images/ipedit.svg" />
       </div>
 
@@ -57,19 +57,19 @@
             v-bind:class="{ 'is-active': activeDropdown }"
           >
             <a
-              class="navbar-link"
-              style="color: rgb(124, 127, 144); padding-left: 10px"
+              class="navbar-link select-signupEmail"
+              v-bind:class="{ 'selected-signupEmail': formData.type !== '' }"
             >
               {{ type }}
             </a>
             <div
               class="navbar-dropdown"
-              style="height: max-content; background: #fff; width:100%"
+              style="height: max-content; background: #fff; width: 100%"
               :style="[!activeDropdown && { display: 'none' }]"
             >
               <a
                 class="navbar-item"
-                style="margin-bottom: 10px; border: none"
+                style="border: none; justify-content: center"
                 v-for="item in arrSelect"
                 :key="item"
                 v-on:click="selectItem(item)"
@@ -177,7 +177,14 @@
               v-on:click="activeCountry = !activeCountry"
               v-bind:class="{ 'is-active': activeCountry }"
             >
-              <a class="navbar-link" style="color: #7c7f90">
+              <a
+                class="navbar-link"
+                :style="[
+                  country === ''
+                    ? { color: '#7C7F90', paddingLeft: '10px' }
+                    : { color: '#212037' },
+                ]"
+              >
                 <img
                   style="width: 20px; height: 14px; margin-right: 5px"
                   v-bind:style="[
@@ -185,11 +192,11 @@
                   ]"
                   :src="country.img"
                 />
-                {{ country.dial_code }}
+                {{ country === "" ? "국가 선택" : country.dial_code }}
               </a>
               <div
                 class="navbar-dropdown"
-                style="background: #fff"
+                style="background: #fff; height: 280px"
                 :style="[!activeCountry && { display: 'none' }]"
               >
                 <a
@@ -306,10 +313,7 @@
             v-on:click="activeDropdown = !activeDropdown"
             v-bind:class="{ 'is-active': activeDropdown }"
           >
-            <a
-              class="navbar-link"
-              style="color: rgb(124, 127, 144); padding-left: 10px"
-            >
+            <a class="navbar-link select-signupEmail" style="">
               {{ type }}
             </a>
             <div
@@ -319,7 +323,7 @@
             >
               <a
                 class="navbar-item"
-                style="margin-bottom: 10px; border: none"
+                style="border: none; justify-content: center"
                 v-for="item in arrSelect"
                 :key="item"
                 v-on:click="selectItem(item)"

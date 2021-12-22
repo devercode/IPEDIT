@@ -2,6 +2,9 @@
 .modal {
   animation: fadein 0.5s !important;
 }
+::-webkit-scrollbar {
+  width: 0px !important;
+}
 .modal-close {
   top: 10px;
   right: 10px;
