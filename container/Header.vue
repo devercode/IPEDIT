@@ -34,18 +34,13 @@
                   style="z-index: 111111"
                 >
                   <a
+                    v-for="(item, index) in arrLanguage"
+                    :key="index"
                     class="navbar-item"
-                    style="margin-right: 0"
-                    v-on:click="this.language = 'English'"
+                    style="margin-right: 0; width: 100%; white-space: nowrap"
+                    v-on:click="handleLanguage(item)"
                   >
-                    <p>English</p>
-                  </a>
-                  <a
-                    class="navbar-item"
-                    style="margin-right: 0"
-                    v-on:click="this.language = '日本語'"
-                  >
-                    <p>日本語</p>
+                    <p>{{ item }}</p>
                   </a>
                 </div>
               </div>
@@ -137,29 +132,28 @@
           style="padding-right: 0; margin-right: 0; padding-top: 8px !important"
         >
           <div class="buttons">
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div
+              class="navbar-item"
+              v-bind:class="{ 'has-dropdown is-hoverable': !upHere }"
+            >
               <a
-                class="navbar-link dropdown-option"
+                class="navbar-link"
+                v-bind:class="{ 'dropdown-option': !upHere }"
                 style="width: max-content; background: none; height: 50px"
-                @mouseover="upHere = true"
-                @mouseleave="upHere = false"
+                v-on:mouseleave="upHere = false"
               >
                 {{ language }}
               </a>
               <div class="navbar-dropdown" style="margin-top: -4px">
                 <a
+                  v-for="(item, index) in arrLanguage"
+                  :key="index"
                   class="navbar-item"
-                  style="margin-right: 0"
-                  v-on:click="handleLanguage('English')"
+                  style="margin-right: 0; width: 100%; white-space: nowrap"
+                  v-on:click="handleLanguage(item)"
+                  v-on:mouseleave="upHere = false"
                 >
-                  <p>English</p>
-                </a>
-                <a
-                  class="navbar-item"
-                  style="margin-right: 0"
-                  v-on:click="this.language = '日本語'"
-                >
-                  <p>日本語</p>
+                  <p>{{ item }}</p>
                 </a>
               </div>
             </div>
@@ -197,6 +191,7 @@ export default {
       isContact: false,
       upHere: false,
       language: "한국어",
+      arrLanguage: ["English", "日本語"],
     };
   },
   components: { Login, SignUp, ContactUs },
@@ -234,7 +229,14 @@ export default {
     handleLanguage: function (lang) {
       this.language = lang;
       this.upHere = true;
-      console.log(this.upHere);
+      this.activeEdd = false;
+      if (lang === "English") {
+        this.arrLanguage = ["한국어", "日本語"];
+      } else if (lang === "한국어") {
+        this.arrLanguage = ["English", "日本語"];
+      } else {
+        this.arrLanguage = ["한국어", "English"];
+      }
     },
     scrollToHeader: function (type) {
       this.activeMenu = false;

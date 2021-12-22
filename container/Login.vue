@@ -69,8 +69,11 @@
       <div class="checkbox-control">
         <label class="container__checbox"
           >이메일 저장하기
-          <input type="checkbox" checked="checked" />
-          <span class="checkmark"></span>
+          <input type="checkbox" checked="checked" @change="someHandler" />
+          <span
+            class="checkmark"
+            :class="{ checkmark__active: typeCheckbox }"
+          ></span>
         </label>
         <a class="forget-pass" v-on:click="openModalResetPassword"
           >비밀번호 찾기</a
@@ -139,6 +142,7 @@ export default {
       apple: Apple,
       checkConditional: false,
       modalResetPass: false,
+      typeCheckbox: true,
       data: { userName: "", password: "" },
     };
   },
@@ -167,6 +171,9 @@ export default {
     closeModalResetPassword: function () {
       document.querySelector("html").classList.remove("is-clipped");
       this.modalResetPass = false;
+    },
+    someHandler: function (e) {
+      this.typeCheckbox = e.target.checked;
     },
   },
   mounted() {},

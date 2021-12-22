@@ -98,14 +98,22 @@
           </div>
 
           <div class="contentt">
-            <div class="contentt__containerr">
-              <ul class="contentt__containerr__listt">
-                <li class="contentt__containerr__listt__itemm">
+            <div class="contentt__containerr wrapper">
+              <ul class="contentt__containerr__listt words">
+                <li class="contentt__containerr__listt__itemm span">
                   구성요소 오류
                 </li>
-                <li class="contentt__containerr__listt__itemm">선행사 오류</li>
-                <li class="contentt__containerr__listt__itemm">
+                <li class="contentt__containerr__listt__itemm span">
+                  선행사 오류
+                </li>
+                <li class="contentt__containerr__listt__itemm span">
                   청구항 인용 오류
+                </li>
+                <li class="contentt__containerr__listt__itemm span">
+                  선행사 오류
+                </li>
+                <li class="contentt__containerr__listt__itemm span">
+                  구성요소 오류
                 </li>
               </ul>
             </div>
