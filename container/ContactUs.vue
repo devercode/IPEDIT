@@ -5,7 +5,7 @@
     v-bind:class="{ 'is-active': isContact }"
   >
     <div class="modal-background"></div>
-    <div class="modal-content" style="padding: 30px 20px">
+    <div class="modal-content modal-contact">
       <button
         class="modal-close is-large"
         aria-label="close"
@@ -104,17 +104,7 @@
       </div>
 
       <!-- login with Email -->
-      <Button
-        text="보내기"
-        :disabled="true"
-        style="
-          width: 280px;
-          height: 36px;
-          float: right;
-          margin-top: 30px;
-          font-size: 14px;
-        "
-      />
+      <Button text="보내기" :disabled="true" class="btn-contact" />
     </div>
   </div>
 </template>
