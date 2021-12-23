@@ -69,11 +69,7 @@
               ]"
               :src="countryText.img"
             />
-            {{
-              countryText === ""
-                ? "국가 선택"
-                : countryText.name + " " + countryText.dial_code
-            }}
+            {{ countryText === "" ? "국가 선택" : countryText.name }}
           </a>
           <div
             class="navbar-dropdown"
