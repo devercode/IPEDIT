@@ -4,9 +4,11 @@
       v-bind:successPopup="successPopup"
       v-on:closeModalSuccess="closeModalSuccess"
       v-on:changeModalLogin="changeModalLogin"
+      v-on:closeModalResetPassword="closeModalResetPassword"
+      v-on:closeModalReset="closeModalReset"
     />
     <!-- <div class="modal-background is-clipped"></div> -->
-    <div class="modal-content" v-if="!sendEmail">
+    <div class="modal-content" v-if="!sendEmail && !successPopup">
       <button
         class="modal-close is-large"
         aria-label="close"
@@ -42,7 +44,11 @@
     </div>
 
     <!-- NewPassword -->
-    <div class="modal-content" style="height: 315px" v-if="sendEmail">
+    <div
+      class="modal-content"
+      style="height: 315px"
+      v-if="sendEmail && !successPopup"
+    >
       <button
         class="modal-close is-large"
         aria-label="close"
@@ -120,24 +126,21 @@ export default {
     },
     closeModalSuccess: function () {
       this.successPopup = false;
+      this.$emit("closeModalResetPassword");
     },
     handleValue: function (e) {
       this.checkConditional = true;
       this.data = { [e.target.name]: e.target.value };
     },
     openResult: function () {
+      // this.$emit("closeModalResetPassword");
       this.successPopup = true;
+      this.sendEmail = false;
     },
     onToogleEmail: function () {
       if (this.data.emailReset !== "") {
         this.sendEmail = true;
       }
-      // if (this.sendEmail) {
-      //   if (this.data.newPassReset === this.data.oldPassReset) {
-      //     this.successPopup = true;
-      //     console.log(this.data.newPassReset === this.data.oldPassReset);
-      //   }
-      // }
     },
   },
   mounted() {},
