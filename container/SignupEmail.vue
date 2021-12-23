@@ -268,7 +268,7 @@
             />
           </div>
 
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <p>
               회원가입 시 IPEDIT의 이용약관과 개인정보처리방침에 동의하게
               됩니다.
