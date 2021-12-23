@@ -2,26 +2,31 @@
   font-family: "Pretendard";
   src: url("../fonts/Pretendard-Regular.otf") format("otf");
 }
-::-webkit-scrollbar {
-  width: 6px;
+// ::-webkit-scrollbar {
+//   width: 0px !important;
+// }
+.disable-scroll::-webkit-scrollbar {
+  width: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f175;
-  border-radius: 10px;
-}
+// ::-webkit-scrollbar-track {
+//   background: #f1f1f175;
+//   border-radius: 10px;
+// }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
-  background: #e0e0e0;
-  border-radius: 10px;
-}
+// ::-webkit-scrollbar-thumb {
+//   background: #e0e0e0;
+//   border-radius: 10px;
+// }
 // .modal-background {
 //   background-color: #0a0a0a62 !important;
 // }
 #__layout {
   background: #f6f7f9;
+  overflow: hidden !important;
 }
 .modal {
   height: 100vh;
@@ -128,7 +133,7 @@ a:hover {
 .textarea:active,
 .textarea:focus {
   box-shadow: none !important;
-  border-color: #f1f1f1 !important;
+  border-color: #5c6bc0 !important;
 }
 @media (max-width: 991px) {
   .container {
@@ -207,12 +212,13 @@ $opacity-transition: opacity $speed ease-in-out;
   background: #e0e0e0;
   color: #bdbdbd;
   border-color: #e0e0e0 !important;
-  &:hover {
-    color: #bdbdbd !important;
-    border-radius: 4px !important;
-  }
+  // &:hover {
+  //   color: #bdbdbd !important;
+  //   border-radius: 4px !important;
+  // }
   &:focus {
     color: #bdbdbd !important;
+    border-color: #e0e0e0 !important;
   }
   &:active {
     border-color: #e0e0e0 !important;
@@ -298,12 +304,12 @@ div.omrs-input-group {
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
 .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
-  // color: #1e4bd1;
+  // color: #5c6bc0;
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
 .omrs-input-filled:not(.omrs-input-danger) > input:focus {
-  // border-color: #1e4bd1;
+  border-color: #5c6bc0;
 }
 
 .omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,

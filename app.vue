@@ -7,7 +7,6 @@
 @import "../assets/stylesheets/global.scss";
 </style>;
 <script >
-// import "./main";
 import Main from "./pages";
 
 export default {
