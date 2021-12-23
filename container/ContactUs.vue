@@ -46,8 +46,45 @@
       />
 
       <!-- Select country -->
-
-      <div class="select-country">
+      <div
+        class="navbar-item field has-dropdown"
+        :style="[activeCountry && { border: '1px solid #5C6BC0' }]"
+        v-on:click="activeCountry = !activeCountry"
+        v-bind:class="{ 'is-active': activeCountry }"
+        style="margin-bottom: 8px"
+      >
+        <a
+          class="navbar-link select-signupEmail select__cout"
+          v-bind:class="{ 'selected-signupEmail': countryText !== '' }"
+        >
+          <img
+            v-bind:style="[
+              countryText === ''
+                ? { display: 'none', marginRight: '10px' }
+                : { display: 'block', marginRight: '10px' },
+            ]"
+            :src="countryText.img"
+          />
+          {{ countryText === "" ? "국가 선택" : countryText.name }}
+        </a>
+        <div
+          class="navbar-dropdown"
+          style="background: #fff; width: 100%"
+          :style="[!activeCountry && { display: 'none' }]"
+        >
+          <a
+            class="navbar-item item__country"
+            style="border: none; justify-content: flex-start"
+            v-for="item in countries"
+            :key="item"
+            v-on:click="selectCountry(item)"
+          >
+            <img :src="item.img" />
+            <span class="nameCountry">{{ item.name }}</span>
+          </a>
+        </div>
+      </div>
+      <!-- <div class="select-country">
         <div
           class="navbar-item has-dropdown field select-country__mobile"
           style="width: 100%; margin-bottom: 10px"
@@ -90,7 +127,7 @@
             </a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="omrs-input-group">
         <label class="omrs-input-filled">
