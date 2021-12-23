@@ -23,7 +23,8 @@
   transition: 1s;
   background-color: #fff;
   width: 540px;
-  height: 582px;
+  // height: 582px;
+  height: max-content;
   padding: 40px;
   text-align: center;
   animation: fadein 0.5s !important;
