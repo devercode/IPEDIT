@@ -208,7 +208,7 @@
                 >
                   <img :src="item.img" />
                   <span class="nameCountry">{{ item.name }}</span>
-                  <!-- <span class="dial_code">{{ item.dial_code }}</span> -->
+                  <span class="dial_code">{{ item.dial_code }}</span>
                 </a>
               </div>
             </div>
@@ -463,7 +463,7 @@
                 >
                   <img :src="item.img" />
                   <span class="nameCountry">{{ item.name }}</span>
-                  <!-- <span class="dial_code">{{ item.dial_code }}</span> -->
+                  <span class="dial_code">{{ item.dial_code }}</span>
                 </a>
               </div>
             </div>
