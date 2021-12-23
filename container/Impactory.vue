@@ -199,15 +199,15 @@ export default {
       }
     },
 
-    // scrollFunction: function () {
-    //   if (typeof window !== "undefined") {
-    //     if (window.scrollY >= 1646) {
-    //       document
-    //         .getElementById("minutes__top")
-    //         .classList.add("minutes__top__animation");
-    //     }
-    //   }
-    // },
+    scrollFunction: function () {
+      if (typeof window !== "undefined") {
+        if (window.scrollY > 2100) {
+          document
+            .getElementById("minutes__top")
+            .classList.remove("minutes__top__animation");
+        }
+      }
+    },
     animationModule: function () {
       this.animate = true;
       document
