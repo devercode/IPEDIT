@@ -178,7 +178,8 @@
               v-bind:class="{ 'is-active': activeCountry }"
             >
               <a
-                class="navbar-link"
+                class="navbar-link select__cout"
+                v-bind:class="{ selected__cout: country !== '' }"
                 :style="[
                   country === ''
                     ? { color: '#7C7F90', paddingLeft: '10px' }
@@ -207,7 +208,7 @@
                 >
                   <img :src="item.img" />
                   <span class="nameCountry">{{ item.name }}</span>
-                  <span class="dial_code">{{ item.dial_code }}</span>
+                  <!-- <span class="dial_code">{{ item.dial_code }}</span> -->
                 </a>
               </div>
             </div>
@@ -461,7 +462,7 @@
                 >
                   <img :src="item.img" />
                   <span class="nameCountry">{{ item.name }}</span>
-                  <span class="dial_code">{{ item.dial_code }}</span>
+                  <!-- <span class="dial_code">{{ item.dial_code }}</span> -->
                 </a>
               </div>
             </div>

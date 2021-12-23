@@ -106,6 +106,30 @@ a:hover {
   transform-origin: center;
   width: 0.625em;
 }
+.input:active {
+  box-shadow: none !important;
+}
+.selected__cout {
+  &:hover {
+    color: rgb(33, 32, 55) !important;
+  }
+}
+.input:active,
+.input:focus,
+.is-active.input,
+.is-active.textarea,
+.is-focused.input,
+.is-focused.textarea,
+.select__cout:active,
+.select select.is-active,
+.select select.is-focused,
+.select select:active,
+.select select:focus,
+.textarea:active,
+.textarea:focus {
+  box-shadow: none !important;
+  border-color: #5c6bc0 !important;
+}
 .container {
   max-width: 1110px !important;
   // max-width: auto !important;
@@ -116,24 +140,6 @@ a:hover {
     max-width: 100% !important;
     margin: auto 60px !important;
   }
-}
-.input:active {
-  box-shadow: none !important;
-}
-.input:active,
-.input:focus,
-.is-active.input,
-.is-active.textarea,
-.is-focused.input,
-.is-focused.textarea,
-.select select.is-active,
-.select select.is-focused,
-.select select:active,
-.select select:focus,
-.textarea:active,
-.textarea:focus {
-  box-shadow: none !important;
-  border-color: #5c6bc0 !important;
 }
 @media (max-width: 991px) {
   .container {
@@ -366,4 +372,8 @@ div.omrs-input-group {
 }
 textarea {
   box-shadow: none !important;
+  border: 1px solid #f1f1f1;
+  &:hover {
+    border: 1px solid #f1f1f1;
+  }
 }
