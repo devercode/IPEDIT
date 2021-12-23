@@ -353,14 +353,10 @@
               flex-direction: column;
               justify-content: flex-end;
               .minutes__top__animation {
-                animation-name: run;
-                animation-duration: 3s;
-                transition: 1s;
-                &:hover {
-                  animation-name: run;
-                  animation-duration: 3s;
-                  transition: 1s;
-                }
+                height: 100px !important;
+                // animation-name: run;
+                // animation-duration: 3s;
+                transition: 3s;
               }
               .minutes__top {
                 background: #212037;

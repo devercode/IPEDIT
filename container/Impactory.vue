@@ -50,7 +50,11 @@
       </div>
 
       <div class="box-containe">
-        <div class="module top-module_1" style="padding: 38px 60px">
+        <div
+          class="module top-module_1"
+          style="padding: 38px 60px"
+          v-on:scroll="scrollFunction"
+        >
           <div class="top">
             <!-- left -->
             <div class="left">
@@ -199,24 +203,26 @@ export default {
       }
     },
 
-    // scrollFunction: function () {
-    //   if (typeof window !== "undefined") {
-    //     if (window.scrollY >= 1646) {
-    //       document
-    //         .getElementById("minutes__top")
-    //         .classList.add("minutes__top__animation");
-    //     }
-    //   }
-    // },
+    scrollFunction: function () {
+      if (typeof window !== "undefined") {
+        if (window.scrollY > 2034 || window.scrollY < 940) {
+          this.animate = false;
+        }
+      }
+    },
     animationModule: function () {
       this.animate = true;
+
       document
         .getElementById("minutes__top")
         .classList.add("minutes__top__animation");
     },
   },
-
+  mounted() {},
   created() {
+    if (this.width < 1000 && this.width > 1400) {
+      this.animate = false;
+    }
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", this.scrollFunction);
       window.addEventListener("resize", this.handleResize);
