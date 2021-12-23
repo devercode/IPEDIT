@@ -21,6 +21,7 @@
         :style="[!buttonRequire ? { display: 'none' } : { display: 'block' }]"
       >
         <button
+          :class="{ disable: vModel === '' }"
           :style="[
             vModel !== '' && {
               background: '#5C6BC0',

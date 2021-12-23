@@ -99,7 +99,7 @@
     }
   }
   .item__country {
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
     border: none;
     display: flex;
     flex-direction: row;
@@ -141,8 +141,9 @@
   font-family: "Pretendard";
   line-height: 100%;
   padding: 5px;
+  background-color: rgba(255, 255, 255, 0) !important;
   &:hover {
-    background-color: #fff !important;
+    // background-color: #fff !important;
   }
 }
 .navbar-link:not(.is-arrowless)::after {
@@ -156,7 +157,7 @@
 .navbar-item,
 .has-dropdown,
 .is-hoverable {
-  border: 1px solid #dbdbdb;
+  border: 1px solid #f1f1f1;
   border-radius: 6px;
   height: 52px;
   width: 100%;
@@ -167,8 +168,26 @@
     font-size: 14px;
     height: 100%;
     align-items: center;
+    // &:hover {
+    //   color: #7c7f90 !important;
+    // }
   }
 }
+.select__cout {
+  &:hover {
+    color: #7c7f90 !important;
+  }
+}
+.selected__cout {
+  &:hover {
+    color: rgb(33, 32, 55) !important;
+  }
+}
+.select__cout:active {
+  box-shadow: none !important;
+  border-color: #5c6bc0 !important;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 .modal-content::-webkit-scrollbar {
   width: 10px;
@@ -184,9 +203,11 @@
   width: 540px;
   padding: 40px;
   text-align: center;
+  @media only screen and (max-width: 767px) {
+    padding: 30px 20px;
+  }
   @media only screen and (max-width: 582px) {
     width: 320px;
-    padding: 20px 30px;
   }
 
   .logo {
@@ -320,8 +341,7 @@
       border-radius: 4px;
       cursor: pointer;
       img {
-        filter: invert(15%) sepia(1%) saturate(40%) hue-rotate(334deg)
-          brightness(93%) contrast(96%);
+        filter: invert(15%) sepia(1%) saturate(40%) hue-rotate(334deg) brightness(93%) contrast(96%);
         width: 140px;
         @media only screen and (max-width: 582px) {
           width: 100px;
@@ -356,11 +376,17 @@
   // }
 }
 .select-signupEmail {
-  color: #f1f1f1 !important;
+  color: #13131599 !important;
   padding-left: 10px !important;
+  &:hover {
+    color: #13131599 !important;
+  }
 }
 .selected-signupEmail {
-  color: #212037 !important;
+  color: #000 !important;
+  &:hover {
+    color: #000 !important;
+  }
 }
 .px-2 {
   text-align: left;
@@ -419,16 +445,28 @@
     // margin-bottom: 10px;
     .navbar-item {
       border-radius: 6px;
+      .selected__cout {
+        &:hover {
+          color: rgb(33, 32, 55) !important;
+        }
+      }
+      .navbar-link {
+        &:hover {
+          color: #7c7f90;
+        }
+      }
     }
     @media only screen and (max-width: 582px) {
       flex-direction: column;
     }
     option {
       span:nth-child(1) {
-        color: #212037 !important;
+        // color: #212037 !important;
+        &:hover {
+        }
       }
       span:nth-child(2) {
-        color: #7c7f90 !important;
+        // color: #7c7f90 !important;
       }
     }
     .field {
@@ -517,8 +555,7 @@ input[type="radio"] {
     width: 134px;
     height: 14px;
     object-fit: contain;
-    filter: invert(37%) sepia(93%) saturate(0%) hue-rotate(284deg)
-      brightness(96%) contrast(107%);
+    filter: invert(37%) sepia(93%) saturate(0%) hue-rotate(284deg) brightness(96%) contrast(107%);
     @media only screen and (max-width: 582px) {
       width: 97px;
     }
@@ -531,8 +568,7 @@ input[type="radio"] {
   }
 }
 .isActive {
-  filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(284deg)
-    brightness(96%) contrast(107%);
+  filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(284deg) brightness(96%) contrast(107%);
 }
 .notification {
   display: flex;

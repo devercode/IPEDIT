@@ -40,7 +40,7 @@
   padding: 16px 40px;
   position: fixed;
   width: 100%;
-  z-index: 999999999999;
+  z-index: 9999999;
   @media only screen and (max-width: 1024px) {
     padding: 0;
   }
@@ -83,6 +83,8 @@
 .navbar-end {
   padding-bottom: 10px;
   .btn {
+    border-color: #5c6bc0 !important;
+
     padding-right: 0;
   }
   .navbar-item {
@@ -365,5 +367,6 @@
   }
 }
 .btn {
+  border-color: #5c6bc0 !important;
   margin: 0 !important;
 }
