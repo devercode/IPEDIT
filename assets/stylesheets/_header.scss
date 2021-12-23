@@ -83,6 +83,8 @@
 .navbar-end {
   padding-bottom: 10px;
   .btn {
+    border-color: #5c6bc0 !important;
+
     padding-right: 0;
   }
   .navbar-item {
@@ -365,5 +367,6 @@
   }
 }
 .btn {
+  border-color: #5c6bc0 !important;
   margin: 0 !important;
 }
