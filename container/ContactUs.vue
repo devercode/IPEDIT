@@ -46,9 +46,10 @@
       />
 
       <!-- Select country -->
+
       <div class="select-country">
         <div
-          class="navbar-item has-dropdown field"
+          class="navbar-item has-dropdown field select-country__mobile"
           style="width: 100%; margin-bottom: 10px"
           v-on:click="activeCountry = !activeCountry"
           v-bind:class="{ 'is-active': activeCountry }"
@@ -56,6 +57,7 @@
           <a
             class="navbar-link select__cout"
             v-bind:class="{ selected__cout: countryText !== '' }"
+            style="border-color: #5c6bc0 !important"
             :style="[
               countryText === ''
                 ? { color: '#7C7F90', paddingLeft: '10px' }
@@ -85,7 +87,6 @@
             >
               <img :src="item.img" />
               <span class="nameCountry">{{ item.name }}</span>
-              <!-- <span class="dial_code">{{ item.dial_code }}</span> -->
             </a>
           </div>
         </div>

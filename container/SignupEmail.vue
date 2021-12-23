@@ -303,7 +303,7 @@
         </div>
 
         <!-- content 2 -->
-        <div id="product-details" class="content-data" v-if="idTabs === 2">
+        <div id="product-details" class="content-data" v-if="idTabs === 1">
           <!-- Type of application -->
           <div
             class="navbar-item has-dropdown"
@@ -433,7 +433,8 @@
               v-bind:class="{ 'is-active': activeCountry }"
             >
               <a
-                class="navbar-link"
+                class="navbar-link select__cout"
+                v-bind:class="{ selected__cout: country !== '' }"
                 :style="[
                   country === ''
                     ? { color: '#7C7F90', paddingLeft: '10px' }
@@ -523,7 +524,7 @@
             />
           </div>
 
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <p>
               회원가입 시 IPEDIT의 이용약관과 개인정보처리방침에 동의하게
               됩니다.
