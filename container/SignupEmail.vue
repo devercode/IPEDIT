@@ -302,23 +302,23 @@
         </div>
 
         <!-- content 2 -->
-        <div
-          id="delivery-informations"
-          class="content-data"
-          v-if="idTabs === 2"
-        >
+        <div id="product-details" class="content-data" v-if="idTabs === 2">
+          <!-- Type of application -->
           <div
             class="navbar-item has-dropdown"
             :style="[activeDropdown && { border: '1px solid #5C6BC0' }]"
             v-on:click="activeDropdown = !activeDropdown"
             v-bind:class="{ 'is-active': activeDropdown }"
           >
-            <a class="navbar-link select-signupEmail" style="">
+            <a
+              class="navbar-link select-signupEmail"
+              v-bind:class="{ 'selected-signupEmail': formData.type !== '' }"
+            >
               {{ type }}
             </a>
             <div
               class="navbar-dropdown"
-              style="height: max-content; bacground: #fff"
+              style="height: max-content; background: #fff; width: 100%"
               :style="[!activeDropdown && { display: 'none' }]"
             >
               <a
@@ -404,6 +404,7 @@
           <!-- password confirm-->
           <div class="field">
             <Input
+              style=""
               fatherClass="control"
               className="input"
               type="password"
@@ -418,19 +419,26 @@
           </div>
 
           <!-- COUNTRY -->
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <h3>휴대폰 인증 <span>*</span></h3>
           </div>
           <!-- Select country -->
           <div class="select-country">
             <div
-              class="navbar-item has-dropdown field"
+              class="navbar-item has-dropdown field select-country__mobile"
               style="width: 27%"
               :style="[activeCountry && { border: '1px solid #5C6BC0' }]"
               v-on:click="activeCountry = !activeCountry"
               v-bind:class="{ 'is-active': activeCountry }"
             >
-              <a class="navbar-link" style="color: #7c7f90">
+              <a
+                class="navbar-link"
+                :style="[
+                  country === ''
+                    ? { color: '#7C7F90', paddingLeft: '10px' }
+                    : { color: '#212037' },
+                ]"
+              >
                 <img
                   style="width: 20px; height: 14px; margin-right: 5px"
                   v-bind:style="[
@@ -438,11 +446,11 @@
                   ]"
                   :src="country.img"
                 />
-                {{ country.dial_code }}
+                {{ country === "" ? "국가 선택" : country.dial_code }}
               </a>
               <div
                 class="navbar-dropdown"
-                style="background: #fff"
+                style="background: #fff; width: 280px"
                 :style="[!activeCountry && { display: 'none' }]"
               >
                 <a
@@ -451,7 +459,7 @@
                   :key="item"
                   v-on:click="selectCountry(item)"
                 >
-                  <!-- <img :src="item.img" /> -->
+                  <img :src="item.img" />
                   <span class="nameCountry">{{ item.name }}</span>
                   <span class="dial_code">{{ item.dial_code }}</span>
                 </a>
@@ -493,7 +501,7 @@
           </div>
 
           <!-- Promotion code -->
-          <div class="services">
+          <div class="services" style="margin-top: -8px">
             <h3>프로모션 코드</h3>
           </div>
 
