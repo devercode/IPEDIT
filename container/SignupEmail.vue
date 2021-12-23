@@ -48,7 +48,7 @@
       <!-- tabs content -->
       <div class="px-2" id="tab-content">
         <!-- content 1 -->
-        <div id="product-details" class="content-data" v-if="idTabs === 1">
+        <div id="product-details" class="content-data" v-if="idTabs === 2">
           <!-- Type of application -->
           <div
             class="navbar-item has-dropdown"
