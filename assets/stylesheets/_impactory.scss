@@ -55,9 +55,9 @@
       background-size: cover;
       position: relative;
       border-radius: 10px;
-      background-position: -1.4vw 14vw;
+      background-position: 0 2vw;
       @media only screen and (min-width: 1335px) and (max-width: 1645px) {
-        background-position: 50% 14vw;
+        // background-position: 50% 14vw;
       }
       @media only screen and (max-width: 1334px) {
         background-image: none !important;
@@ -74,14 +74,17 @@
         // background-position: 50% 25%;
       }
       .vide-background {
-        height: 45.4vw;
+        height: 33vw;
         position: relative;
         width: 100%;
         border-radius: 0;
         box-shadow: none;
         filter: brightness(0.91);
+        @media only screen and (max-width: 1824px) {
+          height: 600px;
+        }
         @media only screen and (max-width: 1279px) {
-          // height: 47vw;
+          height: 47vw;
         }
         img {
           width: 100%;
@@ -350,11 +353,19 @@
                 // animation-name: run;
                 // animation-duration: 3s;
                 transition: 3s;
-                // &:hover {
-                //   animation-name: run;
-                //   animation-duration: 3s;
-                //   transition: 1s;
-                // }
+                @media only screen and (max-width: 1279px) {
+                  height: 85px !important;
+                }
+                @media only screen and (max-width: 991px) {
+                  height: 70px !important;
+                }
+                @media only screen and (max-width: 767px) {
+                  height: 21vw !important;
+                  // height: 39vw;
+                }
+                @media only screen and (max-width: 582px) {
+                  height: 18vw !important;
+                }
               }
               .minutes__top {
                 background: #212037;
