@@ -11,7 +11,7 @@
           <img :src="videoArea" />
         </div>
         <iframe
-          v-if="width >= 991 && modalVideo"
+          v-if="modalVideo"
           class="iframe-desktop"
           width="100%"
           height="100%"
@@ -25,25 +25,25 @@
         <div
           class="video-img video-img-desktop"
           :style="[modalVideo ? { display: 'none' } : { display: 'flex' }]"
-          v-on:click="handlePlay(width >= 991 ? 'normal' : 'modal')"
+          v-on:click="handlePlay"
         >
           <img :src="playCircle" />
         </div>
-        <div class="vide-background" v-if="width < 991 && modalVideo">
+        <!-- <div class="vide-background" v-if="width < 991 && modalVideo">
           <img :src="videoArea" />
-        </div>
-        <div
+        </div> -->
+        <!-- <div
           v-if="width < 991"
           class="video-img video-img-desktop"
           v-on:click="handlePlay(width >= 991 ? 'normal' : 'modal')"
         >
           <img :src="playCircle" />
-        </div>
+        </div> -->
       </div>
 
       <!-- modal video -->
 
-      <div
+      <!-- <div
         class="modal"
         v-bind:class="{ 'is-active': modalVideo }"
         v-if="width < 991 && modalVideo"
@@ -62,7 +62,7 @@
             allowfullscreen
           ></iframe>
         </div>
-      </div>
+      </div> -->
 
       <div class="box-containe" id="minutes__top__con">
         <div
@@ -201,16 +201,15 @@ export default {
   },
   components: {},
   methods: {
-    handlePlay: function (type) {
+    handlePlay: function () {
       this.modalVideo = !this.modalVideo;
-      console.log(type);
-      if (type === "modal") {
-        if (this.modalVideo) {
-          document.querySelector("html").classList.add("is-clipped");
-        } else {
-          document.querySelector("html").classList.remove("is-clipped");
-        }
-      }
+      // if (type === "modal") {
+      //   if (this.modalVideo) {
+      //     document.querySelector("html").classList.add("is-clipped");
+      //   } else {
+      //     document.querySelector("html").classList.remove("is-clipped");
+      //   }
+      // }
     },
     handleResize() {
       if (typeof window !== "undefined") {
