@@ -3,8 +3,13 @@
     <div class="impactory__container container">
       <div
         class="video"
-        v-bind:style="{ backgroundImage: 'url(' + videoArea + ')' }"
+        v-bind:style="[
+          !modalVideo && { backgroundImage: 'url(' + videoArea + ')' },
+        ]"
       >
+        <div class="vide-background" v-if="!modalVideo">
+          <img :src="videoArea" />
+        </div>
         <iframe
           v-if="width >= 991 && modalVideo"
           class="iframe-desktop"
@@ -20,6 +25,16 @@
         <div
           class="video-img video-img-desktop"
           :style="[modalVideo ? { display: 'none' } : { display: 'flex' }]"
+          v-on:click="handlePlay(width >= 991 ? 'normal' : 'modal')"
+        >
+          <img :src="playCircle" />
+        </div>
+        <div class="vide-background" v-if="width < 991 && modalVideo">
+          <img :src="videoArea" />
+        </div>
+        <div
+          v-if="width < 991"
+          class="video-img video-img-desktop"
           v-on:click="handlePlay(width >= 991 ? 'normal' : 'modal')"
         >
           <img :src="playCircle" />
@@ -49,7 +64,7 @@
         </div>
       </div>
 
-      <div class="box-containe">
+      <div class="box-containe" id="minutes__top__con">
         <div
           class="module top-module_1"
           style="padding: 38px 60px"
@@ -205,7 +220,22 @@ export default {
 
     scrollFunction: function () {
       if (typeof window !== "undefined") {
-        if (window.scrollY > 2100) {
+        if (
+          window.scrollY >
+          document.getElementById("minutes__top__con").offsetTop + 2000
+        ) {
+          document
+            .getElementById("minutes__top")
+            .classList.remove("minutes__top__animation");
+        }
+        if (
+          window.scrollY >=
+          document.getElementById("minutes__top__con").offsetTop
+        ) {
+          document
+            .getElementById("minutes__top")
+            .classList.add("minutes__top__animation");
+        } else {
           document
             .getElementById("minutes__top")
             .classList.remove("minutes__top__animation");
@@ -214,7 +244,6 @@ export default {
     },
     animationModule: function () {
       this.animate = true;
-
       document
         .getElementById("minutes__top")
         .classList.add("minutes__top__animation");
