@@ -205,8 +205,10 @@ export default {
 
     scrollFunction: function () {
       if (typeof window !== "undefined") {
-        if (window.scrollY > 2034 || window.scrollY < 940) {
-          this.animate = false;
+        if (window.scrollY > 2100) {
+          document
+            .getElementById("minutes__top")
+            .classList.remove("minutes__top__animation");
         }
       }
     },
